@@ -20,6 +20,7 @@
 		277ED1462746D2FE0091C076 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED1452746D2FE0091C076 /* FSCalendar */; };
 		277ED1492746D34A0091C076 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED1482746D34A0091C076 /* Realm */; };
 		277ED14B2746D34A0091C076 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED14A2746D34A0091C076 /* RealmSwift */; };
+		277ED14D2746DA340091C076 /* CostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED14C2746DA340091C076 /* CostModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		277ED12A2746CDC40091C076 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		277ED12C2746CDC40091C076 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		277ED1322746CE8A0091C076 /* MainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
+		277ED14C2746DA340091C076 /* CostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		277ED1352746CF190091C076 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				277ED14C2746DA340091C076 /* CostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				277ED14D2746DA340091C076 /* CostModel.swift in Sources */,
 				277ED1332746CE8A0091C076 /* MainListViewController.swift in Sources */,
 				277ED11F2746CDC00091C076 /* AppDelegate.swift in Sources */,
 				277ED1212746CDC00091C076 /* SceneDelegate.swift in Sources */,
