@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		277ED11F2746CDC00091C076 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED11E2746CDC00091C076 /* AppDelegate.swift */; };
 		277ED1212746CDC00091C076 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED1202746CDC00091C076 /* SceneDelegate.swift */; };
-		277ED1232746CDC00091C076 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED1222746CDC00091C076 /* ViewController.swift */; };
-		277ED1262746CDC00091C076 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277ED1242746CDC00091C076 /* Main.storyboard */; };
+		277ED1262746CDC00091C076 /* MainList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277ED1242746CDC00091C076 /* MainList.storyboard */; };
 		277ED1282746CDC40091C076 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 277ED1272746CDC40091C076 /* Assets.xcassets */; };
 		277ED12B2746CDC40091C076 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277ED1292746CDC40091C076 /* LaunchScreen.storyboard */; };
+		277ED1332746CE8A0091C076 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED1322746CE8A0091C076 /* MainListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		277ED11B2746CDC00091C076 /* RetailTherapyRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RetailTherapyRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		277ED11E2746CDC00091C076 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		277ED1202746CDC00091C076 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		277ED1222746CDC00091C076 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		277ED1252746CDC00091C076 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		277ED1252746CDC00091C076 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainList.storyboard; sourceTree = "<group>"; };
 		277ED1272746CDC40091C076 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		277ED12A2746CDC40091C076 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		277ED12C2746CDC40091C076 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		277ED1322746CE8A0091C076 /* MainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,47 @@
 		277ED11D2746CDC00091C076 /* RetailTherapyRecord */ = {
 			isa = PBXGroup;
 			children = (
-				277ED11E2746CDC00091C076 /* AppDelegate.swift */,
-				277ED1202746CDC00091C076 /* SceneDelegate.swift */,
-				277ED1222746CDC00091C076 /* ViewController.swift */,
-				277ED1242746CDC00091C076 /* Main.storyboard */,
-				277ED1272746CDC40091C076 /* Assets.xcassets */,
-				277ED1292746CDC40091C076 /* LaunchScreen.storyboard */,
-				277ED12C2746CDC40091C076 /* Info.plist */,
+				277ED1372746CF370091C076 /* ViewControllers */,
+				277ED1352746CF190091C076 /* Models */,
+				277ED1342746CF0E0091C076 /* Extensions */,
+				277ED1362746CF2A0091C076 /* SupportFiles */,
 			);
 			path = RetailTherapyRecord;
+			sourceTree = "<group>";
+		};
+		277ED1342746CF0E0091C076 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		277ED1352746CF190091C076 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		277ED1362746CF2A0091C076 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				277ED11E2746CDC00091C076 /* AppDelegate.swift */,
+				277ED1202746CDC00091C076 /* SceneDelegate.swift */,
+				277ED1272746CDC40091C076 /* Assets.xcassets */,
+				277ED12C2746CDC40091C076 /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		277ED1372746CF370091C076 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				277ED1242746CDC00091C076 /* MainList.storyboard */,
+				277ED1322746CE8A0091C076 /* MainListViewController.swift */,
+				277ED1292746CDC40091C076 /* LaunchScreen.storyboard */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +159,7 @@
 			files = (
 				277ED12B2746CDC40091C076 /* LaunchScreen.storyboard in Resources */,
 				277ED1282746CDC40091C076 /* Assets.xcassets in Resources */,
-				277ED1262746CDC00091C076 /* Main.storyboard in Resources */,
+				277ED1262746CDC00091C076 /* MainList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				277ED1232746CDC00091C076 /* ViewController.swift in Sources */,
+				277ED1332746CE8A0091C076 /* MainListViewController.swift in Sources */,
 				277ED11F2746CDC00091C076 /* AppDelegate.swift in Sources */,
 				277ED1212746CDC00091C076 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,12 +179,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		277ED1242746CDC00091C076 /* Main.storyboard */ = {
+		277ED1242746CDC00091C076 /* MainList.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				277ED1252746CDC00091C076 /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainList.storyboard;
 			sourceTree = "<group>";
 		};
 		277ED1292746CDC40091C076 /* LaunchScreen.storyboard */ = {
@@ -291,12 +323,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VJUS985676;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RetailTherapyRecord/Info.plist;
+				INFOPLIST_FILE = RetailTherapyRecord/SupportFiles/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "시발비용";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MainList;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,12 +353,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VJUS985676;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RetailTherapyRecord/Info.plist;
+				INFOPLIST_FILE = RetailTherapyRecord/SupportFiles/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "시발비용";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MainList;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
