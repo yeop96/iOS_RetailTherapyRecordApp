@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift // 10.18.0 exact version
 
-//https://docs.mongodb.com/realm/sdk/ios/quick-start 문서
+//https://docs.mongodb.com/realm/sdk/ios/quick-start Realm 문서
 
 class CostList: Object {
     @Persisted var costSubject: String

@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		277ED11F2746CDC00091C076 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED11E2746CDC00091C076 /* AppDelegate.swift */; };
 		277ED1212746CDC00091C076 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED1202746CDC00091C076 /* SceneDelegate.swift */; };
-		277ED1262746CDC00091C076 /* MainList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277ED1242746CDC00091C076 /* MainList.storyboard */; };
+		277ED1262746CDC00091C076 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277ED1242746CDC00091C076 /* MainTabBar.storyboard */; };
 		277ED1282746CDC40091C076 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 277ED1272746CDC40091C076 /* Assets.xcassets */; };
 		277ED12B2746CDC40091C076 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277ED1292746CDC40091C076 /* LaunchScreen.storyboard */; };
-		277ED1332746CE8A0091C076 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED1322746CE8A0091C076 /* MainListViewController.swift */; };
 		277ED13A2746D2C00091C076 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED1392746D2C00091C076 /* Zip */; };
 		277ED13D2746D2D10091C076 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED13C2746D2D10091C076 /* JGProgressHUD */; };
 		277ED1402746D2E10091C076 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED13F2746D2E10091C076 /* Toast */; };
@@ -21,18 +20,32 @@
 		277ED1492746D34A0091C076 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED1482746D34A0091C076 /* Realm */; };
 		277ED14B2746D34A0091C076 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED14A2746D34A0091C076 /* RealmSwift */; };
 		277ED14D2746DA340091C076 /* CostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED14C2746DA340091C076 /* CostModel.swift */; };
+		277ED14F2747FDEA0091C076 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277ED14E2747FDEA0091C076 /* List.storyboard */; };
+		277ED1512747FDFA0091C076 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277ED1502747FDFA0091C076 /* Calendar.storyboard */; };
+		277ED1532747FE140091C076 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED1522747FE140091C076 /* ListViewController.swift */; };
+		277ED1552747FE240091C076 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED1542747FE240091C076 /* CalendarViewController.swift */; };
+		277ED157274805700091C076 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED156274805700091C076 /* RecordViewController.swift */; };
+		277ED159274805820091C076 /* Record.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277ED158274805820091C076 /* Record.storyboard */; };
+		277ED15D274807B10091C076 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED15C274807B10091C076 /* MainTabBarController.swift */; };
+		277ED16027481A280091C076 /* JJFloatingActionButton in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED15F27481A280091C076 /* JJFloatingActionButton */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		277ED11B2746CDC00091C076 /* RetailTherapyRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RetailTherapyRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		277ED11E2746CDC00091C076 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		277ED1202746CDC00091C076 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		277ED1252746CDC00091C076 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainList.storyboard; sourceTree = "<group>"; };
+		277ED1252746CDC00091C076 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainTabBar.storyboard; sourceTree = "<group>"; };
 		277ED1272746CDC40091C076 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		277ED12A2746CDC40091C076 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		277ED12C2746CDC40091C076 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		277ED1322746CE8A0091C076 /* MainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
 		277ED14C2746DA340091C076 /* CostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostModel.swift; sourceTree = "<group>"; };
+		277ED14E2747FDEA0091C076 /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
+		277ED1502747FDFA0091C076 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		277ED1522747FE140091C076 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		277ED1542747FE240091C076 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		277ED156274805700091C076 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		277ED158274805820091C076 /* Record.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Record.storyboard; sourceTree = "<group>"; };
+		277ED15C274807B10091C076 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				277ED16027481A280091C076 /* JJFloatingActionButton in Frameworks */,
 				277ED1492746D34A0091C076 /* Realm in Frameworks */,
 				277ED1402746D2E10091C076 /* Toast in Frameworks */,
 				277ED14B2746D34A0091C076 /* RealmSwift in Frameworks */,
@@ -109,9 +123,15 @@
 		277ED1372746CF370091C076 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				277ED1242746CDC00091C076 /* MainList.storyboard */,
-				277ED1322746CE8A0091C076 /* MainListViewController.swift */,
 				277ED1292746CDC40091C076 /* LaunchScreen.storyboard */,
+				277ED1242746CDC00091C076 /* MainTabBar.storyboard */,
+				277ED15C274807B10091C076 /* MainTabBarController.swift */,
+				277ED14E2747FDEA0091C076 /* List.storyboard */,
+				277ED1522747FE140091C076 /* ListViewController.swift */,
+				277ED1502747FDFA0091C076 /* Calendar.storyboard */,
+				277ED1542747FE240091C076 /* CalendarViewController.swift */,
+				277ED158274805820091C076 /* Record.storyboard */,
+				277ED156274805700091C076 /* RecordViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -140,6 +160,7 @@
 				277ED1452746D2FE0091C076 /* FSCalendar */,
 				277ED1482746D34A0091C076 /* Realm */,
 				277ED14A2746D34A0091C076 /* RealmSwift */,
+				277ED15F27481A280091C076 /* JJFloatingActionButton */,
 			);
 			productName = RetailTherapyRecord;
 			productReference = 277ED11B2746CDC00091C076 /* RetailTherapyRecord.app */;
@@ -176,6 +197,7 @@
 				277ED1412746D2EE0091C076 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				277ED1442746D2FE0091C076 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				277ED1472746D34A0091C076 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				277ED15E27481A280091C076 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */,
 			);
 			productRefGroup = 277ED11C2746CDC00091C076 /* Products */;
 			projectDirPath = "";
@@ -193,7 +215,10 @@
 			files = (
 				277ED12B2746CDC40091C076 /* LaunchScreen.storyboard in Resources */,
 				277ED1282746CDC40091C076 /* Assets.xcassets in Resources */,
-				277ED1262746CDC00091C076 /* MainList.storyboard in Resources */,
+				277ED14F2747FDEA0091C076 /* List.storyboard in Resources */,
+				277ED159274805820091C076 /* Record.storyboard in Resources */,
+				277ED1512747FDFA0091C076 /* Calendar.storyboard in Resources */,
+				277ED1262746CDC00091C076 /* MainTabBar.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,9 +229,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				277ED1552747FE240091C076 /* CalendarViewController.swift in Sources */,
 				277ED14D2746DA340091C076 /* CostModel.swift in Sources */,
-				277ED1332746CE8A0091C076 /* MainListViewController.swift in Sources */,
+				277ED157274805700091C076 /* RecordViewController.swift in Sources */,
+				277ED15D274807B10091C076 /* MainTabBarController.swift in Sources */,
 				277ED11F2746CDC00091C076 /* AppDelegate.swift in Sources */,
+				277ED1532747FE140091C076 /* ListViewController.swift in Sources */,
 				277ED1212746CDC00091C076 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,12 +242,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		277ED1242746CDC00091C076 /* MainList.storyboard */ = {
+		277ED1242746CDC00091C076 /* MainTabBar.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				277ED1252746CDC00091C076 /* Base */,
 			);
-			name = MainList.storyboard;
+			name = MainTabBar.storyboard;
 			sourceTree = "<group>";
 		};
 		277ED1292746CDC40091C076 /* LaunchScreen.storyboard */ = {
@@ -362,7 +390,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "시발비용";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = MainList;
+				INFOPLIST_KEY_UIMainStoryboardFile = MainTabBar;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -392,7 +420,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "시발비용";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = MainList;
+				INFOPLIST_KEY_UIMainStoryboardFile = MainTabBar;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -481,6 +509,14 @@
 				version = 10.18.0;
 			};
 		};
+		277ED15E27481A280091C076 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jjochen/JJFloatingActionButton.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -518,6 +554,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 277ED1472746D34A0091C076 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		277ED15F27481A280091C076 /* JJFloatingActionButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 277ED15E27481A280091C076 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */;
+			productName = JJFloatingActionButton;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
