@@ -9,6 +9,7 @@ import UIKit
 import RealmSwift
 
 class ListViewController: UIViewController {
+    var searchController:  UISearchController!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -16,14 +17,59 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        searchController = searchBarSetting()
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
+    
+    func searchBarSetting() -> UISearchController{
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "검색"
+        searchController.searchBar.setValue("취소", forKey: "cancelButtonText")
+        //searchController.searchBar.tintColor = .systemBackground
+        searchController.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false // 스크롤 할 때 서치부분은 남겨두기
+        
+        return searchController
+    }
 }
 
+
+extension ListViewController: UISearchBarDelegate, UISearchResultsUpdating{
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        tableView.reloadData()
+    }
+    
+    //검색 버튼(키보드 리턴키)을 눌렀을 때 실행
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    //취소 버튼 눌렀을 때 실행
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    //서치바에 커서 깜빡이기 시작할 때
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        updateSearchResults(for: searchController)
+    }
+    
+}
 
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource{
@@ -71,8 +117,12 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     
     //셀 선택 didSelectRowAt
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("셀선택")
+        let storyboard = UIStoryboard(name: "Record", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "RecordViewController") as! RecordViewController
+        vc.editRecordBool = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
     //셀 스와이프 ON commit
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true

@@ -8,16 +8,33 @@
 import UIKit
 
 class RecordViewController: UIViewController {
+    var editRecordBool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "기록"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(dismissAction))
+        
+        if !editRecordBool{
+            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(dismissAction))
+        }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(saveButtonClicked))
+        
     }
     
-
+    @objc func saveButtonClicked(){
+        if editRecordBool{
+            
+            self.navigationController?.popViewController(animated: true)
+        }
+        else{
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     @objc func dismissAction(){
-        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }
