@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		275830142749584100CEE9FA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275830132749584100CEE9FA /* Constants.swift */; };
 		277ED11F2746CDC00091C076 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED11E2746CDC00091C076 /* AppDelegate.swift */; };
 		277ED1212746CDC00091C076 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED1202746CDC00091C076 /* SceneDelegate.swift */; };
 		277ED1262746CDC00091C076 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277ED1242746CDC00091C076 /* MainTabBar.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		275830132749584100CEE9FA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		277ED11B2746CDC00091C076 /* RetailTherapyRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RetailTherapyRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		277ED11E2746CDC00091C076 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		277ED1202746CDC00091C076 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27583012274957D700CEE9FA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				275830132749584100CEE9FA /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		277ED1122746CDC00091C076 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +99,7 @@
 				277ED1372746CF370091C076 /* ViewControllers */,
 				277ED1352746CF190091C076 /* Models */,
 				277ED1342746CF0E0091C076 /* Extensions */,
+				27583012274957D700CEE9FA /* Utils */,
 				277ED1362746CF2A0091C076 /* SupportFiles */,
 			);
 			path = RetailTherapyRecord;
@@ -236,6 +247,7 @@
 				277ED11F2746CDC00091C076 /* AppDelegate.swift in Sources */,
 				277ED1532747FE140091C076 /* ListViewController.swift in Sources */,
 				277ED1212746CDC00091C076 /* SceneDelegate.swift in Sources */,
+				275830142749584100CEE9FA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

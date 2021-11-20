@@ -15,16 +15,16 @@ class CostList: Object {
     @Persisted var costMoney: Int?
     @Persisted var costContent: String?
     @Persisted var costDate = Date()
-    //@Persisted var costEmoji: String
+    @Persisted var costEmotion: Int
     @Persisted(primaryKey: true) var _pk: ObjectId
     
-    convenience init(costSubject: String, costMoney: Int, costContent: String, costDate: Date) { //,costEmoji: String
+    convenience init(costSubject: String, costMoney: Int, costContent: String, costDate: Date, costEmotion: Int) {
         self.init()
         
         self.costSubject = costSubject
         self.costMoney = costMoney
         self.costContent = costContent
         self.costDate = costDate
-        //self.costEmoji = costEmoji
+        self.costEmotion = costEmotion
     }
 }

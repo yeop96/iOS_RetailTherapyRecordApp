@@ -37,7 +37,7 @@ class MainTabBarController: UITabBarController {
     
     //버튼 액션 함수
     @objc func addButtonAction(sender: UIButton){
-        self.selectedIndex = 700 //탭바에 없는 인덱스로 줌
+        self.selectedIndex = 777 //탭바에 없는 인덱스로 줌
         
         //작성뷰로 modal
         let storyboard = UIStoryboard(name: "Record", bundle: nil)
