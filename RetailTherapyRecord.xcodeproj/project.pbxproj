@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		275830142749584100CEE9FA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275830132749584100CEE9FA /* Constants.swift */; };
+		27604F39274AE97D00E7EABE /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27604F38274AE97D00E7EABE /* DatePickerViewController.swift */; };
+		27604F3B274AE98D00E7EABE /* EmotionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27604F3A274AE98D00E7EABE /* EmotionPickerViewController.swift */; };
 		277ED11F2746CDC00091C076 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED11E2746CDC00091C076 /* AppDelegate.swift */; };
 		277ED1212746CDC00091C076 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED1202746CDC00091C076 /* SceneDelegate.swift */; };
 		277ED1262746CDC00091C076 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277ED1242746CDC00091C076 /* MainTabBar.storyboard */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		275830132749584100CEE9FA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		27604F38274AE97D00E7EABE /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		27604F3A274AE98D00E7EABE /* EmotionPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionPickerViewController.swift; sourceTree = "<group>"; };
 		277ED11B2746CDC00091C076 /* RetailTherapyRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RetailTherapyRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		277ED11E2746CDC00091C076 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		277ED1202746CDC00091C076 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 				277ED1542747FE240091C076 /* CalendarViewController.swift */,
 				277ED158274805820091C076 /* Record.storyboard */,
 				277ED156274805700091C076 /* RecordViewController.swift */,
+				27604F38274AE97D00E7EABE /* DatePickerViewController.swift */,
+				27604F3A274AE98D00E7EABE /* EmotionPickerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -242,11 +248,13 @@
 			files = (
 				277ED1552747FE240091C076 /* CalendarViewController.swift in Sources */,
 				277ED14D2746DA340091C076 /* CostModel.swift in Sources */,
+				27604F39274AE97D00E7EABE /* DatePickerViewController.swift in Sources */,
 				277ED157274805700091C076 /* RecordViewController.swift in Sources */,
 				277ED15D274807B10091C076 /* MainTabBarController.swift in Sources */,
 				277ED11F2746CDC00091C076 /* AppDelegate.swift in Sources */,
 				277ED1532747FE140091C076 /* ListViewController.swift in Sources */,
 				277ED1212746CDC00091C076 /* SceneDelegate.swift in Sources */,
+				27604F3B274AE98D00E7EABE /* EmotionPickerViewController.swift in Sources */,
 				275830142749584100CEE9FA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,7 +423,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -445,7 +453,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

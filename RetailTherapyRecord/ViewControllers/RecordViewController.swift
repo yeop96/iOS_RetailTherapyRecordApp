@@ -8,17 +8,20 @@
 import UIKit
 
 class RecordViewController: UIViewController {
-    var editRecordBool = false
-
+    var editRecordBool = false //셀에서 진입시 true, 추가 버튼에서 진입시 false
+    
+    @IBOutlet weak var dateButton: UIButton!
+    @IBOutlet weak var emotionButton: UIButton!
+    @IBOutlet weak var subjectTextField: UITextField!
+    @IBOutlet weak var moneyTextField: UITextField!
+    @IBOutlet weak var contentTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        title = "기록"
-        
+        title = editRecordBool ? "감정 소비 내역" : "감정 소비 기록"
         if !editRecordBool{
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(dismissAction))
         }
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(saveButtonClicked))
         
     }
@@ -37,4 +40,13 @@ class RecordViewController: UIViewController {
     @objc func dismissAction(){
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
+    @IBAction func tapGestureAction(_ sender: UITapGestureRecognizer) {
+        
+        //키보드 내리기
+        view.endEditing(true)
+
+    }
+    
 }
