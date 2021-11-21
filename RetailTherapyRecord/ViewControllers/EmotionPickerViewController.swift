@@ -15,4 +15,14 @@ class EmotionPickerViewController: UIViewController {
     }
     
 
+    @IBAction func tapGestureAction(_ sender: UITapGestureRecognizer) {
+        self.dismiss(animated: true)
+    }
+    
+    @IBAction func saveButtonClicked(_ sender: UIButton) {
+        
+        self.dismiss(animated: true)
+    }
+    
+    
 }

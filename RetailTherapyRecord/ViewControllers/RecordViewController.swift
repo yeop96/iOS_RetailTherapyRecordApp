@@ -49,4 +49,27 @@ class RecordViewController: UIViewController {
 
     }
     
+    @IBAction func dateButtonClicked(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Record", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
+        
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func emotionButtonClicked(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Record", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "EmotionPickerViewController") as! EmotionPickerViewController
+        
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
+    
 }

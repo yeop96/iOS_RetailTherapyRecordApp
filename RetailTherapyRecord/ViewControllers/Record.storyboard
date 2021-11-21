@@ -69,11 +69,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="148" height="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="2021년 12월 25일"/>
+                                                <connections>
+                                                    <action selector="dateButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Psj-Yn-WfQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTJ-T8-urG">
                                                 <rect key="frame" x="305" y="0.0" width="69" height="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="기분 이모지"/>
+                                                <connections>
+                                                    <action selector="emotionButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="x4e-vc-Gl4"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -128,11 +134,57 @@
                     <view key="view" contentMode="scaleToFill" id="tMW-rl-tIo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kpj-lZ-ASS">
+                                <rect key="frame" x="0.0" y="542" width="414" height="320"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pc8-wX-pgv">
+                                        <rect key="frame" x="20" y="258" width="374" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="D6Z-rd-4Np"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="saveButtonClicked:" destination="1SP-ZX-Zp4" eventType="touchUpInside" id="UBo-Oh-Y7o"/>
+                                        </connections>
+                                    </button>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="oKZ-0q-tgs">
+                                        <rect key="frame" x="20" y="20" width="374" height="218"/>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="0Ry-pM-eDH"/>
+                                    <constraint firstItem="oKZ-0q-tgs" firstAttribute="top" secondItem="Kpj-lZ-ASS" secondAttribute="top" constant="20" id="0wM-id-1OI"/>
+                                    <constraint firstAttribute="bottom" secondItem="pc8-wX-pgv" secondAttribute="bottom" constant="20" id="DM2-dD-flT"/>
+                                    <constraint firstItem="pc8-wX-pgv" firstAttribute="top" secondItem="oKZ-0q-tgs" secondAttribute="bottom" constant="20" id="E6I-Rg-evU"/>
+                                    <constraint firstItem="pc8-wX-pgv" firstAttribute="leading" secondItem="Kpj-lZ-ASS" secondAttribute="leading" constant="20" id="M2x-n8-hvx"/>
+                                    <constraint firstAttribute="trailing" secondItem="oKZ-0q-tgs" secondAttribute="trailing" constant="20" id="vf2-UY-5j1"/>
+                                    <constraint firstItem="oKZ-0q-tgs" firstAttribute="leading" secondItem="Kpj-lZ-ASS" secondAttribute="leading" constant="20" id="xdh-XX-RdE"/>
+                                    <constraint firstAttribute="trailing" secondItem="pc8-wX-pgv" secondAttribute="trailing" constant="20" id="yKP-ff-htX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="t4L-E7-chb"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.97746662257872907" green="0.97746662257872907" blue="0.97746662257872907" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="t4L-E7-chb" firstAttribute="bottom" secondItem="Kpj-lZ-ASS" secondAttribute="bottom" id="LW6-ux-QXz"/>
+                            <constraint firstItem="Kpj-lZ-ASS" firstAttribute="leading" secondItem="t4L-E7-chb" secondAttribute="leading" id="YQV-qm-2Dj"/>
+                            <constraint firstItem="t4L-E7-chb" firstAttribute="trailing" secondItem="Kpj-lZ-ASS" secondAttribute="trailing" id="rjj-Ii-RPd"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="8PZ-8g-fx9" appends="YES" id="rkW-Vg-rbP"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbL-Xz-TAf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8PZ-8g-fx9">
+                    <connections>
+                        <action selector="tapGestureAction:" destination="1SP-ZX-Zp4" id="9zz-gs-CEf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="849" y="-52"/>
         </scene>
@@ -143,11 +195,57 @@
                     <view key="view" contentMode="scaleToFill" id="LB1-vw-ETQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMm-fF-blp">
+                                <rect key="frame" x="0.0" y="542" width="414" height="320"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qL-QT-afo">
+                                        <rect key="frame" x="20" y="258" width="374" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="a1T-xs-0TS"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="saveButtonClicked:" destination="gs1-dQ-mua" eventType="touchUpInside" id="9ov-ql-ErL"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMK-2I-GLj">
+                                        <rect key="frame" x="20" y="20" width="374" height="218"/>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="2wb-NJ-nww"/>
+                                    <constraint firstAttribute="trailing" secondItem="NMK-2I-GLj" secondAttribute="trailing" constant="20" id="BHd-Se-gzU"/>
+                                    <constraint firstAttribute="trailing" secondItem="1qL-QT-afo" secondAttribute="trailing" constant="20" id="JDd-cq-7kL"/>
+                                    <constraint firstItem="1qL-QT-afo" firstAttribute="leading" secondItem="yMm-fF-blp" secondAttribute="leading" constant="20" id="QAH-mj-Epq"/>
+                                    <constraint firstItem="NMK-2I-GLj" firstAttribute="top" secondItem="yMm-fF-blp" secondAttribute="top" constant="20" id="anj-ld-loO"/>
+                                    <constraint firstItem="NMK-2I-GLj" firstAttribute="leading" secondItem="yMm-fF-blp" secondAttribute="leading" constant="20" id="k0G-B2-PXS"/>
+                                    <constraint firstAttribute="bottom" secondItem="1qL-QT-afo" secondAttribute="bottom" constant="20" id="mKm-ac-WD7"/>
+                                    <constraint firstItem="1qL-QT-afo" firstAttribute="top" secondItem="NMK-2I-GLj" secondAttribute="bottom" constant="20" id="vVL-11-IH2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="PFu-r3-5VK"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.95385986013510793" green="0.95385986013510793" blue="0.95385986013510793" alpha="0.096299463388871173" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="PFu-r3-5VK" firstAttribute="trailing" secondItem="yMm-fF-blp" secondAttribute="trailing" id="5a8-Gc-H3w"/>
+                            <constraint firstItem="yMm-fF-blp" firstAttribute="leading" secondItem="PFu-r3-5VK" secondAttribute="leading" id="dcn-bP-cHq"/>
+                            <constraint firstItem="PFu-r3-5VK" firstAttribute="bottom" secondItem="yMm-fF-blp" secondAttribute="bottom" id="e62-JF-lke"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="F5v-nM-3WD" appends="YES" id="FWm-MP-xqQ"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ig-Z2-vXl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="F5v-nM-3WD">
+                    <connections>
+                        <action selector="tapGestureAction:" destination="gs1-dQ-mua" id="Zt2-Mk-7Lp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="848" y="617"/>
         </scene>
