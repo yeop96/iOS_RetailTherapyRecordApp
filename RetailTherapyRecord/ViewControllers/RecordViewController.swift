@@ -9,6 +9,8 @@ import UIKit
 
 class RecordViewController: UIViewController {
     var editRecordBool = false //셀에서 진입시 true, 추가 버튼에서 진입시 false
+    var selectDate = Date()
+    var selectEmotion = "😶"
     
     @IBOutlet weak var dateButton: UIButton!
     @IBOutlet weak var emotionButton: UIButton!
@@ -18,19 +20,25 @@ class RecordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         contentTextView.delegate = self
         
         title = editRecordBool ? "감정 소비 내역" : "감정 소비 기록"
         
-        let nowDays = DateFormatter().koreaDateFormatString(date: Date())
-        dateButton.setTitle(nowDays, for: .normal)
         
         if !editRecordBool{
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(dismissAction))
         }
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(saveButtonClicked))
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let dateString = DateFormatter().koreaDateFormatString(date: selectDate)
+        dateButton.setTitle(dateString, for: .normal)
+        
+        emotionButton.setTitle("감정 표정은 \(selectEmotion)", for: .normal)
     }
     
     @objc func saveButtonClicked(){
@@ -56,10 +64,19 @@ class RecordViewController: UIViewController {
 
     }
     
+    // 날짜 클릭시
     @IBAction func dateButtonClicked(_ sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "Record", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
+        
+        vc.saveActionHandler = {
+            
+            self.selectDate = vc.selectDate
+            self.viewWillAppear(true)
+        }
+        
+        vc.selectDate = selectDate
         
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .overCurrentContext
@@ -67,10 +84,16 @@ class RecordViewController: UIViewController {
         
     }
     
+    // 감정 이모지 클릭시
     @IBAction func emotionButtonClicked(_ sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "Record", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "EmotionPickerViewController") as! EmotionPickerViewController
+        
+        vc.saveActionHandler = {
+            self.selectEmotion = vc.selectEmotion
+            self.viewWillAppear(true)
+        }
         
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .overCurrentContext

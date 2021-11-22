@@ -9,7 +9,9 @@ import UIKit
 
 class EmotionPickerViewController: UIViewController {
     
-    let emotions = ["🥳", "😤", "🤬", "🤯", "😢", "🤑", "☺️"]
+    let emotions = ["😶", "😤", "🤬", "🤯", "😢", "🤑", "☺️"]
+    var selectEmotion = "😶"
+    var saveActionHandler: (() -> Void)?
 
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -31,7 +33,7 @@ class EmotionPickerViewController: UIViewController {
     }
     
     @IBAction func saveButtonClicked(_ sender: UIButton) {
-        
+        saveActionHandler?()
         self.dismiss(animated: true)
     }
     
@@ -52,19 +54,19 @@ extension EmotionPickerViewController: UIPickerViewDelegate, UIPickerViewDataSou
 
     // 피커 뷰의 개수 설정
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-       return emotions.count
+        return emotions.count
        
     }
 
     // 피커 뷰의 각 Row의 타이틀 설정
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-       return emotions[row]
+        return emotions[row]
        
     }
 
     // 피커 뷰가 선택되었을 때 실행
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       //showPicker.text = emotions[row]
+        selectEmotion = emotions[row]
        
     }
     

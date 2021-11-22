@@ -9,6 +9,9 @@ import UIKit
 
 class DatePickerViewController: UIViewController {
     
+    var saveActionHandler: (() -> Void)?
+    var selectDate = Date()
+    
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var saveButton: UIButton!
@@ -23,14 +26,13 @@ class DatePickerViewController: UIViewController {
         components.day = 0
         let maxDate = Calendar.autoupdatingCurrent.date(byAdding: components, to: Date())
         datePicker.maximumDate = maxDate
-        
+        datePicker.date = selectDate
         datePicker.locale = Locale(identifier: "ko-KR")
         datePicker.addTarget(self, action: #selector(handleDatePicker(_:)), for: .valueChanged)
     }
     
     @objc private func handleDatePicker(_ sender: UIDatePicker) {
-        print(sender.date)
-        
+        selectDate = sender.date
     }
     
     @IBAction func tapGestureAction(_ sender: UITapGestureRecognizer) {
@@ -39,7 +41,7 @@ class DatePickerViewController: UIViewController {
     }
     
     @IBAction func saveButtonClicked(_ sender: UIButton) {
-        
+        saveActionHandler?()
         self.dismiss(animated: true)
     }
     
