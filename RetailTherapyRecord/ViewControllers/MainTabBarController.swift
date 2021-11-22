@@ -44,6 +44,7 @@ class MainTabBarController: UITabBarController {
         let vc = storyboard.instantiateViewController(withIdentifier: "RecordViewController") as! RecordViewController
         vc.editRecordBool = false
         let nav = UINavigationController(rootViewController: vc)
+        
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true, completion: nil)
     }
