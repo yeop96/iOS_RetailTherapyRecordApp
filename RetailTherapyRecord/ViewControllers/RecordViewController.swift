@@ -32,8 +32,16 @@ class RecordViewController: UIViewController {
         
         if !editRecordBool{
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(dismissAction))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(saveButtonClicked))
         }
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(saveButtonClicked))
+        else{
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "확인", style: .plain, target: self, action: #selector(checkButtonClicked))
+            subjectTextField.isEnabled = false
+            moneyTextField.isEnabled = false
+            contentTextView.isEditable = false
+            dateButton.isEnabled = false
+            emotionButton.isEnabled = false
+        }
         
     }
     
@@ -46,33 +54,33 @@ class RecordViewController: UIViewController {
         emotionButton.setTitle("감정 표정은 \(selectEmotion)", for: .normal)
     }
     
-    //우측 상단 버튼 클릭시
+    //우측 상단 확인버튼 클릭시
+    @objc func checkButtonClicked(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    //우측 상단 완료버튼 클릭시
     @objc func saveButtonClicked(){
-        //수정 화면
-        if editRecordBool{
-            self.navigationController?.popViewController(animated: true)
+    
+        //공백일 경우
+        guard let subject = subjectTextField.text else{ return }
+        if subject.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty{
+            self.view.makeToast("무엇을 소비했는지 써주세요!", duration: 3.0, position: .top)
+            return
         }
-        //완료 버튼
-        else{
-            //공백일 경우
-            guard let subject = subjectTextField.text else{ return }
-            if subject.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty{
-                self.view.makeToast("무엇을 소비했는지 써주세요!", duration: 3.0, position: .top)
-                return
-            }
-            var content = contentTextView.text
-            if content == "감정 소비한 이유를 적어보세요 :)"{
-                content = ""
-            }
-            //Realm 저장
-            let task = CostList(costSubject: subject, costMoney: moneyTextField.text, costContent: content, costDate: selectDate, costEmotion: selectEmotionInt)
-                        
-            try! self.localRealm.write {
-                self.localRealm.add(task)
-            }
-            
-            self.dismiss(animated: true, completion: nil)
+        var content = contentTextView.text
+        if content == "감정 소비한 이유를 적어보세요 :)"{
+            content = ""
         }
+        //Realm 저장
+        let task = CostList(costSubject: subject, costMoney: moneyTextField.text, costContent: content, costDate: selectDate, costEmotion: selectEmotionInt)
+                    
+        try! self.localRealm.write {
+            self.localRealm.add(task)
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+        
     }
     
     @objc func dismissAction(){

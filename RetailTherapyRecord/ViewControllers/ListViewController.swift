@@ -12,6 +12,7 @@ class ListViewController: UIViewController {
     var searchController:  UISearchController!
     let localRealm = try! Realm()
     var tasks: Results<CostList>!
+    var datesTitle = Set<String>()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,6 +24,11 @@ class ListViewController: UIViewController {
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         tasks = localRealm.objects(CostList.self).sorted(byKeyPath: "costDate", ascending: false) // 최근 등록일 순
+        tasks.forEach{
+            let dateFormatter = DateFormatter()
+            datesTitle.insert(dateFormatter.koreaDateFormatString(date: $0.costDate))
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,12 +86,15 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     
     //섹션의 수: numberOfSections (default가 1이라서)
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return datesTitle.count
     }
     
     //섹션 타이틀: titleForHeaderInSection
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "섹션 타이틀"
+        //return "섹션 타이틀"
+        let indices = datesTitle.indices.map{$0}
+        let index = indices[section]
+        return datesTitle[index]
     }
     
     //셀의 갯수: numberOfRowsInSection
@@ -99,6 +108,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell") as? ListTableViewCell else{
             return UITableViewCell()
         }
+        
+        
         let row = tasks[indexPath.row]
         if let emotion = Expression(rawValue: row.costEmotion) {
             cell.emotionImageView.image = emotion.expressionEmoji()
@@ -132,11 +143,27 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+    //삭제 스와이프
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete{
-            print("삭제")
-            tableView.reloadData()
+        
+        let row = tasks[indexPath.row]
+        
+        let alert = UIAlertController(title: row.costSubject, message: "기록을 삭제해도 되나요?", preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "예", style: .default){ (action) in
+            
+            try! self.localRealm.write{
+                self.localRealm.delete(row)
+                tableView.reloadData()
+            }
+            
+            return
         }
+        let noAction = UIAlertAction(title: "아니오", style: .cancel){ (action) in
+            return
+        }
+        alert.addAction(yesAction)
+        alert.addAction(noAction)
+        present(alert, animated: true, completion: nil)
     }
     
 }
