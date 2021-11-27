@@ -11,6 +11,7 @@ class RecordViewController: UIViewController {
     var editRecordBool = false //셀에서 진입시 true, 추가 버튼에서 진입시 false
     var selectDate = Date()
     var selectEmotion = "😶"
+    var selectEmotionInt = 0
     
     @IBOutlet weak var dateButton: UIButton!
     @IBOutlet weak var emotionButton: UIButton!
@@ -58,10 +59,8 @@ class RecordViewController: UIViewController {
     
     
     @IBAction func tapGestureAction(_ sender: UITapGestureRecognizer) {
-        
         //키보드 내리기
         view.endEditing(true)
-
     }
     
     // 날짜 클릭시
@@ -92,6 +91,7 @@ class RecordViewController: UIViewController {
         
         vc.saveActionHandler = {
             self.selectEmotion = vc.selectEmotion
+            self.selectEmotionInt = vc.selectEmotionInt
             self.viewWillAppear(true)
         }
         
@@ -102,6 +102,8 @@ class RecordViewController: UIViewController {
     
 }
 
+
+// MARK: - UITextViewDelegate
 extension RecordViewController: UITextViewDelegate{
     //편집이 시작될 때
     func textViewDidBeginEditing(_ textView: UITextView) {

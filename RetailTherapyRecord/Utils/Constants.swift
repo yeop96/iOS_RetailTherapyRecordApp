@@ -15,4 +15,23 @@ enum Expression : Int {
     case sad = 4
     case flex = 5
     case calm = 6
+    
+    func expressionEmoji() -> String{
+        switch self {
+        case .expressionless:
+            return "😶"
+        case .pout:
+            return "😤"
+        case .angry:
+            return "🤬"
+        case .meltdown:
+            return "🤯"
+        case .sad:
+            return "😢"
+        case .flex:
+            return "🤑"
+        case .calm:
+            return "☺️"
+        }
+    }
 }

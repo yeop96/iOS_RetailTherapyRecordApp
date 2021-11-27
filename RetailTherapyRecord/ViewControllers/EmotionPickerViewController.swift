@@ -11,6 +11,7 @@ class EmotionPickerViewController: UIViewController {
     
     let emotions = ["😶", "😤", "🤬", "🤯", "😢", "🤑", "☺️"]
     var selectEmotion = "😶"
+    var selectEmotionInt = 0
     var saveActionHandler: (() -> Void)?
 
     @IBOutlet weak var popUpView: UIView!
@@ -67,6 +68,7 @@ extension EmotionPickerViewController: UIPickerViewDelegate, UIPickerViewDataSou
     // 피커 뷰가 선택되었을 때 실행
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectEmotion = emotions[row]
+        selectEmotionInt = row
        
     }
     
