@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import RealmSwift
+import Toast
 
 class RecordViewController: UIViewController {
     var editRecordBool = false //셀에서 진입시 true, 추가 버튼에서 진입시 false
     var selectDate = Date()
     var selectEmotion = "😶"
     var selectEmotionInt = 0
+    
+    let localRealm = try! Realm()
     
     @IBOutlet weak var dateButton: UIButton!
     @IBOutlet weak var emotionButton: UIButton!
@@ -42,12 +46,30 @@ class RecordViewController: UIViewController {
         emotionButton.setTitle("감정 표정은 \(selectEmotion)", for: .normal)
     }
     
+    //우측 상단 버튼 클릭시
     @objc func saveButtonClicked(){
+        //수정 화면
         if editRecordBool{
-            
             self.navigationController?.popViewController(animated: true)
         }
+        //완료 버튼
         else{
+            //공백일 경우
+            guard let subject = subjectTextField.text else{ return }
+            if subject.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty{
+                self.view.makeToast("무엇을 소비했는지 써주세요!", duration: 3.0, position: .top)
+                return
+            }
+            var content = contentTextView.text
+            if content == "감정 소비한 이유를 적어보세요 :)"{
+                content = ""
+            }
+            //Realm 저장
+            let task = CostList(costSubject: subject, costMoney: moneyTextField.text, costContent: content, costDate: selectDate, costEmotion: selectEmotionInt)
+                        
+            try! self.localRealm.write {
+                self.localRealm.add(task)
+            }
             
             self.dismiss(animated: true, completion: nil)
         }

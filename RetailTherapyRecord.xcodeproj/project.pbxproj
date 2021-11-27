@@ -11,6 +11,13 @@
 		27604F39274AE97D00E7EABE /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27604F38274AE97D00E7EABE /* DatePickerViewController.swift */; };
 		27604F3B274AE98D00E7EABE /* EmotionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27604F3A274AE98D00E7EABE /* EmotionPickerViewController.swift */; };
 		27604F3D274BE87700E7EABE /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27604F3C274BE87600E7EABE /* DateFormatter+Extension.swift */; };
+		27604F402752D28E00E7EABE /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = 27604F3F2752D28D00E7EABE /* smile.png */; };
+		27604F472752D45300E7EABE /* expressionless.png in Resources */ = {isa = PBXBuildFile; fileRef = 27604F412752D45200E7EABE /* expressionless.png */; };
+		27604F482752D45300E7EABE /* sad.png in Resources */ = {isa = PBXBuildFile; fileRef = 27604F422752D45200E7EABE /* sad.png */; };
+		27604F492752D45300E7EABE /* rich.png in Resources */ = {isa = PBXBuildFile; fileRef = 27604F432752D45300E7EABE /* rich.png */; };
+		27604F4A2752D45300E7EABE /* stressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 27604F442752D45300E7EABE /* stressed.png */; };
+		27604F4B2752D45300E7EABE /* angry.png in Resources */ = {isa = PBXBuildFile; fileRef = 27604F452752D45300E7EABE /* angry.png */; };
+		27604F4C2752D45300E7EABE /* cry.png in Resources */ = {isa = PBXBuildFile; fileRef = 27604F462752D45300E7EABE /* cry.png */; };
 		277ED11F2746CDC00091C076 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED11E2746CDC00091C076 /* AppDelegate.swift */; };
 		277ED1212746CDC00091C076 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED1202746CDC00091C076 /* SceneDelegate.swift */; };
 		277ED1262746CDC00091C076 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277ED1242746CDC00091C076 /* MainTabBar.storyboard */; };
@@ -39,6 +46,13 @@
 		27604F38274AE97D00E7EABE /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		27604F3A274AE98D00E7EABE /* EmotionPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionPickerViewController.swift; sourceTree = "<group>"; };
 		27604F3C274BE87600E7EABE /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		27604F3F2752D28D00E7EABE /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
+		27604F412752D45200E7EABE /* expressionless.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expressionless.png; sourceTree = "<group>"; };
+		27604F422752D45200E7EABE /* sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sad.png; sourceTree = "<group>"; };
+		27604F432752D45300E7EABE /* rich.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rich.png; sourceTree = "<group>"; };
+		27604F442752D45300E7EABE /* stressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stressed.png; sourceTree = "<group>"; };
+		27604F452752D45300E7EABE /* angry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = angry.png; sourceTree = "<group>"; };
+		27604F462752D45300E7EABE /* cry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cry.png; sourceTree = "<group>"; };
 		277ED11B2746CDC00091C076 /* RetailTherapyRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RetailTherapyRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		277ED11E2746CDC00091C076 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		277ED1202746CDC00091C076 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +95,20 @@
 				275830132749584100CEE9FA /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		27604F3E2752D27600E7EABE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				27604F412752D45200E7EABE /* expressionless.png */,
+				27604F3F2752D28D00E7EABE /* smile.png */,
+				27604F452752D45300E7EABE /* angry.png */,
+				27604F462752D45300E7EABE /* cry.png */,
+				27604F422752D45200E7EABE /* sad.png */,
+				27604F442752D45300E7EABE /* stressed.png */,
+				27604F432752D45300E7EABE /* rich.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		277ED1122746CDC00091C076 = {
@@ -130,6 +158,7 @@
 		277ED1362746CF2A0091C076 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				27604F3E2752D27600E7EABE /* Images */,
 				277ED11E2746CDC00091C076 /* AppDelegate.swift */,
 				277ED1202746CDC00091C076 /* SceneDelegate.swift */,
 				277ED1272746CDC40091C076 /* Assets.xcassets */,
@@ -233,9 +262,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27604F482752D45300E7EABE /* sad.png in Resources */,
+				27604F4A2752D45300E7EABE /* stressed.png in Resources */,
+				27604F492752D45300E7EABE /* rich.png in Resources */,
 				277ED12B2746CDC40091C076 /* LaunchScreen.storyboard in Resources */,
+				27604F402752D28E00E7EABE /* smile.png in Resources */,
+				27604F4B2752D45300E7EABE /* angry.png in Resources */,
 				277ED1282746CDC40091C076 /* Assets.xcassets in Resources */,
 				277ED14F2747FDEA0091C076 /* List.storyboard in Resources */,
+				27604F4C2752D45300E7EABE /* cry.png in Resources */,
+				27604F472752D45300E7EABE /* expressionless.png in Resources */,
 				277ED159274805820091C076 /* Record.storyboard in Resources */,
 				277ED1512747FDFA0091C076 /* Calendar.storyboard in Resources */,
 				277ED1262746CDC00091C076 /* MainTabBar.storyboard in Resources */,

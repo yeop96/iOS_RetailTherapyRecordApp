@@ -6,32 +6,36 @@
 //
 
 import Foundation
+import UIKit
+
 
 enum Expression : Int {
     case expressionless = 0
-    case pout = 1
+    case smile = 1
     case angry = 2
-    case meltdown = 3
+    case cry = 3
     case sad = 4
-    case flex = 5
-    case calm = 6
+    case stressed = 5
+    case rich = 6
     
-    func expressionEmoji() -> String{
+    func expressionEmoji() -> UIImage{
         switch self {
         case .expressionless:
-            return "😶"
-        case .pout:
-            return "😤"
+            return UIImage(named: "expressionless")!
+        case .smile:
+            return UIImage(named: "smile")!
         case .angry:
-            return "🤬"
-        case .meltdown:
-            return "🤯"
+            return UIImage(named: "angry")!
+        case .cry:
+            return UIImage(named: "cry")!
         case .sad:
-            return "😢"
-        case .flex:
-            return "🤑"
-        case .calm:
-            return "☺️"
+            return UIImage(named: "sad")!
+        case .stressed:
+            return UIImage(named: "stressed")!
+        case .rich:
+            return UIImage(named: "rich")!
         }
     }
+    
+    
 }

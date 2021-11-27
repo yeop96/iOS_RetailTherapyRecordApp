@@ -12,13 +12,13 @@ import RealmSwift // 10.18.0 exact version
 
 class CostList: Object {
     @Persisted var costSubject: String
-    @Persisted var costMoney: Int?
+    @Persisted var costMoney: String?
     @Persisted var costContent: String?
     @Persisted var costDate = Date()
     @Persisted var costEmotion: Int
     @Persisted(primaryKey: true) var _pk: ObjectId
     
-    convenience init(costSubject: String, costMoney: Int, costContent: String, costDate: Date, costEmotion: Int) {
+    convenience init(costSubject: String, costMoney: String?, costContent: String?, costDate: Date, costEmotion: Int) {
         self.init()
         
         self.costSubject = costSubject

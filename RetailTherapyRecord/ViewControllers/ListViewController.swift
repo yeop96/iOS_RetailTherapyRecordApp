@@ -10,6 +10,8 @@ import RealmSwift
 
 class ListViewController: UIViewController {
     var searchController:  UISearchController!
+    let localRealm = try! Realm()
+    var tasks: Results<CostList>!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,10 +22,12 @@ class ListViewController: UIViewController {
         searchController = searchBarSetting()
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
+        tasks = localRealm.objects(CostList.self).sorted(byKeyPath: "costDate", ascending: false) // 최근 등록일 순
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     
@@ -86,8 +90,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     
     //셀의 갯수: numberOfRowsInSection
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 20
+        return tasks.count
     }
     
     //셀의 디자인 및 데이터 처리: cellForRowAt
@@ -96,11 +99,13 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell") as? ListTableViewCell else{
             return UITableViewCell()
         }
-        
-        cell.emotionImageView.image = UIImage(systemName: "plus")
-        cell.costSubjectLabel.text = "?!"
-        cell.costMoneyLabel.text = "?!"
-        cell.costContentLabel.text = "?!"
+        let row = tasks[indexPath.row]
+        if let emotion = Expression(rawValue: row.costEmotion) {
+            cell.emotionImageView.image = emotion.expressionEmoji()
+        }
+        cell.costSubjectLabel.text = row.costSubject
+        cell.costMoneyLabel.text = row.costMoney == "" ? "" : row.costMoney! + "원"
+        cell.costContentLabel.text = row.costContent
         
         return cell
     }
@@ -108,7 +113,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     //셀의 높이: heightForRowAt
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 100
+        return 90
     }
     //헤더 높이: heightForHeaderInSection
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
