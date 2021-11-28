@@ -14,7 +14,8 @@ class CostList: Object {
     @Persisted var costSubject: String
     @Persisted var costMoney: String?
     @Persisted var costContent: String?
-    @Persisted var costDate = Date()
+    @Persisted var costDate: Date
+    @Persisted var costDateString: String
     @Persisted var costEmotion: Int
     @Persisted(primaryKey: true) var _pk: ObjectId
     
@@ -25,6 +26,7 @@ class CostList: Object {
         self.costMoney = costMoney
         self.costContent = costContent
         self.costDate = costDate
+        self.costDateString = DateFormatter().connectDateFormatString(date: costDate)
         self.costEmotion = costEmotion
     }
 }

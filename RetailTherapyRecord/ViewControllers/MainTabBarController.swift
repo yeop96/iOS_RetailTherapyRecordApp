@@ -27,8 +27,13 @@ class MainTabBarController: UITabBarController {
         
         //탭바 높이
         let tabBarheight = self.tabBar.frame.size.height
+        //safe area 높이
+        let window = UIApplication.shared.windows.first
+        let bottomPadding = window!.safeAreaInsets.bottom
+        //밑에 패딩
+        let bottomConstant = tabBarheight/2 + bottomPadding
         //바닥에서 탭바 높이 만큼
-        NSLayoutConstraint(item: actionButton, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: -tabBarheight).isActive = true
+        NSLayoutConstraint(item: actionButton, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: -bottomConstant).isActive = true
         //x중앙배치
         NSLayoutConstraint(item: actionButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
         

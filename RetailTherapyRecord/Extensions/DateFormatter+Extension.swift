@@ -19,5 +19,15 @@ extension DateFormatter {
         return str
     }
     
+    func connectDateFormatString(date : Date) -> String{
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier:"ko_KR")
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let str = dateFormatter.string(from: date)
+        
+        return str
+    }
+    
     
 }

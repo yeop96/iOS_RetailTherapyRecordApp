@@ -12,7 +12,8 @@ class ListViewController: UIViewController {
     var searchController:  UISearchController!
     let localRealm = try! Realm()
     var tasks: Results<CostList>!
-    var datesTitle = Set<String>()
+    var dateSet = Set<String>()
+    var dateArray = Array<String>()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,16 +24,19 @@ class ListViewController: UIViewController {
         searchController = searchBarSetting()
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
-        tasks = localRealm.objects(CostList.self).sorted(byKeyPath: "costDate", ascending: false) // 최근 등록일 순
-        tasks.forEach{
-            let dateFormatter = DateFormatter()
-            datesTitle.insert(dateFormatter.koreaDateFormatString(date: $0.costDate))
-        }
+        //tasks = localRealm.objects(CostList.self).sorted(byKeyPath: "costDate", ascending: false) // 최근 등록일 순
+        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tasks = localRealm.objects(CostList.self).sorted(byKeyPath: "costDate", ascending: false) // 최근 등록일 순
+        dateSet = Set<String>()
+        tasks.forEach{
+            dateSet.insert(DateFormatter().connectDateFormatString(date: $0.costDate))
+        }
+        dateArray = Array(dateSet.sorted(by: >))
         tableView.reloadData()
     }
     
@@ -86,20 +90,22 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     
     //섹션의 수: numberOfSections (default가 1이라서)
     func numberOfSections(in tableView: UITableView) -> Int {
-        return datesTitle.count
+        return dateArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
     }
     
     //섹션 타이틀: titleForHeaderInSection
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        //return "섹션 타이틀"
-        let indices = datesTitle.indices.map{$0}
-        let index = indices[section]
-        return datesTitle[index]
+        return dateArray[section]
     }
     
     //셀의 갯수: numberOfRowsInSection
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+        let taskFiltered = tasks.filter("costDateString == '\(dateArray[section])'")
+        return taskFiltered.count
     }
     
     //셀의 디자인 및 데이터 처리: cellForRowAt
@@ -109,8 +115,9 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
             return UITableViewCell()
         }
         
+        let taskFiltered = tasks.filter("costDateString == '\(dateArray[indexPath.section])'")
         
-        let row = tasks[indexPath.row]
+        let row = taskFiltered[indexPath.row]
         if let emotion = Expression(rawValue: row.costEmotion) {
             cell.emotionImageView.image = emotion.expressionEmoji()
         }
@@ -153,9 +160,9 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
             
             try! self.localRealm.write{
                 self.localRealm.delete(row)
-                tableView.reloadData()
+                
+                self.viewWillAppear(true)
             }
-            
             return
         }
         let noAction = UIAlertAction(title: "아니오", style: .cancel){ (action) in

@@ -72,6 +72,7 @@ class RecordViewController: UIViewController {
         if content == "감정 소비한 이유를 적어보세요 :)"{
             content = ""
         }
+        print(selectDate)
         //Realm 저장
         let task = CostList(costSubject: subject, costMoney: moneyTextField.text, costContent: content, costDate: selectDate, costEmotion: selectEmotionInt)
                     
