@@ -12,8 +12,12 @@ import Toast
 class RecordViewController: UIViewController {
     var editRecordBool = false //셀에서 진입시 true, 추가 버튼에서 진입시 false
     var selectDate = Date()
-    var selectEmotion = "😶"
     var selectEmotionInt = 0
+    let emotions = ["😐", "😸", "😾", "😿", "😓", "🙀", "🤑"]
+    
+    var existingSubject = ""
+    var existingMoeny = ""
+    var existingContent = ""
     
     let localRealm = try! Realm()
     
@@ -41,6 +45,10 @@ class RecordViewController: UIViewController {
             contentTextView.isEditable = false
             dateButton.isEnabled = false
             emotionButton.isEnabled = false
+            
+            subjectTextField.text = existingSubject
+            moneyTextField.text = existingMoeny == "" ? " " : existingMoeny + "원"
+            contentTextView.text = existingContent
         }
         
     }
@@ -51,7 +59,7 @@ class RecordViewController: UIViewController {
         let dateString = DateFormatter().koreaDateFormatString(date: selectDate)
         dateButton.setTitle(dateString, for: .normal)
         
-        emotionButton.setTitle("감정 표정은 \(selectEmotion)", for: .normal)
+        emotionButton.setTitle("감정 표정은 \(emotions[selectEmotionInt])", for: .normal)
     }
     
     //우측 상단 확인버튼 클릭시
@@ -72,7 +80,6 @@ class RecordViewController: UIViewController {
         if content == "감정 소비한 이유를 적어보세요 :)"{
             content = ""
         }
-        print(selectDate)
         //Realm 저장
         let task = CostList(costSubject: subject, costMoney: moneyTextField.text, costContent: content, costDate: selectDate, costEmotion: selectEmotionInt)
                     
@@ -121,7 +128,6 @@ class RecordViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "EmotionPickerViewController") as! EmotionPickerViewController
         
         vc.saveActionHandler = {
-            self.selectEmotion = vc.selectEmotion
             self.selectEmotionInt = vc.selectEmotionInt
             self.viewWillAppear(true)
         }

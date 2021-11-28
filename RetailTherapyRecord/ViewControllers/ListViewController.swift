@@ -115,9 +115,10 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
             return UITableViewCell()
         }
         
+        //섹션에 맞는 날짜만
         let taskFiltered = tasks.filter("costDateString == '\(dateArray[indexPath.section])'")
-        
         let row = taskFiltered[indexPath.row]
+        
         if let emotion = Expression(rawValue: row.costEmotion) {
             cell.emotionImageView.image = emotion.expressionEmoji()
         }
@@ -140,9 +141,17 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     
     //셀 선택 didSelectRowAt
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let taskFiltered = tasks.filter("costDateString == '\(dateArray[indexPath.section])'")
+        let row = taskFiltered[indexPath.row]
+        
         let storyboard = UIStoryboard(name: "Record", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "RecordViewController") as! RecordViewController
         vc.editRecordBool = true
+        vc.selectDate = row.costDate
+        vc.selectEmotionInt = row.costEmotion
+        vc.existingSubject = row.costSubject
+        vc.existingMoeny = row.costMoney ?? ""
+        vc.existingContent = row.costContent ?? ""
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -153,7 +162,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     //삭제 스와이프
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        let row = tasks[indexPath.row]
+        let taskFiltered = tasks.filter("costDateString == '\(dateArray[indexPath.section])'")
+        let row = taskFiltered[indexPath.row]
         
         let alert = UIAlertController(title: row.costSubject, message: "기록을 삭제해도 되나요?", preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "예", style: .default){ (action) in
