@@ -9,11 +9,12 @@ import UIKit
 import RealmSwift
 
 class ListViewController: UIViewController {
-    var searchController:  UISearchController!
     let localRealm = try! Realm()
     var tasks: Results<CostList>!
     var dateSet = Set<String>()
     var dateArray = Array<String>()
+    var searchController:  UISearchController!
+    var searchText = ""
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -53,13 +54,21 @@ class ListViewController: UIViewController {
         
         return searchController
     }
+    
+    func searchBarIsEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
 }
 
 
 extension ListViewController: UISearchBarDelegate, UISearchResultsUpdating{
     
     func updateSearchResults(for searchController: UISearchController) {
-        
+        searchText  = searchController.searchBar.text!
         tableView.reloadData()
     }
     
@@ -90,7 +99,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     
     //섹션의 수: numberOfSections (default가 1이라서)
     func numberOfSections(in tableView: UITableView) -> Int {
-        return dateArray.count
+        return isFiltering() ? 1 : dateArray.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -99,13 +108,14 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     
     //섹션 타이틀: titleForHeaderInSection
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return dateArray[section]
+        return isFiltering() ? nil : dateArray[section]
     }
     
     //셀의 갯수: numberOfRowsInSection
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let taskFiltered = tasks.filter("costDateString == '\(dateArray[section])'")
-        return taskFiltered.count
+        let taskSearched = tasks.filter("costSubject CONTAINS '\(searchController.searchBar.text!)' OR costContent CONTAINS '\(searchController.searchBar.text!)'")
+        return isFiltering() ? taskSearched.count : taskFiltered.count
     }
     
     //셀의 디자인 및 데이터 처리: cellForRowAt
@@ -117,7 +127,10 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         
         //섹션에 맞는 날짜만
         let taskFiltered = tasks.filter("costDateString == '\(dateArray[indexPath.section])'")
-        let row = taskFiltered[indexPath.row]
+        //검색된 애들만
+        let taskSearched = tasks.filter("costSubject CONTAINS '\(searchController.searchBar.text!)' OR costContent CONTAINS '\(searchController.searchBar.text!)'")
+        
+        let row = isFiltering() ? taskSearched[indexPath.row] : taskFiltered[indexPath.row]
         
         if let emotion = Expression(rawValue: row.costEmotion) {
             cell.emotionImageView.image = emotion.expressionEmoji()
@@ -125,6 +138,15 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         cell.costSubjectLabel.text = row.costSubject
         cell.costMoneyLabel.text = row.costMoney == "" ? "" : row.costMoney! + "원"
         cell.costContentLabel.text = row.costContent
+        
+        //검색시 글자 색 바꿔주기
+        if isFiltering() && !searchBarIsEmpty() {
+            cell.costSubjectLabel.makeHighlight(searchText: searchText, color: .systemBrown)
+            cell.costContentLabel.makeHighlight(searchText: searchText, color: .systemBrown)
+        } else if !isFiltering() {
+            cell.costSubjectLabel.removeHighlight(color: .label)
+            cell.costContentLabel.removeHighlight(color: .label)
+        }
         
         return cell
     }
@@ -141,8 +163,12 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     
     //셀 선택 didSelectRowAt
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //섹션에 맞는 날짜만
         let taskFiltered = tasks.filter("costDateString == '\(dateArray[indexPath.section])'")
-        let row = taskFiltered[indexPath.row]
+        //검색된 애들만
+        let taskSearched = tasks.filter("costSubject CONTAINS '\(searchController.searchBar.text!)' OR costContent CONTAINS '\(searchController.searchBar.text!)'")
+        
+        let row = isFiltering() ? taskSearched[indexPath.row] : taskFiltered[indexPath.row]
         
         let storyboard = UIStoryboard(name: "Record", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "RecordViewController") as! RecordViewController
@@ -161,9 +187,13 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     }
     //삭제 스와이프
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
+        //섹션에 맞는 날짜만
         let taskFiltered = tasks.filter("costDateString == '\(dateArray[indexPath.section])'")
-        let row = taskFiltered[indexPath.row]
+        //검색된 애들만
+        let taskSearched = tasks.filter("costSubject CONTAINS '\(searchController.searchBar.text!)' OR costContent CONTAINS '\(searchController.searchBar.text!)'")
+        
+        let row = isFiltering() ? taskSearched[indexPath.row] : taskFiltered[indexPath.row]
+        
         
         let alert = UIAlertController(title: row.costSubject, message: "기록을 삭제해도 되나요?", preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "예", style: .default){ (action) in
