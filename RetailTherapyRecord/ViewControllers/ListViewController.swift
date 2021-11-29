@@ -25,8 +25,6 @@ class ListViewController: UIViewController {
         searchController = searchBarSetting()
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
-        //tasks = localRealm.objects(CostList.self).sorted(byKeyPath: "costDate", ascending: false) // 최근 등록일 순
-        
         
     }
     
