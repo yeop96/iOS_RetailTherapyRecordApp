@@ -29,5 +29,15 @@ extension DateFormatter {
         return str
     }
     
+    func DateFormatInt(date : Date) -> Int{
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier:"ko_KR")
+        dateFormatter.dateFormat = "yyyyMMdd"
+        let str = dateFormatter.string(from: date)
+        
+        return Int(str)!
+    }
+    
     
 }

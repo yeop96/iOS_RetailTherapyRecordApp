@@ -111,9 +111,9 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     
     //셀의 갯수: numberOfRowsInSection
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let taskFiltered = tasks.filter("costDateString == '\(dateArray[section])'")
-        let taskSearched = tasks.filter("costSubject CONTAINS '\(searchController.searchBar.text!)' OR costContent CONTAINS '\(searchController.searchBar.text!)'")
-        return isFiltering() ? taskSearched.count : taskFiltered.count
+        //let taskFiltered = tasks.filter("costDateString == '\(dateArray[section])'")
+        //let taskSearched = tasks.filter("costSubject CONTAINS '\(searchController.searchBar.text!)' OR costContent CONTAINS '\(searchController.searchBar.text!)'")
+        return isFiltering() ? tasks.filter("costSubject CONTAINS '\(searchController.searchBar.text!)' OR costContent CONTAINS '\(searchController.searchBar.text!)'").count : tasks.filter("costDateString == '\(dateArray[section])'").count
     }
     
     //셀의 디자인 및 데이터 처리: cellForRowAt
@@ -134,7 +134,19 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
             cell.emotionImageView.image = emotion.expressionEmoji()
         }
         cell.costSubjectLabel.text = row.costSubject
-        cell.costMoneyLabel.text = row.costMoney == "" ? "" : row.costMoney! + "원"
+        
+        
+        //가격 표시
+        if row.costMoney == "" || row.costMoney == nil{
+            cell.costMoneyLabel.text = ""
+        }
+        else{
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            let cost = numberFormatter.string(for: Int(row.costMoney!)!)! + "원"
+            cell.costMoneyLabel.text = cost
+        }
+        
         cell.costContentLabel.text = row.costContent
         
         //검색시 글자 색 바꿔주기

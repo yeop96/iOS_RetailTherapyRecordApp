@@ -18,6 +18,8 @@ class CalendarViewController: UIViewController {
     var events = Array<Date?>()
     
     @IBOutlet weak var calendarView: FSCalendar!
+    @IBOutlet weak var yearCostLabel: UILabel!
+    @IBOutlet weak var unCostDayLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -54,8 +56,25 @@ class CalendarViewController: UIViewController {
         formatter.dateFormat = "yyyy-MM-dd"
         
         events = Array<Date>()
+        var cost = 0
+        
         tasks.forEach{
             events +=  [formatter.date(from: DateFormatter().connectDateFormatString(date: $0.costDate))]
+            
+            guard let money = $0.costMoney else { return }
+            cost += Int(money) ?? 0
+        }
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let costs = numberFormatter.string(for: cost)!
+        yearCostLabel.text = costs + "원"
+        
+        if !tasks.isEmpty{
+            let day = DateFormatter().DateFormatInt(date: Date()) - DateFormatter().DateFormatInt(date: tasks[0].costDate)
+            unCostDayLabel.text = "\(String(day))일"
+        } else{
+            unCostDayLabel.text = "아직 없음"
         }
         
         calendarView.reloadData()
