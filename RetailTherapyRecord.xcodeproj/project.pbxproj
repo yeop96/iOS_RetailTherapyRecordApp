@@ -40,6 +40,7 @@
 		277ED15D274807B10091C076 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED15C274807B10091C076 /* MainTabBarController.swift */; };
 		277ED16027481A280091C076 /* JJFloatingActionButton in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED15F27481A280091C076 /* JJFloatingActionButton */; };
 		277FDE8B275414970035C0B6 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDE8A275414960035C0B6 /* UILabel+Extension.swift */; };
+		277FDE8D2755A7BC0035C0B6 /* payment.png in Resources */ = {isa = PBXBuildFile; fileRef = 277FDE8C2755A7BC0035C0B6 /* payment.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		277ED158274805820091C076 /* Record.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Record.storyboard; sourceTree = "<group>"; };
 		277ED15C274807B10091C076 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		277FDE8A275414960035C0B6 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		277FDE8C2755A7BC0035C0B6 /* payment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = payment.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				27604F422752D45200E7EABE /* sad.png */,
 				27604F442752D45300E7EABE /* stressed.png */,
 				27604F432752D45300E7EABE /* rich.png */,
+				277FDE8C2755A7BC0035C0B6 /* payment.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				27604F472752D45300E7EABE /* expressionless.png in Resources */,
 				277ED159274805820091C076 /* Record.storyboard in Resources */,
 				277ED1512747FDFA0091C076 /* Calendar.storyboard in Resources */,
+				277FDE8D2755A7BC0035C0B6 /* payment.png in Resources */,
 				277ED1262746CDC00091C076 /* MainTabBar.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
