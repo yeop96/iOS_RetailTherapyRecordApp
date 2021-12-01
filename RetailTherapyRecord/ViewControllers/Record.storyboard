@@ -23,31 +23,93 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="5Fv-i8-zVr">
                                         <rect key="frame" x="40" y="0.0" width="334" height="715.5"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="무엇에 소비하셨나요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-5h-8tb">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MMk-8D-MYA">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="93.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="얼마를 소비하셨나요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mfl-Vb-6C5">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="무엇을!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ce-vb-asT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20.5" id="pZ4-JK-08v"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="무엇에 소비하셨나요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-5h-8tb">
+                                                        <rect key="frame" x="0.0" y="35.5" width="334" height="58"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="8ce-vb-asT" secondAttribute="trailing" id="EHj-qZ-ime"/>
+                                                    <constraint firstItem="xIf-5h-8tb" firstAttribute="leading" secondItem="MMk-8D-MYA" secondAttribute="leading" id="EVh-8r-SJp"/>
+                                                    <constraint firstItem="8ce-vb-asT" firstAttribute="leading" secondItem="MMk-8D-MYA" secondAttribute="leading" id="l3k-bz-kPW"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xIf-5h-8tb" secondAttribute="trailing" id="mFt-l6-pl7"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8SJ-xM-lcL">
                                                 <rect key="frame" x="0.0" y="123.5" width="334" height="93.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                            </textField>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="감정 소비한 이유를 적어보세요 :)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NK8-7K-Ed4">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="얼마를!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz7-Jd-D2B">
+                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20.5" id="IVZ-hl-PJa"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="얼마를 소비하셨나요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mfl-Vb-6C5">
+                                                        <rect key="frame" x="0.0" y="35.5" width="334" height="58"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Mfl-Vb-6C5" secondAttribute="trailing" id="0Jf-AU-GLT"/>
+                                                    <constraint firstItem="Mfl-Vb-6C5" firstAttribute="leading" secondItem="8SJ-xM-lcL" secondAttribute="leading" id="KWg-eN-ZJo"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hz7-Jd-D2B" secondAttribute="trailing" id="Vi7-AG-jdd"/>
+                                                    <constraint firstItem="hz7-Jd-D2B" firstAttribute="leading" secondItem="8SJ-xM-lcL" secondAttribute="leading" id="YTu-ep-fto"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2H7-wE-e1r">
                                                 <rect key="frame" x="0.0" y="247" width="334" height="468.5"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <color key="textColor" systemColor="placeholderTextColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="무슨 감정으로!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v4-QE-Cff">
+                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20.5" id="FZ0-Pi-dQQ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="감정 소비한 이유를 적어보세요 :)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NK8-7K-Ed4">
+                                                        <rect key="frame" x="0.0" y="35.5" width="334" height="433"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="textColor" systemColor="placeholderTextColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="6v4-QE-Cff" firstAttribute="leading" secondItem="2H7-wE-e1r" secondAttribute="leading" id="CwV-Sv-YXP"/>
+                                                    <constraint firstItem="NK8-7K-Ed4" firstAttribute="leading" secondItem="2H7-wE-e1r" secondAttribute="leading" id="ORr-vv-xHN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="6v4-QE-Cff" secondAttribute="trailing" id="ZyR-fK-zxp"/>
+                                                    <constraint firstAttribute="trailing" secondItem="NK8-7K-Ed4" secondAttribute="trailing" id="o6V-cq-lPF"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Mfl-Vb-6C5" firstAttribute="width" secondItem="xIf-5h-8tb" secondAttribute="width" id="1Rj-id-2bc"/>
-                                            <constraint firstAttribute="trailing" secondItem="xIf-5h-8tb" secondAttribute="trailing" id="Go4-Ww-XCf"/>
-                                            <constraint firstItem="NK8-7K-Ed4" firstAttribute="height" secondItem="xIf-5h-8tb" secondAttribute="height" multiplier="5" id="QVT-nS-Qmt"/>
-                                            <constraint firstItem="xIf-5h-8tb" firstAttribute="leading" secondItem="5Fv-i8-zVr" secondAttribute="leading" id="UXe-ux-rIz"/>
-                                            <constraint firstItem="Mfl-Vb-6C5" firstAttribute="height" secondItem="xIf-5h-8tb" secondAttribute="height" id="nf2-O2-zA4"/>
-                                            <constraint firstItem="NK8-7K-Ed4" firstAttribute="width" secondItem="xIf-5h-8tb" secondAttribute="width" id="tdv-vL-rj0"/>
+                                            <constraint firstItem="2H7-wE-e1r" firstAttribute="leading" secondItem="5Fv-i8-zVr" secondAttribute="leading" id="7xZ-Jf-YI3"/>
+                                            <constraint firstItem="8SJ-xM-lcL" firstAttribute="leading" secondItem="5Fv-i8-zVr" secondAttribute="leading" id="Epk-be-BSJ"/>
+                                            <constraint firstItem="8SJ-xM-lcL" firstAttribute="height" secondItem="MMk-8D-MYA" secondAttribute="height" id="N9d-9M-3zZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="2H7-wE-e1r" secondAttribute="trailing" id="Wmx-Z1-vox"/>
+                                            <constraint firstItem="MMk-8D-MYA" firstAttribute="leading" secondItem="5Fv-i8-zVr" secondAttribute="leading" id="fsP-co-tpd"/>
+                                            <constraint firstItem="2H7-wE-e1r" firstAttribute="height" secondItem="MMk-8D-MYA" secondAttribute="height" multiplier="5" id="kYM-y7-wWL"/>
+                                            <constraint firstAttribute="trailing" secondItem="8SJ-xM-lcL" secondAttribute="trailing" id="o5d-q8-c5P"/>
+                                            <constraint firstAttribute="trailing" secondItem="MMk-8D-MYA" secondAttribute="trailing" id="wBY-LF-Rm3"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>

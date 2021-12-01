@@ -8,6 +8,7 @@
 import UIKit
 import RealmSwift
 import Toast
+import TextFieldEffects
 
 class RecordViewController: UIViewController {
     var editRecordBool = false //셀에서 진입시 true, 추가 버튼에서 진입시 false
@@ -36,8 +37,20 @@ class RecordViewController: UIViewController {
         subjectTextField.delegate = self
         moneyTextField.delegate = self
         
-        title = editRecordBool ? "감정 소비 내역" : "감정 소비 기록"
+        title = editRecordBool ? "나의 감정 소비" : "감정 소비 기록"
         
+        dateButton.setTitleColor(.primary, for: .disabled)
+        subjectTextField.layer.borderWidth = 1.0
+        subjectTextField.layer.cornerRadius = 10
+        subjectTextField.layer.borderColor = UIColor.primary.cgColor
+        moneyTextField.layer.borderWidth = 1.0
+        moneyTextField.layer.cornerRadius = 10
+        moneyTextField.layer.borderColor = UIColor.primary.cgColor
+        
+        contentTextView.layer.borderWidth = 1.0
+        contentTextView.layer.borderColor = UIColor.primary.cgColor
+        contentTextView.layer.cornerRadius = 10
+        contentTextView.textContainerInset = UIEdgeInsets(top: 10, left: 5, bottom: 0, right: 5)
         
         
         if !editRecordBool{
@@ -69,6 +82,15 @@ class RecordViewController: UIViewController {
             emotionButton.setTitle("표정", for: .normal)
             
             
+            if contentTextView.text == ""{
+                contentTextView.text = "감정 소비한 이유를 적어보세요 :)"
+                contentTextView.textColor = .placeholderText
+            }
+            else if contentTextView.text != "감정 소비한 이유를 적어보세요 :)"{
+                contentTextView.textColor = .label
+            }
+            
+            
             self.tabBarController?.tabBar.isHidden = true
             MainTabBarController.actionButton.isHidden = true
         }
@@ -98,6 +120,7 @@ class RecordViewController: UIViewController {
         contentTextView.isEditable = true
         dateButton.isEnabled = true
         emotionButton.isEnabled = true
+        
     }
     
     //편집 저장 클릭시
