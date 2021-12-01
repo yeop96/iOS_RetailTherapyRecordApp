@@ -21,7 +21,7 @@ class MainTabBarController: UITabBarController {
         //let actionButton = JJFloatingActionButton() //플로팅 라이브러리
         
         MainTabBarController.actionButton.addTarget(self, action: #selector(self.addButtonAction(sender:)), for: UIControl.Event.touchUpInside)
-        MainTabBarController.actionButton.buttonColor = .brown //배경색
+        MainTabBarController.actionButton.buttonColor = .primary //배경색
         MainTabBarController.actionButton.buttonImageColor = .white //이미지
         
         self.view.addSubview(MainTabBarController.actionButton)

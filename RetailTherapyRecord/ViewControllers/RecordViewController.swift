@@ -244,7 +244,7 @@ extension RecordViewController: UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         let newLength = text.count + string.count - range.length
-        return newLength <= 10 // 숫자제한
+        return newLength <= 20 // 숫자제한
     }
 }
 
@@ -265,7 +265,7 @@ extension RecordViewController: UITextViewDelegate{
     func textViewSetupView(){
         if contentTextView.text == "감정 소비한 이유를 적어보세요 :)"{
             contentTextView.text = ""
-            contentTextView.textColor = .black
+            contentTextView.textColor = .label
         }
         else if contentTextView.text == ""{
             contentTextView.text = "감정 소비한 이유를 적어보세요 :)"

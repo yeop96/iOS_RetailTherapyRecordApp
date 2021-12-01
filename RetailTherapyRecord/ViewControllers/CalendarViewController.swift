@@ -28,19 +28,30 @@ class CalendarViewController: UIViewController {
         calendarView.delegate = self
         calendarView.dataSource = self
         
-        calendarView.appearance.eventDefaultColor = .brown
-        calendarView.appearance.eventSelectionColor = .brown
+        calendarView.appearance.eventDefaultColor = .primary
+        calendarView.appearance.eventSelectionColor = .primary
         calendarView.allowsSelection = false
         calendarView.today = nil
+        //calendarView.appearance.todayColor
+        //calendarView.appearance.titleTodayColor
         
         //calendarView.appearance.borderRadius = 0
+        self.navigationItem.title = "패턴"
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = backBarButtonItem
         
         calendarView.headerHeight = 50
         calendarView.appearance.headerDateFormat = "YYYY년 M월"
-        calendarView.appearance.headerTitleColor = .black
+        calendarView.appearance.headerTitleColor = .primary
         calendarView.appearance.headerTitleFont = UIFont.systemFont(ofSize: 24)
 
-        calendarView.appearance.weekdayTextColor = .black
+        calendarView.appearance.weekdayTextColor = .label
+        
+        
+        calendarView.appearance.titleWeekendColor = .strawberryMilk
+        calendarView.appearance.titleDefaultColor = .label
+        
+        
 
         calendarView.locale = Locale(identifier: "ko_KR")
 
@@ -98,15 +109,35 @@ extension CalendarViewController : FSCalendarDelegate, FSCalendarDataSource, FSC
     
     //글자색
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
-        return nil
+        if self.events.contains(date) {
+            return .secondary
+        } else {
+            return nil
+        }
     }
     
     //셀 색
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
         if self.events.contains(date) {
-            return .brown
+            return .primary
         } else {
             return nil
+        }
+    }
+    
+    // 날짜 밑에 글씨
+    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "yyyy-MM-dd"
+            
+        switch formatter.string(from: date) {
+            case formatter.string(from: Date()):
+                return "오늘"
+            case "2021-12-25":
+                return "크리스마스"
+            default:
+                return nil
         }
     }
 }

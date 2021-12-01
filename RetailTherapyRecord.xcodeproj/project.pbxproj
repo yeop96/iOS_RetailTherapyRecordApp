@@ -41,6 +41,7 @@
 		277ED16027481A280091C076 /* JJFloatingActionButton in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED15F27481A280091C076 /* JJFloatingActionButton */; };
 		277FDE8B275414970035C0B6 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDE8A275414960035C0B6 /* UILabel+Extension.swift */; };
 		277FDE8D2755A7BC0035C0B6 /* payment.png in Resources */ = {isa = PBXBuildFile; fileRef = 277FDE8C2755A7BC0035C0B6 /* payment.png */; };
+		277FDE8F27576B800035C0B6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDE8E27576B7F0035C0B6 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		277ED15C274807B10091C076 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		277FDE8A275414960035C0B6 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		277FDE8C2755A7BC0035C0B6 /* payment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = payment.png; sourceTree = "<group>"; };
+		277FDE8E27576B7F0035C0B6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			children = (
 				27604F3C274BE87600E7EABE /* DateFormatter+Extension.swift */,
 				277FDE8A275414960035C0B6 /* UILabel+Extension.swift */,
+				277FDE8E27576B7F0035C0B6 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				277ED1212746CDC00091C076 /* SceneDelegate.swift in Sources */,
 				277FDE8B275414970035C0B6 /* UILabel+Extension.swift in Sources */,
 				27604F3B274AE98D00E7EABE /* EmotionPickerViewController.swift in Sources */,
+				277FDE8F27576B800035C0B6 /* UIColor+Extension.swift in Sources */,
 				27604F3D274BE87700E7EABE /* DateFormatter+Extension.swift in Sources */,
 				275830142749584100CEE9FA /* Constants.swift in Sources */,
 			);

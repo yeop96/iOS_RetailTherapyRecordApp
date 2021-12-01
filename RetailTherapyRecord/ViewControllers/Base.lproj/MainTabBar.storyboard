@@ -46,11 +46,11 @@
             </objects>
             <point key="canvasLocation" x="-23.188405797101453" y="77.678571428571431"/>
         </scene>
-        <!--List-->
+        <!--내역-->
         <scene sceneID="mqz-XY-llt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UyG-th-gdQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" image="list.bullet" catalog="system" id="9cb-ak-CiK"/>
+                    <tabBarItem key="tabBarItem" title="내역" image="list.bullet" catalog="system" id="9cb-ak-CiK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bmq-Td-gGJ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -65,11 +65,11 @@
             </objects>
             <point key="canvasLocation" x="838" y="-216"/>
         </scene>
-        <!--Calendar-->
+        <!--달력-->
         <scene sceneID="VfJ-MJ-s2w">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wrn-QI-TID" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="uAC-0R-RKn"/>
+                    <tabBarItem key="tabBarItem" title="달력" image="note.text" catalog="system" id="uAC-0R-RKn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7MH-iy-2V5">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -86,7 +86,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="note.text" catalog="system" width="128" height="106"/>
     </resources>
 </document>

@@ -24,17 +24,17 @@
                                         <rect key="frame" x="40" y="0.0" width="334" height="715.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="무엇에 소비하셨나요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-5h-8tb">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="54.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="93.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="얼마를 소비하셨나요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mfl-Vb-6C5">
-                                                <rect key="frame" x="0.0" y="84.5" width="334" height="54.5"/>
+                                                <rect key="frame" x="0.0" y="123.5" width="334" height="93.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="감정 소비한 이유를 적어보세요 :)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NK8-7K-Ed4">
-                                                <rect key="frame" x="0.0" y="169" width="334" height="546.5"/>
+                                                <rect key="frame" x="0.0" y="247" width="334" height="468.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="placeholderTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -44,7 +44,7 @@
                                         <constraints>
                                             <constraint firstItem="Mfl-Vb-6C5" firstAttribute="width" secondItem="xIf-5h-8tb" secondAttribute="width" id="1Rj-id-2bc"/>
                                             <constraint firstAttribute="trailing" secondItem="xIf-5h-8tb" secondAttribute="trailing" id="Go4-Ww-XCf"/>
-                                            <constraint firstItem="NK8-7K-Ed4" firstAttribute="height" secondItem="xIf-5h-8tb" secondAttribute="height" multiplier="10" id="QVT-nS-Qmt"/>
+                                            <constraint firstItem="NK8-7K-Ed4" firstAttribute="height" secondItem="xIf-5h-8tb" secondAttribute="height" multiplier="5" id="QVT-nS-Qmt"/>
                                             <constraint firstItem="xIf-5h-8tb" firstAttribute="leading" secondItem="5Fv-i8-zVr" secondAttribute="leading" id="UXe-ux-rIz"/>
                                             <constraint firstItem="Mfl-Vb-6C5" firstAttribute="height" secondItem="xIf-5h-8tb" secondAttribute="height" id="nf2-O2-zA4"/>
                                             <constraint firstItem="NK8-7K-Ed4" firstAttribute="width" secondItem="xIf-5h-8tb" secondAttribute="width" id="tdv-vL-rj0"/>

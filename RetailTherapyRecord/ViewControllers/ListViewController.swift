@@ -28,16 +28,16 @@ class ListViewController: UIViewController {
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         
-        self.navigationItem.title = "감정 소비"
+        
+        self.navigationItem.title = "기록"
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        backBarButtonItem.tintColor = .gray
         self.navigationItem.backBarButtonItem = backBarButtonItem
-
+        
 
         
         emptyLabel.textAlignment = .center // 중앙 정렬.
         emptyLabel.text = "가운데 + 버튼을 통해 감정 소비를 기록해보세요!"
-        emptyLabel.textColor = .brown
+        emptyLabel.textColor = .primary
         self.view.addSubview(emptyLabel)
         emptyLabel.translatesAutoresizingMaskIntoConstraints = false
         //x중앙배치
@@ -74,7 +74,8 @@ class ListViewController: UIViewController {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = "검색"
         searchController.searchBar.setValue("취소", forKey: "cancelButtonText")
-        //searchController.searchBar.tintColor = .systemBackground
+        searchController.searchBar.tintColor = .primary
+        searchController.searchBar.barTintColor = .primary
         searchController.obscuresBackgroundDuringPresentation = false
         definesPresentationContext = true
         navigationItem.searchController = searchController
@@ -187,8 +188,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         
         //검색시 글자 색 바꿔주기
         if isFiltering() && !searchBarIsEmpty() {
-            cell.costSubjectLabel.makeHighlight(searchText: searchText, color: .systemBrown)
-            cell.costContentLabel.makeHighlight(searchText: searchText, color: .systemBrown)
+            cell.costSubjectLabel.makeHighlight(searchText: searchText, color: .primary)
+            cell.costContentLabel.makeHighlight(searchText: searchText, color: .primary)
         } else if !isFiltering() {
             cell.costSubjectLabel.removeHighlight(color: .label)
             cell.costContentLabel.removeHighlight(color: .label)
