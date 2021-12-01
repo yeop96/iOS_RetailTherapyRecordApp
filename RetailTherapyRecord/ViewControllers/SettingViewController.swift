@@ -21,6 +21,17 @@ class SettingViewController: UIViewController {
         tableView.delegate = self
         
         title = "서비스 정보"
+        
+        
+        self.tabBarController?.tabBar.isHidden = true
+        MainTabBarController.actionButton.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
+        MainTabBarController.actionButton.isHidden = false
     }
 }
 

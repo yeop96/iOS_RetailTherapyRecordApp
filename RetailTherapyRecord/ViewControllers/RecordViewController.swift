@@ -43,9 +43,12 @@ class RecordViewController: UIViewController {
         subjectTextField.layer.borderWidth = 1.0
         subjectTextField.layer.cornerRadius = 10
         subjectTextField.layer.borderColor = UIColor.primary.cgColor
+        subjectTextField.addLeftPadding()
+        
         moneyTextField.layer.borderWidth = 1.0
         moneyTextField.layer.cornerRadius = 10
         moneyTextField.layer.borderColor = UIColor.primary.cgColor
+        moneyTextField.addLeftPadding()
         
         contentTextView.layer.borderWidth = 1.0
         contentTextView.layer.borderColor = UIColor.primary.cgColor

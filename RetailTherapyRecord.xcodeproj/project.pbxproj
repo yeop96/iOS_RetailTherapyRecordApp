@@ -46,6 +46,7 @@
 		277FDE932757E2920035C0B6 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277FDE922757E2920035C0B6 /* Setting.storyboard */; };
 		277FDE952757E2A40035C0B6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDE942757E2A40035C0B6 /* SettingViewController.swift */; };
 		277FDE9B2757EB880035C0B6 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 277FDE9A2757EB880035C0B6 /* TextFieldEffects */; };
+		277FDE9D2758129A0035C0B6 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDE9C2758129A0035C0B6 /* UITextField+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		277FDE902757D75D0035C0B6 /* greedy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greedy.png; sourceTree = "<group>"; };
 		277FDE922757E2920035C0B6 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		277FDE942757E2A40035C0B6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		277FDE9C2758129A0035C0B6 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				27604F3C274BE87600E7EABE /* DateFormatter+Extension.swift */,
 				277FDE8A275414960035C0B6 /* UILabel+Extension.swift */,
 				277FDE8E27576B7F0035C0B6 /* UIColor+Extension.swift */,
+				277FDE9C2758129A0035C0B6 /* UITextField+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				277FDE9D2758129A0035C0B6 /* UITextField+Extension.swift in Sources */,
 				277ED1552747FE240091C076 /* CalendarViewController.swift in Sources */,
 				277ED14D2746DA340091C076 /* CostModel.swift in Sources */,
 				27604F39274AE97D00E7EABE /* DatePickerViewController.swift in Sources */,
