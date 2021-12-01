@@ -40,6 +40,9 @@ class CalendarViewController: UIViewController {
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtonItem
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
+        
+        
         calendarView.headerHeight = 50
         calendarView.appearance.headerDateFormat = "YYYY년 M월"
         calendarView.appearance.headerTitleColor = .primary
@@ -92,6 +95,15 @@ class CalendarViewController: UIViewController {
     }
 
 
+    
+    //세팅 버튼 클릭시
+    @objc func settingButtonClicked(){
+        let storyboard = UIStoryboard(name: "Setting", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SettingViewController") as! SettingViewController
+        
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 
@@ -99,11 +111,7 @@ extension CalendarViewController : FSCalendarDelegate, FSCalendarDataSource, FSC
     
     //밑에 동그란 이벤트 표시
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-//        if self.events.contains(date){
-//            return 1
-//        } else {
-//            return 0
-//        }
+
         return 0
     }
     

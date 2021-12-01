@@ -42,6 +42,10 @@
 		277FDE8B275414970035C0B6 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDE8A275414960035C0B6 /* UILabel+Extension.swift */; };
 		277FDE8D2755A7BC0035C0B6 /* payment.png in Resources */ = {isa = PBXBuildFile; fileRef = 277FDE8C2755A7BC0035C0B6 /* payment.png */; };
 		277FDE8F27576B800035C0B6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDE8E27576B7F0035C0B6 /* UIColor+Extension.swift */; };
+		277FDE912757D75D0035C0B6 /* greedy.png in Resources */ = {isa = PBXBuildFile; fileRef = 277FDE902757D75D0035C0B6 /* greedy.png */; };
+		277FDE932757E2920035C0B6 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277FDE922757E2920035C0B6 /* Setting.storyboard */; };
+		277FDE952757E2A40035C0B6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDE942757E2A40035C0B6 /* SettingViewController.swift */; };
+		277FDE9B2757EB880035C0B6 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 277FDE9A2757EB880035C0B6 /* TextFieldEffects */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +78,9 @@
 		277FDE8A275414960035C0B6 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		277FDE8C2755A7BC0035C0B6 /* payment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = payment.png; sourceTree = "<group>"; };
 		277FDE8E27576B7F0035C0B6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		277FDE902757D75D0035C0B6 /* greedy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greedy.png; sourceTree = "<group>"; };
+		277FDE922757E2920035C0B6 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		277FDE942757E2A40035C0B6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +91,7 @@
 				277ED16027481A280091C076 /* JJFloatingActionButton in Frameworks */,
 				277ED1492746D34A0091C076 /* Realm in Frameworks */,
 				277ED1402746D2E10091C076 /* Toast in Frameworks */,
+				277FDE9B2757EB880035C0B6 /* TextFieldEffects in Frameworks */,
 				277ED14B2746D34A0091C076 /* RealmSwift in Frameworks */,
 				277ED1432746D2EE0091C076 /* IQKeyboardManagerSwift in Frameworks */,
 				277ED13D2746D2D10091C076 /* JGProgressHUD in Frameworks */,
@@ -114,6 +122,7 @@
 				27604F442752D45300E7EABE /* stressed.png */,
 				27604F432752D45300E7EABE /* rich.png */,
 				277FDE8C2755A7BC0035C0B6 /* payment.png */,
+				277FDE902757D75D0035C0B6 /* greedy.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -190,6 +199,8 @@
 				277ED156274805700091C076 /* RecordViewController.swift */,
 				27604F38274AE97D00E7EABE /* DatePickerViewController.swift */,
 				27604F3A274AE98D00E7EABE /* EmotionPickerViewController.swift */,
+				277FDE922757E2920035C0B6 /* Setting.storyboard */,
+				277FDE942757E2A40035C0B6 /* SettingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -219,6 +230,7 @@
 				277ED1482746D34A0091C076 /* Realm */,
 				277ED14A2746D34A0091C076 /* RealmSwift */,
 				277ED15F27481A280091C076 /* JJFloatingActionButton */,
+				277FDE9A2757EB880035C0B6 /* TextFieldEffects */,
 			);
 			productName = RetailTherapyRecord;
 			productReference = 277ED11B2746CDC00091C076 /* RetailTherapyRecord.app */;
@@ -256,6 +268,7 @@
 				277ED1442746D2FE0091C076 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				277ED1472746D34A0091C076 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				277ED15E27481A280091C076 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */,
+				277FDE992757EB880035C0B6 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 			);
 			productRefGroup = 277ED11C2746CDC00091C076 /* Products */;
 			projectDirPath = "";
@@ -271,12 +284,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				277FDE912757D75D0035C0B6 /* greedy.png in Resources */,
 				27604F482752D45300E7EABE /* sad.png in Resources */,
 				27604F4A2752D45300E7EABE /* stressed.png in Resources */,
 				27604F492752D45300E7EABE /* rich.png in Resources */,
 				277ED12B2746CDC40091C076 /* LaunchScreen.storyboard in Resources */,
 				27604F402752D28E00E7EABE /* smile.png in Resources */,
 				27604F4B2752D45300E7EABE /* angry.png in Resources */,
+				277FDE932757E2920035C0B6 /* Setting.storyboard in Resources */,
 				277ED1282746CDC40091C076 /* Assets.xcassets in Resources */,
 				277ED14F2747FDEA0091C076 /* List.storyboard in Resources */,
 				27604F4C2752D45300E7EABE /* cry.png in Resources */,
@@ -300,6 +315,7 @@
 				27604F39274AE97D00E7EABE /* DatePickerViewController.swift in Sources */,
 				277ED157274805700091C076 /* RecordViewController.swift in Sources */,
 				277ED15D274807B10091C076 /* MainTabBarController.swift in Sources */,
+				277FDE952757E2A40035C0B6 /* SettingViewController.swift in Sources */,
 				277ED11F2746CDC00091C076 /* AppDelegate.swift in Sources */,
 				277ED1532747FE140091C076 /* ListViewController.swift in Sources */,
 				277ED1212746CDC00091C076 /* SceneDelegate.swift in Sources */,
@@ -591,6 +607,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		277FDE992757EB880035C0B6 /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -633,6 +657,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 277ED15E27481A280091C076 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */;
 			productName = JJFloatingActionButton;
+		};
+		277FDE9A2757EB880035C0B6 /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 277FDE992757EB880035C0B6 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

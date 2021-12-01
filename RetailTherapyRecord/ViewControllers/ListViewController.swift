@@ -137,7 +137,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     
     //섹션 타이틀: titleForHeaderInSection
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return isFiltering() ? nil : dateArray[section]
+        return isFiltering() ? "검색결과" : dateArray[section]
     }
     
     //셀의 갯수: numberOfRowsInSection
