@@ -28,6 +28,13 @@ class ListViewController: UIViewController {
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         
+        self.navigationItem.title = "감정 소비"
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        backBarButtonItem.tintColor = .gray
+        self.navigationItem.backBarButtonItem = backBarButtonItem
+
+
+        
         emptyLabel.textAlignment = .center // 중앙 정렬.
         emptyLabel.text = "가운데 + 버튼을 통해 감정 소비를 기록해보세요!"
         emptyLabel.textColor = .brown
@@ -217,6 +224,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         vc.existingSubject = row.costSubject
         vc.existingMoeny = row.costMoney ?? ""
         vc.existingContent = row.costContent ?? ""
+        vc.taskUpdateRow = row // 수정할 친구 보내기
         
         
         self.navigationController?.pushViewController(vc, animated: true)
@@ -252,6 +260,10 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         alert.addAction(yesAction)
         alert.addAction(noAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "삭제"
     }
     
 }

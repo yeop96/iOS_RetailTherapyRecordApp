@@ -21,6 +21,7 @@ class RecordViewController: UIViewController {
     var existingContent = ""
     
     let localRealm = try! Realm()
+    var taskUpdateRow: CostList!
     
     @IBOutlet weak var dateButton: UIButton!
     @IBOutlet weak var emotionButton: UIButton!
@@ -53,7 +54,7 @@ class RecordViewController: UIViewController {
 
         }
         else{
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "확인", style: .plain, target: self, action: #selector(checkButtonClicked))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집", style: .plain, target: self, action: #selector(checkButtonClicked))
             subjectTextField.isEnabled = false
             moneyTextField.isEnabled = false
             contentTextView.isEditable = false
@@ -62,10 +63,11 @@ class RecordViewController: UIViewController {
             
             
             subjectTextField.text = existingSubject
-            moneyTextField.text = existingMoeny == "" ? " " : existingMoeny + "원"
+            moneyTextField.text = existingMoeny
             contentTextView.text = existingContent
             
             emotionButton.setTitle("표정", for: .normal)
+            
             
             self.tabBarController?.tabBar.isHidden = true
             MainTabBarController.actionButton.isHidden = true
@@ -87,9 +89,57 @@ class RecordViewController: UIViewController {
         MainTabBarController.actionButton.isHidden = false
     }
     
-    //우측 상단 확인버튼 클릭시
+    
+    //편집 버튼 클릭시
     @objc func checkButtonClicked(){
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(editSaveButtonClicked))
+        subjectTextField.isEnabled = true
+        moneyTextField.isEnabled = true
+        contentTextView.isEditable = true
+        dateButton.isEnabled = true
+        emotionButton.isEnabled = true
+    }
+    
+    //편집 저장 클릭시
+    @objc func editSaveButtonClicked(){
+    
+        //공백일 경우
+        guard let subject = subjectTextField.text else{ return }
+        if subject.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty{
+            self.view.makeToast("무엇을 소비했는지 써주세요!", duration: 3.0, position: .top)
+            return
+        }
+        
+        var content = contentTextView.text
+        if content == "감정 소비한 이유를 적어보세요 :)"{
+            content = ""
+        }
+        
+        //소비 금액이 숫자가 아닐 경우
+        if !moneyTextField.text!.isEmpty{
+            let pattern = "^[0-9]{0,}$"
+            let regex = try? NSRegularExpression(pattern: pattern)
+            guard let _ = regex?.firstMatch(in: moneyTextField.text!, options: [], range: NSRange(location: 0, length: moneyTextField.text!.count)) else{
+                self.view.makeToast("소비 금액은 숫자만 써주세요 :)", duration: 3.0, position: .top)
+                return
+            }
+        }
+        
+        //Realm 데이터 수정
+        let taskUpdate = taskUpdateRow!
+        try! self.localRealm.write {
+            taskUpdate.costSubject = subject
+            taskUpdate.costMoney = moneyTextField.text
+            taskUpdate.costContent = content
+            taskUpdate.costDate = selectDate
+            taskUpdate.costDateString = DateFormatter().connectDateFormatString(date: selectDate)
+            taskUpdate.costEmotion = selectEmotionInt
+        }
+        
+        
+        
         self.navigationController?.popViewController(animated: true)
+        
     }
     
     //우측 상단 완료버튼 클릭시
