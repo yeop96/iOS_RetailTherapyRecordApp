@@ -63,27 +63,39 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="102.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTb-mS-4FJ">
-                                        <rect key="frame" x="20" y="36" width="374" height="30"/>
+                                        <rect key="frame" x="20" y="38.5" width="374" height="25"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87s-ES-QHC">
-                                                <rect key="frame" x="0.0" y="0.0" width="197" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="25"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="2021년 12월 25일"/>
                                                 <connections>
                                                     <action selector="dateButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Psj-Yn-WfQ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTJ-T8-urG">
-                                                <rect key="frame" x="197" y="0.0" width="177" height="30"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="기분 이모지"/>
-                                                <connections>
-                                                    <action selector="emotionButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="x4e-vc-Gl4"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KaS-Cd-p4T">
+                                                <rect key="frame" x="187" y="0.0" width="187" height="25"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTJ-T8-urG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="152" height="25"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="감정 표정은 "/>
+                                                        <connections>
+                                                            <action selector="emotionButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="x4e-vc-Gl4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expressionless.png" translatesAutoresizingMaskIntoConstraints="NO" id="CcM-95-wqI">
+                                                        <rect key="frame" x="162" y="0.0" width="25" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="gGw-8t-Djg"/>
+                                                            <constraint firstAttribute="width" secondItem="CcM-95-wqI" secondAttribute="height" multiplier="1:1" id="qh1-Qy-RjR"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="PTJ-T8-urG" firstAttribute="width" secondItem="87s-ES-QHC" secondAttribute="width" multiplier="0.9" id="if5-lb-AVK"/>
+                                            <constraint firstItem="KaS-Cd-p4T" firstAttribute="width" secondItem="87s-ES-QHC" secondAttribute="width" id="2eD-hi-QnU"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -117,6 +129,7 @@
                         <outlet property="contentTextView" destination="NK8-7K-Ed4" id="UDb-zX-Fdh"/>
                         <outlet property="dateButton" destination="87s-ES-QHC" id="YNU-PE-q8l"/>
                         <outlet property="emotionButton" destination="PTJ-T8-urG" id="0hJ-Zs-EWr"/>
+                        <outlet property="emotionImageView" destination="CcM-95-wqI" id="LqL-YA-nOl"/>
                         <outlet property="moneyTextField" destination="Mfl-Vb-6C5" id="DRy-uo-tgl"/>
                         <outlet property="subjectTextField" destination="xIf-5h-8tb" id="uTC-2W-vwv"/>
                     </connections>
@@ -128,7 +141,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-12" y="246"/>
+            <point key="canvasLocation" x="-13.043478260869566" y="245.75892857142856"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="PPt-tf-UNI">
@@ -264,6 +277,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="expressionless.png" width="64" height="64"/>
         <systemColor name="placeholderTextColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

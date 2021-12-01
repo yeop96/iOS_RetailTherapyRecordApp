@@ -10,20 +10,22 @@ import JJFloatingActionButton //https://github.com/jjochen/JJFloatingActionButto
 
 class MainTabBarController: UITabBarController {
     
+    static let actionButton = JJFloatingActionButton() //플로팅 라이브러리
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addFloatingButton()
     }
-    
+
     func addFloatingButton(){
-        let actionButton = JJFloatingActionButton() //플로팅 라이브러리
+        //let actionButton = JJFloatingActionButton() //플로팅 라이브러리
         
-        actionButton.addTarget(self, action: #selector(self.addButtonAction(sender:)), for: UIControl.Event.touchUpInside)
-        actionButton.buttonColor = .lightGray //배경색
-        actionButton.buttonImageColor = .white //이미지
+        MainTabBarController.actionButton.addTarget(self, action: #selector(self.addButtonAction(sender:)), for: UIControl.Event.touchUpInside)
+        MainTabBarController.actionButton.buttonColor = .brown //배경색
+        MainTabBarController.actionButton.buttonImageColor = .white //이미지
         
-        self.view.addSubview(actionButton)
-        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(MainTabBarController.actionButton)
+        MainTabBarController.actionButton.translatesAutoresizingMaskIntoConstraints = false
         
         //탭바 높이
         let tabBarheight = self.tabBar.frame.size.height
@@ -33,9 +35,9 @@ class MainTabBarController: UITabBarController {
         //밑에 패딩
         let bottomConstant = tabBarheight/2 + bottomPadding
         //바닥에서 탭바 높이 만큼
-        NSLayoutConstraint(item: actionButton, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: -bottomConstant).isActive = true
+        NSLayoutConstraint(item: MainTabBarController.actionButton, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: -bottomConstant).isActive = true
         //x중앙배치
-        NSLayoutConstraint(item: actionButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: MainTabBarController.actionButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
         
         self.view.layoutIfNeeded() //즉시 적용 동기
     }

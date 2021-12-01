@@ -18,6 +18,8 @@ class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 80, height: 40))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -26,11 +28,32 @@ class ListViewController: UIViewController {
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         
+        emptyLabel.textAlignment = .center // 중앙 정렬.
+        emptyLabel.text = "가운데 + 버튼을 통해 감정 소비를 기록해보세요!"
+        emptyLabel.textColor = .brown
+        self.view.addSubview(emptyLabel)
+        emptyLabel.translatesAutoresizingMaskIntoConstraints = false
+        //x중앙배치
+        NSLayoutConstraint(item: emptyLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
+        //y중앙배치
+        NSLayoutConstraint(item: emptyLabel, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.0, constant: 0).isActive = true
+        self.view.layoutIfNeeded() //즉시 적용 동기
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tasks = localRealm.objects(CostList.self).sorted(byKeyPath: "costDate", ascending: false) // 최근 등록일 순
+        
+        
+        if tasks.isEmpty{
+            emptyLabel.isHidden = false
+        }
+        else{
+            emptyLabel.isHidden = true
+        }
+        
+        
         dateSet = Set<String>()
         tasks.forEach{
             dateSet.insert(DateFormatter().connectDateFormatString(date: $0.costDate))
@@ -111,9 +134,15 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     
     //셀의 갯수: numberOfRowsInSection
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //let taskFiltered = tasks.filter("costDateString == '\(dateArray[section])'")
-        //let taskSearched = tasks.filter("costSubject CONTAINS '\(searchController.searchBar.text!)' OR costContent CONTAINS '\(searchController.searchBar.text!)'")
-        return isFiltering() ? tasks.filter("costSubject CONTAINS '\(searchController.searchBar.text!)' OR costContent CONTAINS '\(searchController.searchBar.text!)'").count : tasks.filter("costDateString == '\(dateArray[section])'").count
+        
+        if isFiltering(){
+            let taskSearched = tasks.filter("costSubject CONTAINS '\(searchController.searchBar.text!)' OR costContent CONTAINS '\(searchController.searchBar.text!)'")
+            return taskSearched.count
+        } else{
+            let taskFiltered = tasks.filter("costDateString == '\(dateArray[section])'")
+            return taskFiltered.count
+        }
+        
     }
     
     //셀의 디자인 및 데이터 처리: cellForRowAt
@@ -188,6 +217,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         vc.existingSubject = row.costSubject
         vc.existingMoeny = row.costMoney ?? ""
         vc.existingContent = row.costContent ?? ""
+        
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

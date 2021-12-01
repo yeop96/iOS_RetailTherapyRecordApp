@@ -455,7 +455,7 @@
 				DEVELOPMENT_TEAM = VJUS985676;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RetailTherapyRecord/SupportFiles/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "감정소비";
+				INFOPLIST_KEY_CFBundleDisplayName = "감정 소비";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = MainTabBar;
@@ -486,7 +486,7 @@
 				DEVELOPMENT_TEAM = VJUS985676;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RetailTherapyRecord/SupportFiles/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "감정소비";
+				INFOPLIST_KEY_CFBundleDisplayName = "감정 소비";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = MainTabBar;
