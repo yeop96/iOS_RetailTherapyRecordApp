@@ -13,7 +13,7 @@ class SettingViewController: UIViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let settings = [["오픈소스 라이선스", ">"], ["문의하기",">"], ["앱 버전","1.0.0"]]
+    let settings = [["오픈소스 라이선스", ">"], ["문의하기",">"], ["앱 이야기", ">"] ,["앱 버전","1.0.0"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +80,15 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
             else {
                 self.showSendMailErrorAlert()
             }
+        }
+        else if indexPath.row == 2{
+            
+            guard let appleUrl = URL(string: "https://organic-shingle-94f.notion.site/d2081d949d094b93b325d730ec946033")   else { return }
+
+            let safariViewController = SFSafariViewController(url: appleUrl)
+            safariViewController.delegate = self
+            safariViewController.modalPresentationStyle = .automatic
+            self.present(safariViewController, animated: true, completion: nil)
         }
         
         

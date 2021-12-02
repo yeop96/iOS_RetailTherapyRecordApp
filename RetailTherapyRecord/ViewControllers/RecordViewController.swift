@@ -15,7 +15,7 @@ class RecordViewController: UIViewController {
     var selectDate = Date()
     var selectEmotionInt = 0
     var imageFileName = ["expressionless.png", "smile.png", "angry.png", "cry.png", "sad.png", "stressed.png", "rich.png"] // 이미지의 파일명을 저장할 배열
-        
+    let placeholderText = "감정 소비한 이야기를 적어보세요 :)"
     
     var existingSubject = ""
     var existingMoeny = ""
@@ -86,10 +86,10 @@ class RecordViewController: UIViewController {
             
             
             if contentTextView.text == ""{
-                contentTextView.text = "감정 소비한 이유를 적어보세요 :)"
+                contentTextView.text = placeholderText
                 contentTextView.textColor = .placeholderText
             }
-            else if contentTextView.text != "감정 소비한 이유를 적어보세요 :)"{
+            else if contentTextView.text != placeholderText{
                 contentTextView.textColor = .label
             }
             
@@ -137,7 +137,7 @@ class RecordViewController: UIViewController {
         }
         
         var content = contentTextView.text
-        if content == "감정 소비한 이유를 적어보세요 :)"{
+        if content == placeholderText{
             content = ""
         }
         
@@ -146,7 +146,12 @@ class RecordViewController: UIViewController {
             let pattern = "^[0-9]{0,}$"
             let regex = try? NSRegularExpression(pattern: pattern)
             guard let _ = regex?.firstMatch(in: moneyTextField.text!, options: [], range: NSRange(location: 0, length: moneyTextField.text!.count)) else{
-                self.view.makeToast("소비 금액은 숫자만 써주세요 :)", duration: 3.0, position: .top)
+                self.view.makeToast("금액은 숫자만 써주세요 :)", duration: 3.0, position: .top)
+                return
+            }
+            
+            if moneyTextField.text!.first == "0"{
+                self.view.makeToast("금액 앞에 0을 빼주세요 :)", duration: 3.0, position: .top)
                 return
             }
         }
@@ -177,8 +182,9 @@ class RecordViewController: UIViewController {
             self.view.makeToast("무엇을 소비했는지 써주세요!", duration: 3.0, position: .top)
             return
         }
+        
         var content = contentTextView.text
-        if content == "감정 소비한 이유를 적어보세요 :)"{
+        if content == placeholderText{
             content = ""
         }
         //소비 금액이 숫자가 아닐 경우
@@ -187,6 +193,11 @@ class RecordViewController: UIViewController {
             let regex = try? NSRegularExpression(pattern: pattern)
             guard let _ = regex?.firstMatch(in: moneyTextField.text!, options: [], range: NSRange(location: 0, length: moneyTextField.text!.count)) else{
                 self.view.makeToast("소비 금액은 숫자만 써주세요 :)", duration: 3.0, position: .top)
+                return
+            }
+            
+            if moneyTextField.text!.first == "0"{
+                self.view.makeToast("금액 앞에 0을 빼주세요 :)", duration: 3.0, position: .top)
                 return
             }
         }
@@ -270,7 +281,7 @@ extension RecordViewController: UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         let newLength = text.count + string.count - range.length
-        return newLength <= 20 // 숫자제한
+        return newLength <= 10 // 숫자제한
     }
 }
 
@@ -289,12 +300,12 @@ extension RecordViewController: UITextViewDelegate{
     
     
     func textViewSetupView(){
-        if contentTextView.text == "감정 소비한 이유를 적어보세요 :)"{
+        if contentTextView.text == placeholderText{
             contentTextView.text = ""
             contentTextView.textColor = .label
         }
         else if contentTextView.text == ""{
-            contentTextView.text = "감정 소비한 이유를 적어보세요 :)"
+            contentTextView.text = placeholderText
             contentTextView.textColor = .placeholderText
         }
     }

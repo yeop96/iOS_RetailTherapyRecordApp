@@ -85,7 +85,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="감정 소비한 이유를 적어보세요 :)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NK8-7K-Ed4">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="감정 소비한 이야기를 적어보세요 :)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NK8-7K-Ed4">
                                                         <rect key="frame" x="0.0" y="30.5" width="334" height="423.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <color key="textColor" systemColor="placeholderTextColor"/>
