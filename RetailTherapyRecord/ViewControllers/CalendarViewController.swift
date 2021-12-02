@@ -78,15 +78,15 @@ class CalendarViewController: UIViewController {
             guard let money = $0.costMoney else { return }
             cost += Int(money) ?? 0
         }
-        
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         let costs = numberFormatter.string(for: cost)!
         yearCostLabel.text = costs + "원"
         
+        //감정 소비 안한지 며칠인지 계산
         if !tasks.isEmpty{
-            let day = DateFormatter().DateFormatInt(date: Date()) - DateFormatter().DateFormatInt(date: tasks[0].costDate)
-            unCostDayLabel.text = "\(String(day))일"
+            let distanceDay = Calendar.current.dateComponents([.day], from: Date(), to: tasks[0].costDate).day
+            unCostDayLabel.text = "\(String(-distanceDay!))일"
         } else{
             unCostDayLabel.text = "아직 없음"
         }

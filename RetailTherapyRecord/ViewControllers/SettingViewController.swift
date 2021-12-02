@@ -9,7 +9,7 @@ import UIKit
 import SafariServices
 import MessageUI
 
-class SettingViewController: UIViewController {
+class SettingViewController: UIViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -58,9 +58,12 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0{
-            let licenseURL = NSURL(string: "https://organic-shingle-94f.notion.site/7ead3acad79c4a63a414ca9bc7711443")
-            let urlSafariView: SFSafariViewController = SFSafariViewController(url: licenseURL as! URL)
-            self.present(urlSafariView, animated: true, completion: nil)
+            guard let appleUrl = URL(string: "https://organic-shingle-94f.notion.site/7ead3acad79c4a63a414ca9bc7711443")   else { return }
+
+            let safariViewController = SFSafariViewController(url: appleUrl)
+            safariViewController.delegate = self
+            safariViewController.modalPresentationStyle = .automatic
+            self.present(safariViewController, animated: true, completion: nil)
             
         }
         else if indexPath.row == 1{
