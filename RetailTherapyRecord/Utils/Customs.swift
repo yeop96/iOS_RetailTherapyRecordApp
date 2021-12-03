@@ -9,17 +9,18 @@ import Foundation
 import UIKit
 import NotificationBannerSwift
 
+
 class CustomBannerColors: BannerColorsProtocol {
     internal func color(for style: BannerStyle) -> UIColor {
         switch style {
         case .danger:
             return .strawberryMilk
         case .info:
-            return .primary
+            return .strawberryMilk
         case .customView:
             return .clear
         case .success:
-            return .green
+            return .primary
         case .warning:
             return .strawberryMilk
         }

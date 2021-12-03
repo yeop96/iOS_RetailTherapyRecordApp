@@ -38,6 +38,8 @@ class RecordViewController: UIViewController {
         
         title = editRecordBool ? "나의 감정 소비" : "감정 소비 기록"
         
+        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont(name: "NanumBaReunHiPi", size: 21)!]
+        
         dateButton.setTitleColor(.primary, for: .disabled)
         subjectTextField.layer.borderWidth = 1.0
         subjectTextField.layer.cornerRadius = 10
@@ -54,10 +56,12 @@ class RecordViewController: UIViewController {
         contentTextView.layer.cornerRadius = 10
         contentTextView.textContainerInset = UIEdgeInsets(top: 10, left: 5, bottom: 0, right: 5)
         
+        contentTextView.font = UIFont().nanumFont15
         
         if !editRecordBool{
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(dismissAction))
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(saveButtonClicked))
+            navigationItem.rightBarButtonItem?.setTitleTextAttributes([.font: UIFont(name: "NanumBaReunHiPi", size: 21)!], for: .normal)
             
             //이미지 버튼 클릭 가능하게
             let emotionImageButton = UITapGestureRecognizer(target: self, action: #selector(emotionImageButtonClicked))
@@ -70,6 +74,8 @@ class RecordViewController: UIViewController {
         }
         else{
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집", style: .plain, target: self, action: #selector(checkButtonClicked))
+            navigationItem.rightBarButtonItem?.setTitleTextAttributes([.font: UIFont(name: "NanumBaReunHiPi", size: 21)!], for: .normal)
+            
             subjectTextField.isEnabled = false
             moneyTextField.isEnabled = false
             contentTextView.isEditable = false
@@ -132,6 +138,8 @@ class RecordViewController: UIViewController {
     //편집 버튼 클릭시
     @objc func checkButtonClicked(){
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(editSaveButtonClicked))
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([.font: UIFont(name: "NanumBaReunHiPi", size: 21)!], for: .normal)
+        
         subjectTextField.isEnabled = true
         moneyTextField.isEnabled = true
         contentTextView.isEditable = true
@@ -173,7 +181,7 @@ class RecordViewController: UIViewController {
                 return
             }
             
-            if moneyTextField.text!.first == "0"{
+            if moneyTextField.text!.first == "0" && moneyTextField.text! != "0"{
                 bannerShow("금액 앞에 0을 빼주세요 :)")
                 return
             }
@@ -220,7 +228,7 @@ class RecordViewController: UIViewController {
                 return
             }
             
-            if moneyTextField.text!.first == "0"{
+            if moneyTextField.text!.first == "0" && moneyTextField.text! != "0"{
                 bannerShow("금액 앞에 0을 빼주세요 :)")
                 return
             }
@@ -233,6 +241,7 @@ class RecordViewController: UIViewController {
         try! self.localRealm.write {
             self.localRealm.add(task)
         }
+        sucessBanner(selectEmotionInt, "감정 소비 +1")
         
         self.dismiss(animated: true, completion: nil)
         
@@ -246,6 +255,25 @@ class RecordViewController: UIViewController {
         let leftView = UIImageView(image: UIImage(named: "surprised")!)
         let banner = NotificationBanner(title: text, leftView: leftView, style: .info, colors: CustomBannerColors())
         banner.titleLabel?.textColor = .label
+        banner.titleLabel?.font = UIFont().nanumFont17
+        banner.duration = 3
+        banner.show()
+    }
+    
+    func sucessBanner(_ emotionSelected: Int, _ text: String){
+        let emotionImage: UIImage
+        
+        if let emotion = Expression(rawValue: emotionSelected) {
+            emotionImage = emotion.expressionEmoji()
+        }
+        else{
+            return
+        }
+        
+        let leftView = UIImageView(image: emotionImage)
+        let banner = NotificationBanner(title: text, leftView: leftView, style: .success, colors: CustomBannerColors())
+        banner.titleLabel?.textColor = .label
+        banner.titleLabel?.font = UIFont().nanumFont17
         banner.duration = 3
         banner.show()
     }
@@ -312,7 +340,7 @@ extension RecordViewController: UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         let newLength = text.count + string.count - range.length
-        return newLength <= 9 // 숫자제한
+        return newLength <= 10 // 숫자제한
     }
 }
 

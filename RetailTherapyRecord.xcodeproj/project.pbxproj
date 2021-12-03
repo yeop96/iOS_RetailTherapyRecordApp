@@ -50,6 +50,8 @@
 		277FDEA22759BD800035C0B6 /* wasted.png in Resources */ = {isa = PBXBuildFile; fileRef = 277FDEA12759BD7F0035C0B6 /* wasted.png */; };
 		277FDEA42759BE150035C0B6 /* surprised.png in Resources */ = {isa = PBXBuildFile; fileRef = 277FDEA32759BE150035C0B6 /* surprised.png */; };
 		277FDEA62759FDF50035C0B6 /* Customs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDEA52759FDF50035C0B6 /* Customs.swift */; };
+		277FDEA9275A9F380035C0B6 /* 나눔손글씨 바른히피.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 277FDEA8275A9F380035C0B6 /* 나눔손글씨 바른히피.ttf */; };
+		277FDEAB275AA3600035C0B6 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDEAA275AA3600035C0B6 /* UIFont+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		277FDEA12759BD7F0035C0B6 /* wasted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wasted.png; sourceTree = "<group>"; };
 		277FDEA32759BE150035C0B6 /* surprised.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surprised.png; sourceTree = "<group>"; };
 		277FDEA52759FDF50035C0B6 /* Customs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customs.swift; sourceTree = "<group>"; };
+		277FDEA8275A9F380035C0B6 /* 나눔손글씨 바른히피.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "나눔손글씨 바른히피.ttf"; sourceTree = "<group>"; };
+		277FDEAA275AA3600035C0B6 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,7 @@
 				277FDE8A275414960035C0B6 /* UILabel+Extension.swift */,
 				277FDE8E27576B7F0035C0B6 /* UIColor+Extension.swift */,
 				277FDE9C2758129A0035C0B6 /* UITextField+Extension.swift */,
+				277FDEAA275AA3600035C0B6 /* UIFont+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 		277ED1362746CF2A0091C076 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				277FDEA7275A9EF10035C0B6 /* Fonts */,
 				27604F3E2752D27600E7EABE /* Images */,
 				277ED11E2746CDC00091C076 /* AppDelegate.swift */,
 				277ED1202746CDC00091C076 /* SceneDelegate.swift */,
@@ -214,6 +220,14 @@
 				277FDE942757E2A40035C0B6 /* SettingViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		277FDEA7275A9EF10035C0B6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				277FDEA8275A9F380035C0B6 /* 나눔손글씨 바른히피.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +326,7 @@
 				27604F4C2752D45300E7EABE /* cry.png in Resources */,
 				27604F472752D45300E7EABE /* expressionless.png in Resources */,
 				277ED159274805820091C076 /* Record.storyboard in Resources */,
+				277FDEA9275A9F380035C0B6 /* 나눔손글씨 바른히피.ttf in Resources */,
 				277ED1512747FDFA0091C076 /* Calendar.storyboard in Resources */,
 				277ED1262746CDC00091C076 /* MainTabBar.storyboard in Resources */,
 			);
@@ -334,6 +349,7 @@
 				277FDE952757E2A40035C0B6 /* SettingViewController.swift in Sources */,
 				277ED11F2746CDC00091C076 /* AppDelegate.swift in Sources */,
 				277ED1532747FE140091C076 /* ListViewController.swift in Sources */,
+				277FDEAB275AA3600035C0B6 /* UIFont+Extension.swift in Sources */,
 				277ED1212746CDC00091C076 /* SceneDelegate.swift in Sources */,
 				277FDE8B275414970035C0B6 /* UILabel+Extension.swift in Sources */,
 				27604F3B274AE98D00E7EABE /* EmotionPickerViewController.swift in Sources */,

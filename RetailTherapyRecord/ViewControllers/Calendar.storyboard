@@ -9,6 +9,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="나눔손글씨 바른히피.ttf">
+            <string>NanumBaReunHiPi</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Calendar View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -71,19 +76,19 @@
                                         <rect key="frame" x="0.0" y="481" width="414" height="337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="haG-5I-0wF">
-                                                <rect key="frame" x="20" y="82.5" width="374" height="71"/>
+                                                <rect key="frame" x="20" y="82" width="374" height="72"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kaD-nU-PBQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="감정 소비 누적 비용" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3te-eH-Mmr">
-                                                                <rect key="frame" x="0.0" y="0.0" width="187" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="187" height="21"/>
+                                                                <fontDescription key="fontDescription" name="NanumBaReunHiPi" family="Nanum BaReunHiPi" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3X-03-mR2">
-                                                                <rect key="frame" x="187" y="0.0" width="187" height="20.5"/>
+                                                                <rect key="frame" x="187" y="0.0" width="187" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -94,16 +99,16 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tus-Ha-JrW">
-                                                        <rect key="frame" x="0.0" y="50.5" width="374" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="51" width="374" height="21"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="감정 소비 안 한 지" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gd-24-WpR">
-                                                                <rect key="frame" x="0.0" y="0.0" width="187" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="187" height="21"/>
+                                                                <fontDescription key="fontDescription" name="NanumBaReunHiPi" family="Nanum BaReunHiPi" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30일" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS6-Zq-NCK">
-                                                                <rect key="frame" x="187" y="0.0" width="187" height="20.5"/>
+                                                                <rect key="frame" x="187" y="0.0" width="187" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>

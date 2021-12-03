@@ -28,15 +28,18 @@ class ListViewController: UIViewController {
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         
+        self.navigationItem.title = "이야기"
+        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont(name: "NanumBaReunHiPi", size: 21)!]
         
-        self.navigationItem.title = "기록"
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtonItem
         
-
         
         emptyLabel.textAlignment = .center // 중앙 정렬.
-        emptyLabel.text = "가운데 + 버튼을 통해 감정 소비를 기록해보세요!"
+        emptyLabel.text = "가운데 + 버튼을 통해\n나만의 감정 소비를 기록해보세요!"
+        emptyLabel.numberOfLines = 2
+        emptyLabel.lineBreakMode = .byWordWrapping
+        emptyLabel.font = UIFont(name: "NanumBaReunHiPi", size: 18)
         emptyLabel.textColor = .primary
         self.view.addSubview(emptyLabel)
         emptyLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -73,6 +76,12 @@ class ListViewController: UIViewController {
     func searchBarSetting() -> UISearchController{
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = "검색"
+        
+        //uisearchbar custom font
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "NanumBaReunHiPi", size: 18)!, NSAttributedString.Key.foregroundColor: UIColor.gray]
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = attributes
+
+        
         searchController.searchBar.setValue("취소", forKey: "cancelButtonText")
         searchController.searchBar.tintColor = .primary
         searchController.searchBar.barTintColor = .primary
@@ -138,6 +147,12 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     //섹션 타이틀: titleForHeaderInSection
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return isFiltering() ? "검색결과" : dateArray[section]
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header : UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = .primary
+        header.textLabel?.font = UIFont().nanumFont12
     }
     
     //셀의 갯수: numberOfRowsInSection

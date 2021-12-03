@@ -9,6 +9,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="나눔손글씨 바른히피.ttf">
+            <string>NanumBaReunHiPi</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -19,23 +24,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tdi-SI-ct6">
-                                <rect key="frame" x="0.0" y="220.5" width="414" height="455"/>
+                                <rect key="frame" x="100" y="322.5" width="214" height="251.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="감정과 비용을 기록하다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-Yv-u6B">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나만의 감정 비용 이야기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-Yv-u6B">
+                                        <rect key="frame" x="0.0" y="0.0" width="214" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="NanumBaReunHiPi" family="Nanum BaReunHiPi" pointSize="15"/>
                                         <color key="textColor" name="primary"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greedy.png" translatesAutoresizingMaskIntoConstraints="NO" id="4wd-WX-bVV">
-                                        <rect key="frame" x="0.0" y="20.5" width="414" height="414"/>
+                                        <rect key="frame" x="0.0" y="17.5" width="214" height="214"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="4wd-WX-bVV" secondAttribute="height" multiplier="1:1" id="GjF-Cj-zGZ"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="감정 소비" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXb-Bf-Alv">
-                                        <rect key="frame" x="0.0" y="434.5" width="414" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="231.5" width="214" height="20"/>
+                                        <fontDescription key="fontDescription" name="NanumBaReunHiPi" family="Nanum BaReunHiPi" pointSize="17"/>
                                         <color key="textColor" name="primary"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -45,9 +50,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="tdi-SI-ct6" secondAttribute="trailing" id="JeC-0n-Ud8"/>
-                            <constraint firstItem="tdi-SI-ct6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OP1-3d-kbe"/>
-                            <constraint firstItem="tdi-SI-ct6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XEh-Cq-87t"/>
+                            <constraint firstItem="tdi-SI-ct6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="HLv-eL-dYT"/>
+                            <constraint firstAttribute="trailing" secondItem="tdi-SI-ct6" secondAttribute="trailing" constant="100" id="JeC-0n-Ud8"/>
+                            <constraint firstItem="tdi-SI-ct6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="XEh-Cq-87t"/>
                             <constraint firstItem="tdi-SI-ct6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="w9z-WR-bl8"/>
                         </constraints>
                     </view>

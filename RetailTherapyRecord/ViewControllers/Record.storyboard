@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="나눔손글씨 바른히피.ttf">
+            <string>NanumBaReunHiPi</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Record View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -31,13 +36,13 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20.5" id="pZ4-JK-08v"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <fontDescription key="fontDescription" name="NanumBaReunHiPi" family="Nanum BaReunHiPi" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="무엇에 소비하셨나요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-5h-8tb">
                                                         <rect key="frame" x="0.0" y="30.5" width="334" height="60"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="NanumBaReunHiPi" family="Nanum BaReunHiPi" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
@@ -56,13 +61,13 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20.5" id="IVZ-hl-PJa"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <fontDescription key="fontDescription" name="NanumBaReunHiPi" family="Nanum BaReunHiPi" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="얼마를 소비하셨나요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mfl-Vb-6C5">
                                                         <rect key="frame" x="0.0" y="30.5" width="334" height="60.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="NanumBaReunHiPi" family="Nanum BaReunHiPi" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                 </subviews>
@@ -81,7 +86,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20.5" id="FZ0-Pi-dQQ"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <fontDescription key="fontDescription" name="NanumBaReunHiPi" family="Nanum BaReunHiPi" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -89,7 +94,7 @@
                                                         <rect key="frame" x="0.0" y="30.5" width="334" height="423.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <color key="textColor" systemColor="placeholderTextColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="NanumBaReunHiPi" family="Nanum BaReunHiPi" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
@@ -129,6 +134,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87s-ES-QHC">
                                                 <rect key="frame" x="0.0" y="0.0" width="187" height="25"/>
+                                                <fontDescription key="fontDescription" name="NanumBaReunHiPi" family="Nanum BaReunHiPi" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="2021년 12월 25일"/>
                                                 <connections>
@@ -140,6 +146,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTJ-T8-urG">
                                                         <rect key="frame" x="0.0" y="0.0" width="152" height="25"/>
+                                                        <fontDescription key="fontDescription" name="NanumBaReunHiPi" family="Nanum BaReunHiPi" pointSize="17"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="감정 표정은 "/>
                                                         <connections>

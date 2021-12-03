@@ -24,6 +24,7 @@ class SettingViewController: UIViewController, SFSafariViewControllerDelegate {
         tableView.delegate = self
         
         title = "서비스 정보"
+        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont(name: "NanumBaReunHiPi", size: 21)!]
         
         
         self.tabBarController?.tabBar.isHidden = true
@@ -103,13 +104,15 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
                 let banner = NotificationBanner(title: "이제 그만..!", leftView: leftView, style: .warning, colors: CustomBannerColors())
                 
                 banner.titleLabel?.textColor = .label
+                banner.titleLabel?.font = UIFont().nanumFont17
                 banner.duration = 0.1
                 banner.show()
             }
             else{
-                let banner = NotificationBanner(title: "반가워엽 :)", leftView: leftView, style: .info, colors: CustomBannerColors())
+                let banner = NotificationBanner(title: "반가워엽 :)", leftView: leftView, style: .success, colors: CustomBannerColors())
                 
                 banner.titleLabel?.textColor = .label
+                banner.titleLabel?.font = UIFont().nanumFont17
                 banner.duration = 0.5
                 banner.show()
             }
@@ -143,4 +146,12 @@ class SettingListTableViewCell: UITableViewCell{
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var rightLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        titleLabel.font = UIFont().nanumFont17
+        rightLabel.font = UIFont().nanumFont17
+    }
+    
 }

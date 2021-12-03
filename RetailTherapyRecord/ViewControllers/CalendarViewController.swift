@@ -29,6 +29,10 @@ class CalendarViewController: UIViewController {
         calendarView.delegate = self
         calendarView.dataSource = self
         
+        yearCostLabel.font = UIFont().nanumFont17
+        unCostDayLabel.font = UIFont().nanumFont17
+        calendarExplainLabel.font = UIFont().nanumFont17
+        
         calendarView.appearance.eventDefaultColor = .primary
         calendarView.appearance.eventSelectionColor = .primary
         calendarView.allowsSelection = false
@@ -37,23 +41,28 @@ class CalendarViewController: UIViewController {
         //calendarView.appearance.titleTodayColor
         
         //calendarView.appearance.borderRadius = 0
-        self.navigationItem.title = "패턴"
+        self.navigationItem.title = "흔적"
+        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont(name: "NanumBaReunHiPi", size: 21)!]
+        
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtonItem
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
         
         
         calendarView.headerHeight = 50
         calendarView.appearance.headerDateFormat = "YYYY년 M월"
+        calendarView.appearance.headerTitleFont = UIFont().nanumFont24
         calendarView.appearance.headerTitleColor = .primary
-        calendarView.appearance.headerTitleFont = UIFont.systemFont(ofSize: 24)
 
         calendarView.appearance.weekdayTextColor = .label
+        calendarView.appearance.weekdayFont = UIFont().nanumFont17
         
         
         calendarView.appearance.titleWeekendColor = .strawberryMilk
         calendarView.appearance.titleDefaultColor = .label
+        calendarView.appearance.titleFont = UIFont().nanumFont17
+        calendarView.appearance.subtitleFont = UIFont().nanumFont12
         
         
 
@@ -96,6 +105,8 @@ class CalendarViewController: UIViewController {
             unCostDayLabel.text = "아직 없음"
         }
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
+        
         calendarView.reloadData()
     }
 
@@ -105,7 +116,6 @@ class CalendarViewController: UIViewController {
     @objc func settingButtonClicked(){
         let storyboard = UIStoryboard(name: "Setting", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "SettingViewController") as! SettingViewController
-        
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
