@@ -7,8 +7,7 @@
 
 import UIKit
 import RealmSwift
-import Toast
-import TextFieldEffects
+import NotificationBannerSwift
 
 class RecordViewController: UIViewController {
     var editRecordBool = false //셀에서 진입시 true, 추가 버튼에서 진입시 false
@@ -77,6 +76,9 @@ class RecordViewController: UIViewController {
             dateButton.isEnabled = false
             emotionButton.isEnabled = false
             
+            subjectTextField.backgroundColor = .myBack
+            moneyTextField.backgroundColor = .myBack
+            contentTextView.backgroundColor = .myBack
             
             subjectTextField.text = existingSubject
             moneyTextField.text = existingMoeny
@@ -124,6 +126,12 @@ class RecordViewController: UIViewController {
         dateButton.isEnabled = true
         emotionButton.isEnabled = true
         
+        
+        subjectTextField.backgroundColor = .clear
+        moneyTextField.backgroundColor = .clear
+        contentTextView.backgroundColor = .clear
+        
+        subjectTextField.becomeFirstResponder()
     }
     
     //편집 저장 클릭시
@@ -132,7 +140,7 @@ class RecordViewController: UIViewController {
         //공백일 경우
         guard let subject = subjectTextField.text else{ return }
         if subject.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty{
-            self.view.makeToast("무엇을 소비했는지 써주세요!", duration: 3.0, position: .top)
+            bannerShow("제목을 지우면 안돼요!")
             return
         }
         
@@ -146,12 +154,13 @@ class RecordViewController: UIViewController {
             let pattern = "^[0-9]{0,}$"
             let regex = try? NSRegularExpression(pattern: pattern)
             guard let _ = regex?.firstMatch(in: moneyTextField.text!, options: [], range: NSRange(location: 0, length: moneyTextField.text!.count)) else{
-                self.view.makeToast("금액은 숫자만 써주세요 :)", duration: 3.0, position: .top)
+                
+                bannerShow("금액은 숫자만 써주세요 :)")
                 return
             }
             
             if moneyTextField.text!.first == "0"{
-                self.view.makeToast("금액 앞에 0을 빼주세요 :)", duration: 3.0, position: .top)
+                bannerShow("금액 앞에 0을 빼주세요 :)")
                 return
             }
         }
@@ -179,7 +188,7 @@ class RecordViewController: UIViewController {
         //공백일 경우
         guard let subject = subjectTextField.text else{ return }
         if subject.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty{
-            self.view.makeToast("무엇을 소비했는지 써주세요!", duration: 3.0, position: .top)
+            bannerShow("제목은 써주세요 :)")
             return
         }
         
@@ -192,12 +201,13 @@ class RecordViewController: UIViewController {
             let pattern = "^[0-9]{0,}$"
             let regex = try? NSRegularExpression(pattern: pattern)
             guard let _ = regex?.firstMatch(in: moneyTextField.text!, options: [], range: NSRange(location: 0, length: moneyTextField.text!.count)) else{
-                self.view.makeToast("소비 금액은 숫자만 써주세요 :)", duration: 3.0, position: .top)
+                
+                bannerShow("금액은 숫자만 써주세요 :)")
                 return
             }
             
             if moneyTextField.text!.first == "0"{
-                self.view.makeToast("금액 앞에 0을 빼주세요 :)", duration: 3.0, position: .top)
+                bannerShow("금액 앞에 0을 빼주세요 :)")
                 return
             }
         }
@@ -218,6 +228,13 @@ class RecordViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func bannerShow(_ text: String){
+        let leftView = UIImageView(image: UIImage(named: "surprised")!)
+        let banner = NotificationBanner(title: text, leftView: leftView, style: .info, colors: CustomBannerColors())
+        banner.titleLabel?.textColor = .label
+        banner.duration = 3
+        banner.show()
+    }
     
     @IBAction func tapGestureAction(_ sender: UITapGestureRecognizer) {
         //키보드 내리기
@@ -281,9 +298,11 @@ extension RecordViewController: UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         let newLength = text.count + string.count - range.length
-        return newLength <= 10 // 숫자제한
+        return newLength <= 9 // 숫자제한
     }
 }
+
+
 
 // MARK: - UITextViewDelegate
 extension RecordViewController: UITextViewDelegate{

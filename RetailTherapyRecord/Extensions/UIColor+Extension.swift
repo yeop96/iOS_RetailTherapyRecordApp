@@ -17,4 +17,6 @@ extension UIColor {
     class var secondary: UIColor { return UIColor(named: "secondary")! }
     /// StrawberryMilk color
     class var strawberryMilk: UIColor { return UIColor(named: "strawberryMilk")! }
+    /// Background color
+    class var myBack: UIColor { return UIColor(named: "myBack")! }
 }

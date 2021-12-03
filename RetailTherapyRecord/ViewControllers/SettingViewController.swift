@@ -8,12 +8,15 @@
 import UIKit
 import SafariServices
 import MessageUI
+import NotificationBannerSwift
 
 class SettingViewController: UIViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
     let settings = [["오픈소스 라이선스", ">"], ["문의하기",">"], ["앱 이야기", ">"] ,["앱 버전","1.0.0"]]
+    
+    var clickCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +32,9 @@ class SettingViewController: UIViewController, SFSafariViewControllerDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         self.tabBarController?.tabBar.isHidden = false
         MainTabBarController.actionButton.isHidden = false
+        clickCount = 0
     }
 }
 
@@ -89,6 +92,31 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
             safariViewController.delegate = self
             safariViewController.modalPresentationStyle = .automatic
             self.present(safariViewController, animated: true, completion: nil)
+        }
+        else if indexPath.row == 3{
+            
+            let leftView = UIImageView(image: UIImage(named: "wasted")!)
+            
+            if clickCount > 10{
+                return
+            } else if clickCount > 5{
+                let banner = NotificationBanner(title: "이제 그만..!", leftView: leftView, style: .warning, colors: CustomBannerColors())
+                
+                banner.titleLabel?.textColor = .label
+                banner.duration = 0.1
+                banner.show()
+            }
+            else{
+                let banner = NotificationBanner(title: "반가워엽 :)", leftView: leftView, style: .info, colors: CustomBannerColors())
+                
+                banner.titleLabel?.textColor = .label
+                banner.duration = 0.5
+                banner.show()
+            }
+            
+            clickCount += 1
+            
+            
         }
         
         
