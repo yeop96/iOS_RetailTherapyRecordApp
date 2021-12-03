@@ -20,7 +20,8 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var yearCostLabel: UILabel!
     @IBOutlet weak var unCostDayLabel: UILabel!
-    
+    @IBOutlet weak var calendarExplainLabel: UILabel!
+    @IBOutlet weak var circleView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +58,11 @@ class CalendarViewController: UIViewController {
         
 
         calendarView.locale = Locale(identifier: "ko_KR")
-
+        
+        circleView.backgroundColor = .primary
+        circleView.layer.cornerRadius = circleView.frame.width / 2
+        circleView.alpha = 0.8
+        calendarExplainLabel.textColor = .placeholderText
 
     }
     

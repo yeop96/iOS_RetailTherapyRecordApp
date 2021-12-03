@@ -32,4 +32,6 @@ extension UILabel {
         str.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: NSRange(location: 0, length: text.count))
        self.attributedText = str
     }
+    
+    
 }

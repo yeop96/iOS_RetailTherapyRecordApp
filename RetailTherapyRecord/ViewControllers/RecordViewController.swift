@@ -81,7 +81,18 @@ class RecordViewController: UIViewController {
             contentTextView.backgroundColor = .myBack
             
             subjectTextField.text = existingSubject
-            moneyTextField.text = existingMoeny
+            
+            if existingMoeny == ""{
+                moneyTextField.text = existingMoeny
+            } else{
+                let numberFormatter = NumberFormatter()
+                numberFormatter.numberStyle = .decimal
+                let cost = numberFormatter.string(for: Int(existingMoeny)!)! + "원"
+                moneyTextField.text = cost
+            }
+            
+            
+            
             contentTextView.text = existingContent
             
             emotionButton.setTitle("표정", for: .normal)
@@ -117,6 +128,7 @@ class RecordViewController: UIViewController {
     }
     
     
+    
     //편집 버튼 클릭시
     @objc func checkButtonClicked(){
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(editSaveButtonClicked))
@@ -125,6 +137,8 @@ class RecordViewController: UIViewController {
         contentTextView.isEditable = true
         dateButton.isEnabled = true
         emotionButton.isEnabled = true
+        
+        moneyTextField.text = existingMoeny
         
         
         subjectTextField.backgroundColor = .clear

@@ -21,14 +21,21 @@ class DatePickerViewController: UIViewController {
         popUpView.layer.cornerRadius = 25
         popUpView.clipsToBounds = true
         
-        //maximumDate 0으로 하여 미래는 못 가게 하기
+        //데이트 피커 과거,미래 제한
         var components = DateComponents()
         components.day = 0
         let maxDate = Calendar.autoupdatingCurrent.date(byAdding: components, to: Date())
+        components.year = -100
+        let minDate = Calendar.autoupdatingCurrent.date(byAdding: components, to: Date())
+
         datePicker.maximumDate = maxDate
+        datePicker.minimumDate = minDate
         datePicker.date = selectDate
         datePicker.locale = Locale(identifier: "ko-KR")
         datePicker.addTarget(self, action: #selector(handleDatePicker(_:)), for: .valueChanged)
+        
+        datePicker.maximumDate = maxDate
+        datePicker.minimumDate = minDate
     }
     
     @objc private func handleDatePicker(_ sender: UIDatePicker) {
