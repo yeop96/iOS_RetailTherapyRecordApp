@@ -26,7 +26,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tdi-SI-ct6">
                                 <rect key="frame" x="100" y="322.5" width="214" height="251.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나만의 감정 비용 이야기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-Yv-u6B">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나만의 감정 비용 이야기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-Yv-u6B">
                                         <rect key="frame" x="0.0" y="0.0" width="214" height="17.5"/>
                                         <fontDescription key="fontDescription" name="NanumBaReunHiPi" family="Nanum BaReunHiPi" pointSize="15"/>
                                         <color key="textColor" name="primary"/>

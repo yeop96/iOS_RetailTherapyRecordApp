@@ -13,7 +13,7 @@ class EmotionPickerViewController: UIViewController {
     let PICKER_VIEW_COLUMN = 1 // 피커 뷰의 열의 갯수 지정
     let PICKER_VIEW_HEIGHT: CGFloat = 64 // 피커 뷰의 높이를 지정할 상수
     var imageArray = [UIImage?]()
-    var imageFileName = ["expressionless.png", "smile.png", "angry.png", "cry.png", "sad.png", "stressed.png", "rich.png"] // 이미지의 파일명을 저장할 배열
+    var imageFileName = ["rich.png", "smile.png", "angry.png", "cry.png", "sad.png", "yummy.png", "expressionless.png"] // 이미지의 파일명을 저장할 배열
     var selectEmotionInt = 0
     var saveActionHandler: (() -> Void)?
 

@@ -13,7 +13,7 @@ class RecordViewController: UIViewController {
     var editRecordBool = false //셀에서 진입시 true, 추가 버튼에서 진입시 false
     var selectDate = Date()
     var selectEmotionInt = 0
-    var imageFileName = ["expressionless.png", "smile.png", "angry.png", "cry.png", "sad.png", "stressed.png", "rich.png"] // 이미지의 파일명을 저장할 배열
+    var imageFileName = ["rich.png", "smile.png", "angry.png", "cry.png", "sad.png", "yummy.png", "expressionless.png"] // 이미지의 파일명을 저장할 배열
     let placeholderText = "감정 소비한 이야기를 적어보세요 :)"
     
     var existingSubject = ""
@@ -139,6 +139,11 @@ class RecordViewController: UIViewController {
     @objc func checkButtonClicked(){
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(editSaveButtonClicked))
         navigationItem.rightBarButtonItem?.setTitleTextAttributes([.font: UIFont(name: "NanumBaReunHiPi", size: 21)!], for: .normal)
+        
+        //이미지 버튼 클릭 가능하게
+        let emotionImageButton = UITapGestureRecognizer(target: self, action: #selector(emotionImageButtonClicked))
+        emotionImageView.isUserInteractionEnabled = true
+        emotionImageView.addGestureRecognizer(emotionImageButton)
         
         subjectTextField.isEnabled = true
         moneyTextField.isEnabled = true
