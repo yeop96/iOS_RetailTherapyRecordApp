@@ -343,9 +343,16 @@ class RecordViewController: UIViewController {
 
 extension RecordViewController: UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let text = textField.text else { return true }
-        let newLength = text.count + string.count - range.length
-        return newLength <= 10 // 숫자제한
+        if textField == moneyTextField{
+            guard let text = textField.text else { return true }
+            let newLength = text.count + string.count - range.length
+            return newLength <= 10 // 숫자제한
+        }
+        else{
+            guard let text = textField.text else { return true }
+            let newLength = text.count + string.count - range.length
+            return newLength <= 20 // 숫자제한
+        }
     }
 }
 

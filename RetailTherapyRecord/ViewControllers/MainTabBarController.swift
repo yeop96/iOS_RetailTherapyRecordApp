@@ -14,14 +14,14 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegate = self
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture))
-        swipeRight.direction = .right
-        self.view.addGestureRecognizer(swipeRight)
-        
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture))
-        swipeLeft.direction = .left
-        self.view.addGestureRecognizer(swipeLeft)
+        //delegate = self
+//        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture))
+//        swipeRight.direction = .right
+//        self.view.addGestureRecognizer(swipeRight)
+//
+//        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture))
+//        swipeLeft.direction = .left
+//        self.view.addGestureRecognizer(swipeLeft)
 
 
         addFloatingButton()
@@ -121,15 +121,15 @@ extension MainTabBarController: UITabBarControllerDelegate  {
                        initialSpringVelocity: 0,
                        options: .curveEaseOut,
                        animations: {
-                        // Slide the views by -offset
-                        fromView.center = CGPoint(x: fromView.center.x - offset, y: fromView.center.y)
-                        toView.center = CGPoint(x: toView.center.x - offset, y: toView.center.y)
-                        
-        }, completion: { finished in
-            // Remove the old view from the tabbar view.
-            fromView.removeFromSuperview()
-            self.selectedIndex = toIndex
-            self.view.isUserInteractionEnabled = true
+            // Slide the views by -offset
+            fromView.center = CGPoint(x: fromView.center.x - offset, y: fromView.center.y)
+            toView.center = CGPoint(x: toView.center.x - offset, y: toView.center.y)
+            
+            }, completion: { finished in
+                // Remove the old view from the tabbar view.
+                fromView.removeFromSuperview()
+                self.selectedIndex = toIndex
+                self.view.isUserInteractionEnabled = true
         })
     }
 }
