@@ -22,9 +22,6 @@
 		277ED1262746CDC00091C076 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277ED1242746CDC00091C076 /* MainTabBar.storyboard */; };
 		277ED1282746CDC40091C076 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 277ED1272746CDC40091C076 /* Assets.xcassets */; };
 		277ED12B2746CDC40091C076 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277ED1292746CDC40091C076 /* LaunchScreen.storyboard */; };
-		277ED13A2746D2C00091C076 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED1392746D2C00091C076 /* Zip */; };
-		277ED13D2746D2D10091C076 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED13C2746D2D10091C076 /* JGProgressHUD */; };
-		277ED1402746D2E10091C076 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED13F2746D2E10091C076 /* Toast */; };
 		277ED1432746D2EE0091C076 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED1422746D2EE0091C076 /* IQKeyboardManagerSwift */; };
 		277ED1462746D2FE0091C076 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED1452746D2FE0091C076 /* FSCalendar */; };
 		277ED1492746D34A0091C076 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 277ED1482746D34A0091C076 /* Realm */; };
@@ -43,7 +40,6 @@
 		277FDE912757D75D0035C0B6 /* greedy.png in Resources */ = {isa = PBXBuildFile; fileRef = 277FDE902757D75D0035C0B6 /* greedy.png */; };
 		277FDE932757E2920035C0B6 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277FDE922757E2920035C0B6 /* Setting.storyboard */; };
 		277FDE952757E2A40035C0B6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDE942757E2A40035C0B6 /* SettingViewController.swift */; };
-		277FDE9B2757EB880035C0B6 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 277FDE9A2757EB880035C0B6 /* TextFieldEffects */; };
 		277FDE9D2758129A0035C0B6 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDE9C2758129A0035C0B6 /* UITextField+Extension.swift */; };
 		277FDEA027599FDD0035C0B6 /* NotificationBannerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 277FDE9F27599FDD0035C0B6 /* NotificationBannerSwift */; };
 		277FDEA42759BE150035C0B6 /* surprised.png in Resources */ = {isa = PBXBuildFile; fileRef = 277FDEA32759BE150035C0B6 /* surprised.png */; };
@@ -101,14 +97,10 @@
 			files = (
 				277ED16027481A280091C076 /* JJFloatingActionButton in Frameworks */,
 				277ED1492746D34A0091C076 /* Realm in Frameworks */,
-				277ED1402746D2E10091C076 /* Toast in Frameworks */,
 				277FDEA027599FDD0035C0B6 /* NotificationBannerSwift in Frameworks */,
-				277FDE9B2757EB880035C0B6 /* TextFieldEffects in Frameworks */,
 				277ED14B2746D34A0091C076 /* RealmSwift in Frameworks */,
 				277ED1432746D2EE0091C076 /* IQKeyboardManagerSwift in Frameworks */,
-				277ED13D2746D2D10091C076 /* JGProgressHUD in Frameworks */,
 				277ED1462746D2FE0091C076 /* FSCalendar in Frameworks */,
-				277ED13A2746D2C00091C076 /* Zip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,15 +239,11 @@
 			);
 			name = RetailTherapyRecord;
 			packageProductDependencies = (
-				277ED1392746D2C00091C076 /* Zip */,
-				277ED13C2746D2D10091C076 /* JGProgressHUD */,
-				277ED13F2746D2E10091C076 /* Toast */,
 				277ED1422746D2EE0091C076 /* IQKeyboardManagerSwift */,
 				277ED1452746D2FE0091C076 /* FSCalendar */,
 				277ED1482746D34A0091C076 /* Realm */,
 				277ED14A2746D34A0091C076 /* RealmSwift */,
 				277ED15F27481A280091C076 /* JJFloatingActionButton */,
-				277FDE9A2757EB880035C0B6 /* TextFieldEffects */,
 				277FDE9F27599FDD0035C0B6 /* NotificationBannerSwift */,
 			);
 			productName = RetailTherapyRecord;
@@ -287,14 +275,10 @@
 			);
 			mainGroup = 277ED1122746CDC00091C076;
 			packageReferences = (
-				277ED1382746D2C00091C076 /* XCRemoteSwiftPackageReference "Zip" */,
-				277ED13B2746D2D10091C076 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
-				277ED13E2746D2E10091C076 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				277ED1412746D2EE0091C076 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				277ED1442746D2FE0091C076 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				277ED1472746D34A0091C076 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				277ED15E27481A280091C076 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */,
-				277FDE992757EB880035C0B6 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 				277FDE9E27599FDD0035C0B6 /* XCRemoteSwiftPackageReference "NotificationBanner" */,
 			);
 			productRefGroup = 277ED11C2746CDC00091C076 /* Products */;
@@ -503,7 +487,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.5;
+				CURRENT_PROJECT_VERSION = 1.0.8;
 				DEVELOPMENT_TEAM = VJUS985676;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RetailTherapyRecord/SupportFiles/Info.plist;
@@ -534,7 +518,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.5;
+				CURRENT_PROJECT_VERSION = 1.0.8;
 				DEVELOPMENT_TEAM = VJUS985676;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RetailTherapyRecord/SupportFiles/Info.plist;
@@ -583,30 +567,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		277ED1382746D2C00091C076 /* XCRemoteSwiftPackageReference "Zip" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/marmelroy/Zip.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-		277ED13B2746D2D10091C076 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-		277ED13E2746D2E10091C076 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		277ED1412746D2EE0091C076 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -639,14 +599,6 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		277FDE992757EB880035C0B6 /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		277FDE9E27599FDD0035C0B6 /* XCRemoteSwiftPackageReference "NotificationBanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Daltron/NotificationBanner.git";
@@ -658,21 +610,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		277ED1392746D2C00091C076 /* Zip */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 277ED1382746D2C00091C076 /* XCRemoteSwiftPackageReference "Zip" */;
-			productName = Zip;
-		};
-		277ED13C2746D2D10091C076 /* JGProgressHUD */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 277ED13B2746D2D10091C076 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
-			productName = JGProgressHUD;
-		};
-		277ED13F2746D2E10091C076 /* Toast */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 277ED13E2746D2E10091C076 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
-			productName = Toast;
-		};
 		277ED1422746D2EE0091C076 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 277ED1412746D2EE0091C076 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
@@ -697,11 +634,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 277ED15E27481A280091C076 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */;
 			productName = JJFloatingActionButton;
-		};
-		277FDE9A2757EB880035C0B6 /* TextFieldEffects */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 277FDE992757EB880035C0B6 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
-			productName = TextFieldEffects;
 		};
 		277FDE9F27599FDD0035C0B6 /* NotificationBannerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
