@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import SnapKit
 
 class ListViewController: UIViewController {
     let localRealm = try! Realm()
@@ -18,7 +19,17 @@ class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 80, height: 40))
+    //let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 80, height: 40))
+    let emptyLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center // 중앙 정렬.
+        label.text = "가운데 + 버튼을 통해\n나만의 감정 소비를 기록해보세요!"
+        label.numberOfLines = 2
+        label.lineBreakMode = .byWordWrapping
+        label.font = UIFont(name: "NanumBaReunHiPi", size: 18)
+        label.textColor = .primary
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,20 +45,10 @@ class ListViewController: UIViewController {
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtonItem
         
-        
-        emptyLabel.textAlignment = .center // 중앙 정렬.
-        emptyLabel.text = "가운데 + 버튼을 통해\n나만의 감정 소비를 기록해보세요!"
-        emptyLabel.numberOfLines = 2
-        emptyLabel.lineBreakMode = .byWordWrapping
-        emptyLabel.font = UIFont(name: "NanumBaReunHiPi", size: 18)
-        emptyLabel.textColor = .primary
-        self.view.addSubview(emptyLabel)
-        emptyLabel.translatesAutoresizingMaskIntoConstraints = false
-        //x중앙배치
-        NSLayoutConstraint(item: emptyLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
-        //y중앙배치
-        NSLayoutConstraint(item: emptyLabel, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.0, constant: 0).isActive = true
-        self.view.layoutIfNeeded() //즉시 적용 동기
+        view.addSubview(emptyLabel)
+        emptyLabel.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
         
     }
     

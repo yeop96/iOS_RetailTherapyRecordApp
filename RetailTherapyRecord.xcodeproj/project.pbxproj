@@ -280,6 +280,7 @@
 				277ED1472746D34A0091C076 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				277ED15E27481A280091C076 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */,
 				277FDE9E27599FDD0035C0B6 /* XCRemoteSwiftPackageReference "NotificationBanner" */,
+				27CF5358279343D5003F1DAA /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 277ED11C2746CDC00091C076 /* Products */;
 			projectDirPath = "";
@@ -605,6 +606,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 3.0.0;
+			};
+		};
+		27CF5358279343D5003F1DAA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
