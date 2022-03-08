@@ -19,7 +19,6 @@ class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    //let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 80, height: 40))
     let emptyLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center // 중앙 정렬.

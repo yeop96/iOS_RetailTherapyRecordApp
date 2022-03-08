@@ -17,6 +17,7 @@
 		27604F492752D45300E7EABE /* rich.png in Resources */ = {isa = PBXBuildFile; fileRef = 27604F432752D45300E7EABE /* rich.png */; };
 		27604F4B2752D45300E7EABE /* angry.png in Resources */ = {isa = PBXBuildFile; fileRef = 27604F452752D45300E7EABE /* angry.png */; };
 		27604F4C2752D45300E7EABE /* cry.png in Resources */ = {isa = PBXBuildFile; fileRef = 27604F462752D45300E7EABE /* cry.png */; };
+		2770B3CB2795E56000AF63A1 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2770B3CA2795E56000AF63A1 /* UITableViewCell+Extension.swift */; };
 		277ED11F2746CDC00091C076 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED11E2746CDC00091C076 /* AppDelegate.swift */; };
 		277ED1212746CDC00091C076 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277ED1202746CDC00091C076 /* SceneDelegate.swift */; };
 		277ED1262746CDC00091C076 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277ED1242746CDC00091C076 /* MainTabBar.storyboard */; };
@@ -46,6 +47,7 @@
 		277FDEA62759FDF50035C0B6 /* Customs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDEA52759FDF50035C0B6 /* Customs.swift */; };
 		277FDEA9275A9F380035C0B6 /* 나눔손글씨 바른히피.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 277FDEA8275A9F380035C0B6 /* 나눔손글씨 바른히피.ttf */; };
 		277FDEAB275AA3600035C0B6 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDEAA275AA3600035C0B6 /* UIFont+Extension.swift */; };
+		27B6296F27D7A2FE0040F59F /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6296E27D7A2FE0040F59F /* UserDefault.swift */; };
 		27DB47C1275AD2F5003BFDC7 /* wasted.png in Resources */ = {isa = PBXBuildFile; fileRef = 27DB47C0275AD2F5003BFDC7 /* wasted.png */; };
 		27DB47C3275BB868003BFDC7 /* yummy.png in Resources */ = {isa = PBXBuildFile; fileRef = 27DB47C2275BB868003BFDC7 /* yummy.png */; };
 /* End PBXBuildFile section */
@@ -61,6 +63,7 @@
 		27604F432752D45300E7EABE /* rich.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rich.png; sourceTree = "<group>"; };
 		27604F452752D45300E7EABE /* angry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = angry.png; sourceTree = "<group>"; };
 		27604F462752D45300E7EABE /* cry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cry.png; sourceTree = "<group>"; };
+		2770B3CA2795E56000AF63A1 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		277ED11B2746CDC00091C076 /* RetailTherapyRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RetailTherapyRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		277ED11E2746CDC00091C076 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		277ED1202746CDC00091C076 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 		277FDEA52759FDF50035C0B6 /* Customs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customs.swift; sourceTree = "<group>"; };
 		277FDEA8275A9F380035C0B6 /* 나눔손글씨 바른히피.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "나눔손글씨 바른히피.ttf"; sourceTree = "<group>"; };
 		277FDEAA275AA3600035C0B6 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		27B6296E27D7A2FE0040F59F /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		27DB47C0275AD2F5003BFDC7 /* wasted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wasted.png; sourceTree = "<group>"; };
 		27DB47C2275BB868003BFDC7 /* yummy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yummy.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +116,7 @@
 			children = (
 				275830132749584100CEE9FA /* Constants.swift */,
 				277FDEA52759FDF50035C0B6 /* Customs.swift */,
+				27B6296E27D7A2FE0040F59F /* UserDefault.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				277FDE8E27576B7F0035C0B6 /* UIColor+Extension.swift */,
 				277FDE9C2758129A0035C0B6 /* UITextField+Extension.swift */,
 				277FDEAA275AA3600035C0B6 /* UIFont+Extension.swift */,
+				2770B3CA2795E56000AF63A1 /* UITableViewCell+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -337,8 +343,10 @@
 				277FDEAB275AA3600035C0B6 /* UIFont+Extension.swift in Sources */,
 				277ED1212746CDC00091C076 /* SceneDelegate.swift in Sources */,
 				277FDE8B275414970035C0B6 /* UILabel+Extension.swift in Sources */,
+				2770B3CB2795E56000AF63A1 /* UITableViewCell+Extension.swift in Sources */,
 				27604F3B274AE98D00E7EABE /* EmotionPickerViewController.swift in Sources */,
 				277FDE8F27576B800035C0B6 /* UIColor+Extension.swift in Sources */,
+				27B6296F27D7A2FE0040F59F /* UserDefault.swift in Sources */,
 				27604F3D274BE87700E7EABE /* DateFormatter+Extension.swift in Sources */,
 				275830142749584100CEE9FA /* Constants.swift in Sources */,
 			);
