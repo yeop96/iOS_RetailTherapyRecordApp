@@ -14,11 +14,14 @@ extension UIFont{
     var nanumFont12: UIFont {
         return UIFont(name: "NanumBaReunHiPi", size: 12)!
     }
+    var nanumFont15: UIFont {
+        return UIFont(name: "NanumBaReunHiPi", size: 15)!
+    }
     var nanumFont17: UIFont {
         return UIFont(name: "NanumBaReunHiPi", size: 17)!
     }
-    var nanumFont15: UIFont {
-        return UIFont(name: "NanumBaReunHiPi", size: 15)!
+    var nanumFont18: UIFont {
+        return UIFont(name: "NanumBaReunHiPi", size: 18)!
     }
     var nanumFont21: UIFont {
         return UIFont(name: "NanumBaReunHiPi", size: 21)!

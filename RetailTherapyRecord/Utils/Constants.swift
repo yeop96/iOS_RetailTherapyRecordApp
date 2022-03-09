@@ -35,5 +35,9 @@ enum Expression : Int {
             return UIImage(named: "expressionless")!
         }
     }
-    
+}
+
+enum CustomUserFont: Int {
+    case base = 0
+    case nanum = 1
 }

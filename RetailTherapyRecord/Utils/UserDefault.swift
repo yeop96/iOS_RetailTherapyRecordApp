@@ -33,7 +33,12 @@ struct AppFirstLaunch {
     @UserDefault(key: keyEnum.isAppFirstLaunch.rawValue, defaultValue: true)
     static var isAppFirstLaunch: Bool
 }
+struct UserData {
+    @UserDefault(key: keyEnum.customUserFont.rawValue, defaultValue: CustomUserFont.nanum.rawValue)
+    static var customUserFont: Int
+}
 
 enum keyEnum: String {
     case isAppFirstLaunch = "isAppFirstLaunch"
+    case customUserFont = "customUserFont"
 }
