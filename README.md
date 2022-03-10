@@ -23,7 +23,7 @@
 |<img src="https://user-images.githubusercontent.com/48886490/157685009-6433c0d5-8008-4022-905f-7a99aad97eb5.png" width="200" height="430"/>|<img src="https://user-images.githubusercontent.com/48886490/157685006-945c85f6-d00d-42f0-8239-154b24bf2986.png" width="200" height="430"/>|
 
 |기록|표정|수정|
-|---|---|
+|---|---|---|
 |<img src="https://user-images.githubusercontent.com/48886490/157684993-1c3540bd-6d38-4381-8ff8-dab94c9967d8.png" width="200" height="430"/>|<img src="https://user-images.githubusercontent.com/48886490/157684999-9db4e04d-fc16-496d-93d0-b3883d18c165.png" width="200" height="430"/>|<img src="https://user-images.githubusercontent.com/48886490/157685010-7e28ec07-5c92-4915-8b60-468966e1e80c.png" width="200" height="430"/>|
 
 |검색|달력|
