@@ -18,7 +18,7 @@
 * 화이트, 다크 모드
 
 #### 화면
-|홈 리스트|
+|홈 화이트|홈 다크|
 |---|---|
 |<img src="https://user-images.githubusercontent.com/48886490/157685009-6433c0d5-8008-4022-905f-7a99aad97eb5.png" width="200" height="430"/>|<img src="https://user-images.githubusercontent.com/48886490/157685006-945c85f6-d00d-42f0-8239-154b24bf2986.png" width="200" height="430"/>|
 
