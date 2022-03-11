@@ -157,7 +157,7 @@ extension CalendarViewController : FSCalendarDelegate, FSCalendarDataSource, FSC
         switch formatter.string(from: date) {
             case formatter.string(from: Date()):
                 return "오늘"
-            case "2021-12-25":
+            case "2022-12-25":
                 return "크리스마스"
             default:
                 return nil

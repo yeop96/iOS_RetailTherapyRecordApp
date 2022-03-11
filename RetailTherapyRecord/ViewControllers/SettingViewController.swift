@@ -26,7 +26,7 @@ class SettingViewController: UIViewController, SFSafariViewControllerDelegate {
         title = "서비스 정보"
         self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().nanumFont21]
         
-        
+        self.tableView.tableFooterView = UIView()
         self.tabBarController?.tabBar.isHidden = true
         MainTabBarController.actionButton.isHidden = true
     }
