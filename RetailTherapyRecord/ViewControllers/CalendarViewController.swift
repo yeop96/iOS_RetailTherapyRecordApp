@@ -42,7 +42,7 @@ class CalendarViewController: UIViewController {
         
         //calendarView.appearance.borderRadius = 0
         self.navigationItem.title = "흔적"
-        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont(name: "NanumBaReunHiPi", size: 21)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().nanumFont21]
         
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtonItem

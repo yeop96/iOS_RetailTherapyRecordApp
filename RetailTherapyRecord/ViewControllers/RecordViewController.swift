@@ -38,7 +38,7 @@ class RecordViewController: UIViewController {
         
         title = editRecordBool ? "나의 감정 소비" : "감정 소비 기록"
         
-        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont(name: "NanumBaReunHiPi", size: 21)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().nanumFont21]
         
         dateButton.setTitleColor(.primary, for: .disabled)
         subjectTextField.layer.borderWidth = 1.0
@@ -61,7 +61,7 @@ class RecordViewController: UIViewController {
         if !editRecordBool{
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(dismissAction))
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(saveButtonClicked))
-            navigationItem.rightBarButtonItem?.setTitleTextAttributes([.font: UIFont(name: "NanumBaReunHiPi", size: 21)!], for: .normal)
+            navigationItem.rightBarButtonItem?.setTitleTextAttributes([.font: UIFont().nanumFont21], for: .normal)
             
             //이미지 버튼 클릭 가능하게
             let emotionImageButton = UITapGestureRecognizer(target: self, action: #selector(emotionImageButtonClicked))
@@ -74,7 +74,7 @@ class RecordViewController: UIViewController {
         }
         else{
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집", style: .plain, target: self, action: #selector(checkButtonClicked))
-            navigationItem.rightBarButtonItem?.setTitleTextAttributes([.font: UIFont(name: "NanumBaReunHiPi", size: 21)!], for: .normal)
+            navigationItem.rightBarButtonItem?.setTitleTextAttributes([.font: UIFont().nanumFont21], for: .normal)
             
             subjectTextField.isEnabled = false
             moneyTextField.isEnabled = false
@@ -138,7 +138,7 @@ class RecordViewController: UIViewController {
     //편집 버튼 클릭시
     @objc func checkButtonClicked(){
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(editSaveButtonClicked))
-        navigationItem.rightBarButtonItem?.setTitleTextAttributes([.font: UIFont(name: "NanumBaReunHiPi", size: 21)!], for: .normal)
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([.font: UIFont().nanumFont21], for: .normal)
         
         //이미지 버튼 클릭 가능하게
         let emotionImageButton = UITapGestureRecognizer(target: self, action: #selector(emotionImageButtonClicked))

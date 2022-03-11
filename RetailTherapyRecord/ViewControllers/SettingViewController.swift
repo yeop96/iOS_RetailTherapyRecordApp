@@ -24,7 +24,7 @@ class SettingViewController: UIViewController, SFSafariViewControllerDelegate {
         tableView.delegate = self
         
         title = "서비스 정보"
-        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont(name: "NanumBaReunHiPi", size: 21)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().nanumFont21]
         
         
         self.tabBarController?.tabBar.isHidden = true

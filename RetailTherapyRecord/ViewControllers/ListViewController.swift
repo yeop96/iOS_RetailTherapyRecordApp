@@ -25,7 +25,7 @@ class ListViewController: UIViewController {
         label.text = "가운데 + 버튼을 통해\n나만의 감정 소비를 기록해보세요!"
         label.numberOfLines = 2
         label.lineBreakMode = .byWordWrapping
-        label.font = UIFont(name: "NanumBaReunHiPi", size: 18)
+        label.font = UIFont().nanumFont18
         label.textColor = .primary
         return label
     }()
@@ -39,7 +39,7 @@ class ListViewController: UIViewController {
         searchController.searchResultsUpdater = self
         
         self.navigationItem.title = "이야기"
-        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont(name: "NanumBaReunHiPi", size: 21)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().nanumFont21]
         
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtonItem
@@ -78,7 +78,7 @@ class ListViewController: UIViewController {
         searchController.searchBar.placeholder = "검색"
         
         //uisearchbar custom font
-        let attributes = [NSAttributedString.Key.font: UIFont(name: "NanumBaReunHiPi", size: 18)!, NSAttributedString.Key.foregroundColor: UIColor.gray]
+        let attributes = [NSAttributedString.Key.font: UIFont().nanumFont18, NSAttributedString.Key.foregroundColor: UIColor.gray]
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = attributes
 
         
