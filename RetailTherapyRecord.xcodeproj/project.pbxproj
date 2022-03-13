@@ -48,6 +48,7 @@
 		277FDEA9275A9F380035C0B6 /* 나눔손글씨 바른히피.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 277FDEA8275A9F380035C0B6 /* 나눔손글씨 바른히피.ttf */; };
 		277FDEAB275AA3600035C0B6 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDEAA275AA3600035C0B6 /* UIFont+Extension.swift */; };
 		27B6296F27D7A2FE0040F59F /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6296E27D7A2FE0040F59F /* UserDefault.swift */; };
+		27C256CA27DE38EC00BB3164 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C256C927DE38EC00BB3164 /* UIAlertController+Extension.swift */; };
 		27DB47C1275AD2F5003BFDC7 /* wasted.png in Resources */ = {isa = PBXBuildFile; fileRef = 27DB47C0275AD2F5003BFDC7 /* wasted.png */; };
 		27DB47C3275BB868003BFDC7 /* yummy.png in Resources */ = {isa = PBXBuildFile; fileRef = 27DB47C2275BB868003BFDC7 /* yummy.png */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		277FDEA8275A9F380035C0B6 /* 나눔손글씨 바른히피.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "나눔손글씨 바른히피.ttf"; sourceTree = "<group>"; };
 		277FDEAA275AA3600035C0B6 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		27B6296E27D7A2FE0040F59F /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		27C256C927DE38EC00BB3164 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		27DB47C0275AD2F5003BFDC7 /* wasted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wasted.png; sourceTree = "<group>"; };
 		27DB47C2275BB868003BFDC7 /* yummy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yummy.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +177,7 @@
 				277FDE9C2758129A0035C0B6 /* UITextField+Extension.swift */,
 				277FDEAA275AA3600035C0B6 /* UIFont+Extension.swift */,
 				2770B3CA2795E56000AF63A1 /* UITableViewCell+Extension.swift */,
+				27C256C927DE38EC00BB3164 /* UIAlertController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				27604F39274AE97D00E7EABE /* DatePickerViewController.swift in Sources */,
 				277ED157274805700091C076 /* RecordViewController.swift in Sources */,
 				277ED15D274807B10091C076 /* MainTabBarController.swift in Sources */,
+				27C256CA27DE38EC00BB3164 /* UIAlertController+Extension.swift in Sources */,
 				277FDEA62759FDF50035C0B6 /* Customs.swift in Sources */,
 				277FDE952757E2A40035C0B6 /* SettingViewController.swift in Sources */,
 				277ED11F2746CDC00091C076 /* AppDelegate.swift in Sources */,
