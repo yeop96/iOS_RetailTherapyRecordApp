@@ -36,10 +36,6 @@ class EmotionPickerViewController: UIViewController {
             // 생성된 이미지를 imageArray에 추가
             imageArray.append(image)
         }
-        // 뷰가 로드되었을 때 첫번째 파일명 출력
-//        lblImageFileName.text = imageFileName[0]
-//        // 뷰가 로드되었을 때 첫번째 이미지 출력
-//        imageView.image = imageArray[0]
     }
     
 
@@ -71,10 +67,6 @@ extension EmotionPickerViewController: UIPickerViewDelegate, UIPickerViewDataSou
         return imageFileName.count
     }
 
-    // 피커 뷰의 각 Row의 타이틀 설정
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return imageFileName[row]
-//    }
 
     // 피커 뷰의 각 Row의 view 설정
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView{
