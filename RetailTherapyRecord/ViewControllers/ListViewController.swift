@@ -261,6 +261,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         
         
         let alert = UIAlertController(title: row.costSubject, message: "기록을 삭제해도 되나요?", preferredStyle: .alert)
+        alert.setTitle(font: UIFont().nanumFont21, color: .label)
+        alert.setMessage(font: UIFont().nanumFont17, color: .strawberryMilk)
         let yesAction = UIAlertAction(title: "예", style: .default){ (action) in
             
             try! self.localRealm.write{
@@ -273,6 +275,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         let noAction = UIAlertAction(title: "아니오", style: .cancel){ (action) in
             return
         }
+        yesAction.setValue(UIColor.strawberryMilk, forKey: "titleTextColor")
+        noAction.setValue(UIColor.label, forKey: "titleTextColor")
         alert.addAction(yesAction)
         alert.addAction(noAction)
         present(alert, animated: true, completion: nil)
