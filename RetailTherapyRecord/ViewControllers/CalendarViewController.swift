@@ -39,7 +39,6 @@ class CalendarViewController: UIViewController {
         calendarView.today = nil
         //calendarView.appearance.todayColor
         //calendarView.appearance.titleTodayColor
-        
         //calendarView.appearance.borderRadius = 0
         self.navigationItem.title = "흔적"
         self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().nanumFont21]
@@ -48,7 +47,6 @@ class CalendarViewController: UIViewController {
         self.navigationItem.backBarButtonItem = backBarButtonItem
         
         //navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
-        
         
         calendarView.headerHeight = 50
         calendarView.appearance.headerDateFormat = "YYYY년 M월"
@@ -98,11 +96,11 @@ class CalendarViewController: UIViewController {
         yearCostLabel.text = costs + "원"
         
         //감정 소비 안한지 며칠인지 계산
-        if !tasks.isEmpty{
+        if tasks.isEmpty{
+            unCostDayLabel.text = "아직 없음"
+        } else{
             let distanceDay = Calendar.current.dateComponents([.day], from: Date(), to: tasks[0].costDate).day
             unCostDayLabel.text = "\(String(-distanceDay!))일"
-        } else{
-            unCostDayLabel.text = "아직 없음"
         }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
@@ -126,7 +124,6 @@ extension CalendarViewController : FSCalendarDelegate, FSCalendarDataSource, FSC
     
     //밑에 동그란 이벤트 표시
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-
         return 0
     }
     
