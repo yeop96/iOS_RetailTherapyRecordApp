@@ -19,6 +19,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Firebase 초기화, 공유 인스턴스 생성
         FirebaseApp.configure()
+        
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.titleTextAttributes = [.font : UIFont().nanumFont21]
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        }
+
+        if #available(iOS 15, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            UITabBar.appearance().standardAppearance = appearance
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+        }
     
         UIImageView.appearance().backgroundColor = .clear
         UITableView.appearance().backgroundColor = .clear
@@ -30,9 +45,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UISearchBar.appearance().tintColor = .primary
         UITabBar.appearance().tintColor = .primary
         UIButton.appearance().tintColor = .primary
-
+        
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.label, .font: UIFont().nanumFont21]
 
         IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
         
         return true
     }
