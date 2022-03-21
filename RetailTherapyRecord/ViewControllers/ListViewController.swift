@@ -264,10 +264,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         alert.setTitle(font: UIFont().nanumFont21, color: .label)
         alert.setMessage(font: UIFont().nanumFont17, color: .strawberryMilk)
         let yesAction = UIAlertAction(title: "예", style: .default){ (action) in
-            
             try! self.localRealm.write{
                 self.localRealm.delete(row)
-                
                 self.viewWillAppear(true)
             }
             return
