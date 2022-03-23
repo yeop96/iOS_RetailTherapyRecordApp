@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		060602FD2031B3C7BD1203E7 /* Pods_RetailTherapyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9C06B8260F11ED587A1429 /* Pods_RetailTherapyRecord.framework */; };
+		27353A4227EB893E00B6D834 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27353A4027EB893D00B6D834 /* NotoSansCJKkr-Regular.otf */; };
+		27353A4327EB893E00B6D834 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27353A4127EB893E00B6D834 /* NotoSansCJKkr-Medium.otf */; };
 		275830142749584100CEE9FA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275830132749584100CEE9FA /* Constants.swift */; };
 		27604F39274AE97D00E7EABE /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27604F38274AE97D00E7EABE /* DatePickerViewController.swift */; };
 		27604F3B274AE98D00E7EABE /* EmotionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27604F3A274AE98D00E7EABE /* EmotionPickerViewController.swift */; };
@@ -56,6 +58,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27353A4027EB893D00B6D834 /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		27353A4127EB893E00B6D834 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		275830132749584100CEE9FA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		27604F38274AE97D00E7EABE /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		27604F3A274AE98D00E7EABE /* EmotionPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionPickerViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 		277FDEA7275A9EF10035C0B6 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				27353A4127EB893E00B6D834 /* NotoSansCJKkr-Medium.otf */,
+				27353A4027EB893D00B6D834 /* NotoSansCJKkr-Regular.otf */,
 				277FDEA8275A9F380035C0B6 /* 나눔손글씨 바른히피.ttf */,
 			);
 			path = Fonts;
@@ -340,8 +346,10 @@
 				27604F482752D45300E7EABE /* sad.png in Resources */,
 				27604F492752D45300E7EABE /* rich.png in Resources */,
 				277ED12B2746CDC40091C076 /* LaunchScreen.storyboard in Resources */,
+				27353A4227EB893E00B6D834 /* NotoSansCJKkr-Regular.otf in Resources */,
 				27604F402752D28E00E7EABE /* smile.png in Resources */,
 				27604F4B2752D45300E7EABE /* angry.png in Resources */,
+				27353A4327EB893E00B6D834 /* NotoSansCJKkr-Medium.otf in Resources */,
 				277FDE932757E2920035C0B6 /* Setting.storyboard in Resources */,
 				277ED1282746CDC40091C076 /* Assets.xcassets in Resources */,
 				27DB47C3275BB868003BFDC7 /* yummy.png in Resources */,
