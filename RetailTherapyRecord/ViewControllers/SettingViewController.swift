@@ -14,7 +14,7 @@ class SettingViewController: UIViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let settings = [["오픈소스 라이선스", ">"], ["문의하기",">"], ["앱 이야기", ">"] ,["앱 버전","1.0.0"]]
+    let settings = [["오픈소스 라이선스", ">"], ["문의하기",">"], ["앱 이야기", ">"] ,["앱 버전","1.0.5"]]
     
     var clickCount = 0
     
