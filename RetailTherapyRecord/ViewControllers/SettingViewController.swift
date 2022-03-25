@@ -138,6 +138,13 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
         sendMailErrorAlert.addAction(confirmAction)
         self.present(sendMailErrorAlert, animated: true, completion: nil)
     }
+    
+    func requestReviewmenually(id: String) { //app store connect의 앱정보에서 apple id를 확인한다
+        guard let writeReviewURL = URL(string: "https://apps.apple.com/app/id\(id)?action=write-review")
+        else { return }
+        UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
+    }
+
 
 }
 
@@ -155,3 +162,4 @@ class SettingListTableViewCell: UITableViewCell{
     }
     
 }
+
