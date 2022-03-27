@@ -3,7 +3,7 @@
 
 [감정소비 앱스토어](https://apps.apple.com/kr/app/감정-소비-나만의-감정-비용-다이어리/id1596845646)
 
-[개발 노트](https://yeop96.tistory.com/)
+[개발 노트](https://yeop96.tistory.com/) 
 
 #### 기술스택
 |적용|기술|
