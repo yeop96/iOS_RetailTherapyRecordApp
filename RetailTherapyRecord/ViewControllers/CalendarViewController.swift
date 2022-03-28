@@ -105,6 +105,7 @@ class CalendarViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
         
+        
         calendarView.reloadData()
     }
 
