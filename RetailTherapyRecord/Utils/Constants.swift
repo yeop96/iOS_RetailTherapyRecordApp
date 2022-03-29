@@ -38,6 +38,7 @@ enum Expression : Int {
 }
 
 enum CustomUserFont: Int {
-    case base = 0
-    case nanum = 1
+    case nanum = 0
+    case base = 1
+    case noto = 2
 }

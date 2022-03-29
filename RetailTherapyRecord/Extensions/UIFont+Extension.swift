@@ -71,3 +71,37 @@ extension UIFont{
         return UIFont(name: "NotoSansCJKkr-Regular", size: 10)!
     }
 }
+
+extension UIFont{
+    var customFont12: UIFont {
+        customFontSize(fontSize: 12)
+    }
+    var customFont15: UIFont {
+        customFontSize(fontSize: 15)
+    }
+    var customFont17: UIFont {
+        customFontSize(fontSize: 17)
+    }
+    var customFont18: UIFont {
+        customFontSize(fontSize: 18)
+    }
+    var customFont21: UIFont {
+        customFontSize(fontSize: 21)
+    }
+    var customFont24: UIFont {
+        customFontSize(fontSize: 24)
+    }
+}
+
+func customFontSize(fontSize: CGFloat) -> UIFont{
+    switch UserData.customUserFont {
+    case CustomUserFont.nanum.rawValue:
+        return UIFont(name: "NanumBaReunHiPi", size: fontSize)!
+    case CustomUserFont.base.rawValue:
+        return UIFont.systemFont(ofSize: fontSize)
+    case CustomUserFont.noto.rawValue:
+        return UIFont(name: "NotoSansCJKkr-Regular", size: fontSize)!
+    default:
+        return UIFont(name: "NanumBaReunHiPi", size: fontSize)!
+    }
+}
