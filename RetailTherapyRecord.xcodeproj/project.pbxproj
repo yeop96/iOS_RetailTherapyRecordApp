@@ -55,6 +55,8 @@
 		27C256CC27E24C5900BB3164 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27C256CB27E24C5800BB3164 /* GoogleService-Info.plist */; };
 		27DB47C1275AD2F5003BFDC7 /* wasted.png in Resources */ = {isa = PBXBuildFile; fileRef = 27DB47C0275AD2F5003BFDC7 /* wasted.png */; };
 		27DB47C3275BB868003BFDC7 /* yummy.png in Resources */ = {isa = PBXBuildFile; fileRef = 27DB47C2275BB868003BFDC7 /* yummy.png */; };
+		27E894A427F5B6AC004FCAC7 /* FontSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E894A327F5B6AC004FCAC7 /* FontSetting.storyboard */; };
+		27E894A627F5B6C2004FCAC7 /* FontSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E894A527F5B6C2004FCAC7 /* FontSettingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +103,8 @@
 		27C256CB27E24C5800BB3164 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		27DB47C0275AD2F5003BFDC7 /* wasted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wasted.png; sourceTree = "<group>"; };
 		27DB47C2275BB868003BFDC7 /* yummy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yummy.png; sourceTree = "<group>"; };
+		27E894A327F5B6AC004FCAC7 /* FontSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FontSetting.storyboard; sourceTree = "<group>"; };
+		27E894A527F5B6C2004FCAC7 /* FontSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSettingController.swift; sourceTree = "<group>"; };
 		3A8BFD90383030CCCC11E818 /* Pods-RetailTherapyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RetailTherapyRecord.debug.xcconfig"; path = "Target Support Files/Pods-RetailTherapyRecord/Pods-RetailTherapyRecord.debug.xcconfig"; sourceTree = "<group>"; };
 		7EC50275801E73B38BD85FBA /* Pods-RetailTherapyRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RetailTherapyRecord.release.xcconfig"; path = "Target Support Files/Pods-RetailTherapyRecord/Pods-RetailTherapyRecord.release.xcconfig"; sourceTree = "<group>"; };
 		AD9C06B8260F11ED587A1429 /* Pods_RetailTherapyRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RetailTherapyRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,6 +237,8 @@
 				27604F3A274AE98D00E7EABE /* EmotionPickerViewController.swift */,
 				277FDE922757E2920035C0B6 /* Setting.storyboard */,
 				277FDE942757E2A40035C0B6 /* SettingViewController.swift */,
+				27E894A327F5B6AC004FCAC7 /* FontSetting.storyboard */,
+				27E894A527F5B6C2004FCAC7 /* FontSettingController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 				277ED159274805820091C076 /* Record.storyboard in Resources */,
 				277FDEA9275A9F380035C0B6 /* 나눔손글씨 바른히피.ttf in Resources */,
 				277ED1512747FDFA0091C076 /* Calendar.storyboard in Resources */,
+				27E894A427F5B6AC004FCAC7 /* FontSetting.storyboard in Resources */,
 				277ED1262746CDC00091C076 /* MainTabBar.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +454,7 @@
 				277FDEAB275AA3600035C0B6 /* UIFont+Extension.swift in Sources */,
 				277ED1212746CDC00091C076 /* SceneDelegate.swift in Sources */,
 				277FDE8B275414970035C0B6 /* UILabel+Extension.swift in Sources */,
+				27E894A627F5B6C2004FCAC7 /* FontSettingController.swift in Sources */,
 				2770B3CB2795E56000AF63A1 /* UITableViewCell+Extension.swift in Sources */,
 				27604F3B274AE98D00E7EABE /* EmotionPickerViewController.swift in Sources */,
 				277FDE8F27576B800035C0B6 /* UIColor+Extension.swift in Sources */,

@@ -14,8 +14,11 @@ class SettingViewController: UIViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let settings = [["오픈소스 라이선스", ">"], ["문의하기",">"], ["앱 이야기", ">"] ,["앱 버전","1.0.5"]]
-    
+    let settings = [["오픈소스 라이선스", ">"],
+                    ["문의하기",">"],
+                    ["앱 이야기", ">"],
+                    ["나의 글씨체", ">"],
+                    ["앱 버전","1.0.5"]]
     var clickCount = 0
     
     override func viewDidLoad() {
@@ -61,18 +64,18 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //오픈소스 라이선스
         if indexPath.row == 0{
             guard let appleUrl = URL(string: "https://organic-shingle-94f.notion.site/7ead3acad79c4a63a414ca9bc7711443")   else { return }
-
             let safariViewController = SFSafariViewController(url: appleUrl)
             safariViewController.delegate = self
             safariViewController.modalPresentationStyle = .automatic
             self.present(safariViewController, animated: true, completion: nil)
             
         }
+        //문의하기
         else if indexPath.row == 1{
             if MFMailComposeViewController.canSendMail() {
-                        
                 let compseVC = MFMailComposeViewController()
                 compseVC.mailComposeDelegate = self
                 compseVC.setToRecipients(["ekdh787@gmail.com"])
@@ -85,19 +88,21 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
                 self.showSendMailErrorAlert()
             }
         }
+        //앱 이야기
         else if indexPath.row == 2{
-            
             guard let appleUrl = URL(string: "https://organic-shingle-94f.notion.site/d2081d949d094b93b325d730ec946033")   else { return }
-
             let safariViewController = SFSafariViewController(url: appleUrl)
             safariViewController.delegate = self
             safariViewController.modalPresentationStyle = .automatic
             self.present(safariViewController, animated: true, completion: nil)
         }
+        //나의 글씨체
         else if indexPath.row == 3{
-            
+            self.navigationController?.pushViewController(FontSettingViewController(), animated: true)
+        }
+        //앱 버전
+        else if indexPath.row == 4{
             let leftView = UIImageView(image: UIImage(named: "wasted")!)
-            
             if clickCount > 10{
                 return
             } else if clickCount > 5{
@@ -116,12 +121,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
                 banner.duration = 0.5
                 banner.show()
             }
-            
             clickCount += 1
-            
-            
         }
-        
         
     }
     
