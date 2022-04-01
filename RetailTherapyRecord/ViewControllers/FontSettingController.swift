@@ -9,6 +9,7 @@
 import UIKit
 
 final class FontSettingViewController: UIViewController{
+    @IBOutlet var radioButtons: [UIButton]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
