@@ -20,7 +20,7 @@
         <!--Font Setting View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="FontSettingViewController" customModule="RetailTherapyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FontSettingViewController" id="Y6W-OH-hqX" customClass="FontSettingViewController" customModule="RetailTherapyRecord" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,8 +86,8 @@
                                     <constraint firstItem="D6t-JQ-Kx3" firstAttribute="centerY" secondItem="VPE-8H-51U" secondAttribute="centerY" id="u5c-zg-txg"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="H8u-3W-YEk">
-                                <rect key="frame" x="12" y="170" width="390" height="115"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="H8u-3W-YEk">
+                                <rect key="frame" x="12" y="170" width="390" height="114"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDr-ub-VcL">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
@@ -100,8 +100,11 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNH-X7-03T">
                                                 <rect key="frame" x="325" y="0.0" width="65" height="30"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="heart.circle" catalog="system"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="heart.circle" catalog="system"/>
+                                                <connections>
+                                                    <action selector="buttonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zMP-DG-X2i"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -120,8 +123,11 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bB2-zr-oIj">
                                                 <rect key="frame" x="325" y="0.0" width="65" height="30"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="circlebadge" catalog="system"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="circlebadge" catalog="system"/>
+                                                <connections>
+                                                    <action selector="buttonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sOI-os-MV1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -130,22 +136,24 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbT-xB-YDA">
-                                        <rect key="frame" x="0.0" y="84" width="390" height="31"/>
+                                        <rect key="frame" x="0.0" y="84" width="390" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noto Sans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGu-04-s3K">
-                                                <rect key="frame" x="0.0" y="0.0" width="325" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="325" height="30"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1V-Wj-taT">
-                                                <rect key="frame" x="325" y="0.0" width="65" height="31"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="circlebadge.fill" catalog="system"/>
+                                                <rect key="frame" x="325" y="0.0" width="65" height="30"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="circle" catalog="system"/>
+                                                <connections>
+                                                    <action selector="buttonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="67Y-Yw-u6R"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="iF0-BE-fzz"/>
                                             <constraint firstItem="c1V-Wj-taT" firstAttribute="width" secondItem="QGu-04-s3K" secondAttribute="width" multiplier="0.2" id="sgU-B6-1rh"/>
                                         </constraints>
                                     </stackView>
@@ -179,8 +187,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="circle" catalog="system" width="128" height="121"/>
         <image name="circlebadge" catalog="system" width="128" height="120"/>
-        <image name="circlebadge.fill" catalog="system" width="128" height="120"/>
         <image name="greedy.png" width="912" height="912"/>
         <image name="heart.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">

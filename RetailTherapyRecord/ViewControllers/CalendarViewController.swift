@@ -77,6 +77,9 @@ class CalendarViewController: UIViewController {
         super.viewWillAppear(animated)
         tasks = localRealm.objects(CostList.self).sorted(byKeyPath: "costDate", ascending: false) // 최근 등록일 순
         
+        self.tabBarController?.tabBar.isHidden = false
+        MainTabBarController.actionButton.isHidden = false
+        
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "ko_KR")
         formatter.dateFormat = "yyyy-MM-dd"

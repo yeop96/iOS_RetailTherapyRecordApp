@@ -32,12 +32,12 @@ class SettingViewController: UIViewController, SFSafariViewControllerDelegate {
         self.tableView.tableFooterView = UIView()
         self.tabBarController?.tabBar.isHidden = true
         MainTabBarController.actionButton.isHidden = true
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = backBarButtonItem
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.tabBarController?.tabBar.isHidden = false
-        MainTabBarController.actionButton.isHidden = false
         clickCount = 0
     }
 }
@@ -98,7 +98,11 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
         }
         //나의 글씨체
         else if indexPath.row == 3{
-            self.navigationController?.pushViewController(FontSettingViewController(), animated: true)
+            
+            let storyboard = UIStoryboard(name: "FontSetting", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "FontSettingViewController") as! FontSettingViewController
+            
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         //앱 버전
         else if indexPath.row == 4{

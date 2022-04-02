@@ -13,7 +13,13 @@ class RecordViewController: UIViewController {
     var editRecordBool = false //셀에서 진입시 true, 추가 버튼에서 진입시 false
     var selectDate = Date()
     var selectEmotionInt = 0
-    var imageFileName = ["rich.png", "smile.png", "angry.png", "cry.png", "sad.png", "yummy.png", "expressionless.png"] // 이미지의 파일명을 저장할 배열
+    var imageFileName = ["rich.png",
+                         "smile.png",
+                         "angry.png",
+                         "cry.png",
+                         "sad.png",
+                         "yummy.png",
+                         "expressionless.png"] // 이미지의 파일명을 저장할 배열
     let placeholderText = "감정 소비한 이야기를 적어보세요 :)"
     
     var existingSubject = ""
@@ -96,11 +102,8 @@ class RecordViewController: UIViewController {
                 let cost = numberFormatter.string(for: Int(existingMoeny)!)! + "원"
                 moneyTextField.text = cost
             }
-            
-            
-            
+    
             contentTextView.text = existingContent
-            
             emotionButton.setTitle("표정", for: .normal)
             
             
@@ -111,7 +114,6 @@ class RecordViewController: UIViewController {
             else if contentTextView.text != placeholderText{
                 contentTextView.textColor = .label
             }
-            
             
             self.tabBarController?.tabBar.isHidden = true
             MainTabBarController.actionButton.isHidden = true

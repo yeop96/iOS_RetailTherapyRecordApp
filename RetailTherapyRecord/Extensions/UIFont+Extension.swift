@@ -95,10 +95,10 @@ extension UIFont{
 
 func customFontSize(fontSize: CGFloat) -> UIFont{
     switch UserData.customUserFont {
-    case CustomUserFont.nanum.rawValue:
-        return UIFont(name: "NanumBaReunHiPi", size: fontSize)!
     case CustomUserFont.base.rawValue:
         return UIFont.systemFont(ofSize: fontSize)
+    case CustomUserFont.nanum.rawValue:
+        return UIFont(name: "NanumBaReunHiPi", size: fontSize)!
     case CustomUserFont.noto.rawValue:
         return UIFont(name: "NotoSansCJKkr-Regular", size: fontSize)!
     default:
