@@ -10,7 +10,7 @@ import SafariServices
 import MessageUI
 import NotificationBannerSwift
 
-class SettingViewController: UIViewController, SFSafariViewControllerDelegate {
+final class SettingViewController: UIViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     

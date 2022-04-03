@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EmotionPickerViewController: UIViewController {
+final class EmotionPickerViewController: UIViewController {
     
     let MAX_ARRAY_NUM = 7 // 이미지의 파일명을 저장할 배열의 최대 크기를 지정
     let PICKER_VIEW_COLUMN = 1 // 피커 뷰의 열의 갯수 지정

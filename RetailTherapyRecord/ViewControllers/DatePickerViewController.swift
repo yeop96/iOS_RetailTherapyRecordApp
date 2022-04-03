@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DatePickerViewController: UIViewController {
+final class DatePickerViewController: UIViewController {
     
     var saveActionHandler: (() -> Void)?
     var selectDate = Date()

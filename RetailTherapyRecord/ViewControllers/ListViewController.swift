@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 import SnapKit
 
-class ListViewController: UIViewController {
+final class ListViewController: UIViewController {
     let localRealm = try! Realm()
     var tasks: Results<CostList>!
     var dateSet = Set<String>()

@@ -15,7 +15,7 @@ final class FontSettingViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "나의 글씨체"
-        //self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().customFont21]
+        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().customFont21]
         
         radioButtons.forEach{
             $0.setImage(UIImage(systemName: "circle"), for: .normal)
@@ -32,7 +32,13 @@ final class FontSettingViewController: UIViewController{
         indexOfOneAndOnlySelectedBtn = radioButtons.firstIndex(of: sender)!
         
         UserData.customUserFont = indexOfOneAndOnlySelectedBtn
-        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().customFont21]
+        
+        if #available(iOS 15, *) {
+            self.navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.font : UIFont().customFont21]
+            self.navigationController?.navigationBar.scrollEdgeAppearance?.titleTextAttributes = [.font : UIFont().customFont21]
+        } else{
+            self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().customFont21]
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

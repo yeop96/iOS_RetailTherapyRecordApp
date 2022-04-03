@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 import NotificationBannerSwift
 
-class RecordViewController: UIViewController {
+final class RecordViewController: UIViewController {
     var editRecordBool = false //셀에서 진입시 true, 추가 버튼에서 진입시 false
     var selectDate = Date()
     var selectEmotionInt = 0

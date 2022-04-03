@@ -9,7 +9,7 @@ import UIKit
 import FSCalendar
 import RealmSwift
 
-class CalendarViewController: UIViewController {
+final class CalendarViewController: UIViewController {
 
     let localRealm = try! Realm()
     var tasks: Results<CostList>!

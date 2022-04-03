@@ -8,7 +8,7 @@
 import UIKit
 import JJFloatingActionButton //https://github.com/jjochen/JJFloatingActionButton
 
-class MainTabBarController: UITabBarController {
+final class MainTabBarController: UITabBarController {
     
     static let actionButton = JJFloatingActionButton() //플로팅 라이브러리
     
