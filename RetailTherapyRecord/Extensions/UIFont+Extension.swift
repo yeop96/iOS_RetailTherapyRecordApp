@@ -91,16 +91,25 @@ extension UIFont{
     var customFont24: UIFont {
         customFontSize(fontSize: 24)
     }
+    var customFont_Title: UIFont {
+        customFontSize(fontSize: 18)
+    }
+    var customFont_Content: UIFont {
+        customFontSize(fontSize: 17)
+    }
+    var customFont_Navigation: UIFont {
+        customFontSize(fontSize: 21)
+    }
 }
 
 func customFontSize(fontSize: CGFloat) -> UIFont{
     switch UserData.customUserFont {
     case CustomUserFont.base.rawValue:
-        return UIFont.systemFont(ofSize: fontSize)
+        return UIFont.systemFont(ofSize: fontSize - 3)
     case CustomUserFont.nanum.rawValue:
         return UIFont(name: "NanumBaReunHiPi", size: fontSize)!
     case CustomUserFont.noto.rawValue:
-        return UIFont(name: "NotoSansCJKkr-Regular", size: fontSize)!
+        return UIFont(name: "NotoSansCJKkr-Regular", size: fontSize - 3)!
     default:
         return UIFont(name: "NanumBaReunHiPi", size: fontSize)!
     }

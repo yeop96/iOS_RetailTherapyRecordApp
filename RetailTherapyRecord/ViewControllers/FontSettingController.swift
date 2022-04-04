@@ -9,6 +9,12 @@
 import UIKit
 
 final class FontSettingViewController: UIViewController{
+    
+    @IBOutlet weak var recordView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var moneyLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     @IBOutlet var radioButtons: [UIButton]!
     var indexOfOneAndOnlySelectedBtn = UserData.customUserFont
     
@@ -16,6 +22,14 @@ final class FontSettingViewController: UIViewController{
         super.viewDidLoad()
         title = "나의 글씨체"
         self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().customFont21]
+        
+        recordView.layer.borderWidth = 1
+        recordView.layer.cornerRadius = 8
+        recordView.layer.borderColor = UIColor.primary.cgColor
+        
+        titleLabel.font = UIFont().customFont18
+        moneyLabel.font = UIFont().customFont17
+        descriptionLabel.font = UIFont().customFont17
         
         radioButtons.forEach{
             $0.setImage(UIImage(systemName: "circle"), for: .normal)
@@ -39,6 +53,9 @@ final class FontSettingViewController: UIViewController{
         } else{
             self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().customFont21]
         }
+        titleLabel.font = UIFont().customFont18
+        moneyLabel.font = UIFont().customFont17
+        descriptionLabel.font = UIFont().customFont17
     }
     
     override func viewWillDisappear(_ animated: Bool) {
