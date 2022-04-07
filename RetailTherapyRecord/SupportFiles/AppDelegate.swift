@@ -39,8 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITableView.appearance().backgroundColor = .clear
         UITableViewCell.appearance().backgroundColor = .clear
         UITableViewCell.appearance().selectionStyle = .none
-        //UINavigationBar.appearance().barTintColor = .primary
-        //UITabBar.appearance().barTintColor = .primary
         UIBarButtonItem.appearance().tintColor = .primary
         UISearchBar.appearance().tintColor = .primary
         UITabBar.appearance().tintColor = .primary

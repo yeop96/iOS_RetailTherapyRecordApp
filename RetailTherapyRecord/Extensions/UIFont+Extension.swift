@@ -97,6 +97,9 @@ extension UIFont{
     var customFont_Content: UIFont {
         customFontSize(fontSize: 17)
     }
+    var customFont_Header: UIFont {
+        customFontSize(fontSize: 12)
+    }
     var customFont_Navigation: UIFont {
         customFontSize(fontSize: 21)
     }

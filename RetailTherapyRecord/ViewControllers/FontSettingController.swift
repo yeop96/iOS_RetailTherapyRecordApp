@@ -28,9 +28,9 @@ final class FontSettingViewController: BaseViewController{
         recordView.layer.cornerRadius = 8
         recordView.layer.borderColor = UIColor.primary.cgColor
         
-        titleLabel.font = UIFont().customFont18
-        moneyLabel.font = UIFont().customFont17
-        descriptionLabel.font = UIFont().customFont17
+        titleLabel.font = UIFont().customFont_Title
+        moneyLabel.font = UIFont().customFont_Content
+        descriptionLabel.font = UIFont().customFont_Content
         
         radioButtons.forEach{
             $0.setImage(UIImage(systemName: "circle"), for: .normal)
@@ -49,9 +49,10 @@ final class FontSettingViewController: BaseViewController{
         UserData.customUserFont = indexOfOneAndOnlySelectedBtn
         
         navigationBarFontSet()
-        titleLabel.font = UIFont().customFont18
-        moneyLabel.font = UIFont().customFont17
-        descriptionLabel.font = UIFont().customFont17
+        titleLabel.font = UIFont().customFont_Title
+        moneyLabel.font = UIFont().customFont_Content
+        descriptionLabel.font = UIFont().customFont_Content
+        
     }
     
     

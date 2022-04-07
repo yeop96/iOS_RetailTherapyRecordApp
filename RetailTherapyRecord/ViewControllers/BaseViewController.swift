@@ -28,10 +28,10 @@ class BaseViewController: UIViewController{
     
     func navigationBarFontSet(){
         if #available(iOS 15, *) {
-            self.navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.font : UIFont().customFont21]
-            self.navigationController?.navigationBar.scrollEdgeAppearance?.titleTextAttributes = [.font : UIFont().customFont21]
+            self.navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.font : UIFont().customFont_Navigation]
+            self.navigationController?.navigationBar.scrollEdgeAppearance?.titleTextAttributes = [.font : UIFont().customFont_Navigation]
         } else{
-            self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().customFont21]
+            self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().customFont_Navigation]
         }
     }
     

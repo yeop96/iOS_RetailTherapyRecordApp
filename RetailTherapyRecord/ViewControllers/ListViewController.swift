@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 import SnapKit
 
-final class ListViewController: UIViewController {
+final class ListViewController: BaseViewController {
     let localRealm = try! Realm()
     var tasks: Results<CostList>!
     var dateSet = Set<String>()
@@ -25,7 +25,7 @@ final class ListViewController: UIViewController {
         label.text = "가운데 + 버튼을 통해\n나만의 감정 소비를 기록해보세요!"
         label.numberOfLines = 2
         label.lineBreakMode = .byWordWrapping
-        label.font = UIFont().nanumFont18
+        label.font = UIFont().customFont_Title
         label.textColor = .primary
         return label
     }()
@@ -39,7 +39,7 @@ final class ListViewController: UIViewController {
         searchController.searchResultsUpdater = self
         
         self.navigationItem.title = "이야기"
-        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().nanumFont21]
+        navigationBarFontSet()
         
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtonItem
@@ -54,16 +54,12 @@ final class ListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tasks = localRealm.objects(CostList.self).sorted(byKeyPath: "costDate", ascending: false) // 최근 등록일 순
-        
-        
         if tasks.isEmpty{
             emptyLabel.isHidden = false
         }
         else{
             emptyLabel.isHidden = true
         }
-        
-        
         dateSet = Set<String>()
         tasks.forEach{
             dateSet.insert(DateFormatter().connectDateFormatString(date: $0.costDate))
@@ -78,10 +74,10 @@ final class ListViewController: UIViewController {
         searchController.searchBar.placeholder = "검색"
         
         //uisearchbar custom font
-        let attributes = [NSAttributedString.Key.font: UIFont().nanumFont18, NSAttributedString.Key.foregroundColor: UIColor.gray]
+        let attributes = [NSAttributedString.Key.font: UIFont().customFont_Title]
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = attributes
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(attributes, for: .normal)
 
-        
         searchController.searchBar.setValue("취소", forKey: "cancelButtonText")
         searchController.searchBar.tintColor = .primary
         searchController.searchBar.barTintColor = .primary
@@ -152,7 +148,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header : UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = .primary
-        header.textLabel?.font = UIFont().nanumFont12
+        header.textLabel?.font = UIFont().customFont_Header
     }
     
     //셀의 갯수: numberOfRowsInSection
@@ -174,6 +170,10 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell") as? ListTableViewCell else{
             return UITableViewCell()
         }
+        
+        cell.costSubjectLabel.font = UIFont().customFont_Title
+        cell.costMoneyLabel.font = UIFont().customFont_Content
+        cell.costContentLabel.font = UIFont().customFont_Content
         
         //섹션에 맞는 날짜만
         let taskFiltered = tasks.filter("costDateString == '\(dateArray[indexPath.section])'")
@@ -261,8 +261,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         
         
         let alert = UIAlertController(title: row.costSubject, message: "기록을 삭제해도 되나요?", preferredStyle: .alert)
-        alert.setTitle(font: UIFont().nanumFont21, color: .label)
-        alert.setMessage(font: UIFont().nanumFont17, color: .strawberryMilk)
+        alert.setTitle(font: UIFont().customFont_Navigation, color: .label)
+        alert.setMessage(font: UIFont().customFont_Content, color: .strawberryMilk)
         let yesAction = UIAlertAction(title: "예", style: .default){ (action) in
             try! self.localRealm.write{
                 self.localRealm.delete(row)
