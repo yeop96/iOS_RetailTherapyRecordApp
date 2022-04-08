@@ -9,7 +9,7 @@ import UIKit
 import FSCalendar
 import RealmSwift
 
-final class CalendarViewController: UIViewController {
+final class CalendarViewController: BaseViewController {
 
     let localRealm = try! Realm()
     var tasks: Results<CostList>!
@@ -29,9 +29,9 @@ final class CalendarViewController: UIViewController {
         calendarView.delegate = self
         calendarView.dataSource = self
         
-        yearCostLabel.font = UIFont().nanumFont17
-        unCostDayLabel.font = UIFont().nanumFont17
-        calendarExplainLabel.font = UIFont().nanumFont17
+        yearCostLabel.font = UIFont().customFont_Content
+        unCostDayLabel.font = UIFont().customFont_Content
+        calendarExplainLabel.font = UIFont().customFont_Content
         
         calendarView.appearance.eventDefaultColor = .primary
         calendarView.appearance.eventSelectionColor = .primary
@@ -41,7 +41,7 @@ final class CalendarViewController: UIViewController {
         //calendarView.appearance.titleTodayColor
         //calendarView.appearance.borderRadius = 0
         self.navigationItem.title = "흔적"
-        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().nanumFont21]
+        navigationBarFontSet()
         
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtonItem
@@ -50,17 +50,17 @@ final class CalendarViewController: UIViewController {
         
         calendarView.headerHeight = 50
         calendarView.appearance.headerDateFormat = "YYYY년 M월"
-        calendarView.appearance.headerTitleFont = UIFont().nanumFont24
+        calendarView.appearance.headerTitleFont = UIFont().customFont_Big
         calendarView.appearance.headerTitleColor = .primary
 
         calendarView.appearance.weekdayTextColor = .label
-        calendarView.appearance.weekdayFont = UIFont().nanumFont17
+        calendarView.appearance.weekdayFont = UIFont().customFont_Content
         
         
         calendarView.appearance.titleWeekendColor = .strawberryMilk
         calendarView.appearance.titleDefaultColor = .label
-        calendarView.appearance.titleFont = UIFont().nanumFont17
-        calendarView.appearance.subtitleFont = UIFont().nanumFont12
+        calendarView.appearance.titleFont = UIFont().customFont_Content
+        calendarView.appearance.subtitleFont = UIFont().customFont_Header
         
         
 

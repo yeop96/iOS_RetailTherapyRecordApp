@@ -103,6 +103,9 @@ extension UIFont{
     var customFont_Navigation: UIFont {
         customFontSize(fontSize: 21)
     }
+    var customFont_Big: UIFont {
+        customFontSize(fontSize: 24)
+    }
 }
 
 func customFontSize(fontSize: CGFloat) -> UIFont{
