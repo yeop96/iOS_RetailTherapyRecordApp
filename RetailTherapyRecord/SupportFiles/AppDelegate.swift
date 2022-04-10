@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 15, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            appearance.titleTextAttributes = [.font : UIFont().nanumFont21]
+            appearance.titleTextAttributes = [.font : UIFont().customFont_Navigation]
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         }
@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = .primary
         UIButton.appearance().tintColor = .primary
         
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.label, .font: UIFont().nanumFont21]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.label, .font: UIFont().customFont_Navigation]
 
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false

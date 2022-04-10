@@ -91,11 +91,15 @@ extension UIFont{
     var customFont24: UIFont {
         customFontSize(fontSize: 24)
     }
+    
     var customFont_Title: UIFont {
         customFontSize(fontSize: 18)
     }
     var customFont_Content: UIFont {
         customFontSize(fontSize: 17)
+    }
+    var customFont_Record: UIFont {
+        customFontSize(fontSize: 15)
     }
     var customFont_Header: UIFont {
         customFontSize(fontSize: 12)

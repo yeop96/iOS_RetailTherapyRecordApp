@@ -10,7 +10,7 @@ import SafariServices
 import MessageUI
 import NotificationBannerSwift
 
-final class SettingViewController: UIViewController, SFSafariViewControllerDelegate {
+final class SettingViewController: BaseViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -27,7 +27,7 @@ final class SettingViewController: UIViewController, SFSafariViewControllerDeleg
         tableView.delegate = self
         
         title = "서비스 정보"
-        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().nanumFont21]
+        navigationBarFontSet()
         
         self.tableView.tableFooterView = UIView()
         self.tabBarController?.tabBar.isHidden = true
@@ -113,7 +113,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
                 let banner = NotificationBanner(title: "이제 그만..!", leftView: leftView, style: .warning, colors: CustomBannerColors())
                 
                 banner.titleLabel?.textColor = .label
-                banner.titleLabel?.font = UIFont().nanumFont17
+                banner.titleLabel?.font = UIFont().customFont_Content
                 banner.duration = 0.1
                 banner.show()
             }
@@ -121,7 +121,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
                 let banner = NotificationBanner(title: "반가워엽 :)", leftView: leftView, style: .success, colors: CustomBannerColors())
                 
                 banner.titleLabel?.textColor = .label
-                banner.titleLabel?.font = UIFont().nanumFont17
+                banner.titleLabel?.font = UIFont().customFont_Content
                 banner.duration = 0.5
                 banner.show()
             }
@@ -162,8 +162,8 @@ class SettingListTableViewCell: UITableViewCell{
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        titleLabel.font = UIFont().nanumFont17
-        rightLabel.font = UIFont().nanumFont17
+        titleLabel.font = UIFont().customFont_Content
+        rightLabel.font = UIFont().customFont_Content
     }
     
 }

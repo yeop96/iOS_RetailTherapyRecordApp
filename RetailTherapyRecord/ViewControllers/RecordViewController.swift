@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 import NotificationBannerSwift
 
-final class RecordViewController: UIViewController {
+final class RecordViewController: BaseViewController {
     var editRecordBool = false //셀에서 진입시 true, 추가 버튼에서 진입시 false
     var selectDate = Date()
     var selectEmotionInt = 0
@@ -44,7 +44,7 @@ final class RecordViewController: UIViewController {
         
         title = editRecordBool ? "나의 감정 소비" : "감정 소비 기록"
         
-        self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().nanumFont21]
+        navigationBarFontSet()
         
         dateButton.setTitleColor(.primary, for: .disabled)
         subjectTextField.layer.borderWidth = 1.0
@@ -62,12 +62,12 @@ final class RecordViewController: UIViewController {
         contentTextView.layer.cornerRadius = 10
         contentTextView.textContainerInset = UIEdgeInsets(top: 10, left: 5, bottom: 0, right: 5)
         
-        contentTextView.font = UIFont().nanumFont15
+        contentTextView.font = UIFont().customFont_Record
         
         if !editRecordBool{
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(dismissAction))
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(saveButtonClicked))
-            navigationItem.rightBarButtonItem?.setTitleTextAttributes([.font: UIFont().nanumFont21], for: .normal)
+            navigationItem.rightBarButtonItem?.setTitleTextAttributes([.font: UIFont().customFont_Navigation], for: .normal)
             
             //이미지 버튼 클릭 가능하게
             let emotionImageButton = UITapGestureRecognizer(target: self, action: #selector(emotionImageButtonClicked))
@@ -80,7 +80,7 @@ final class RecordViewController: UIViewController {
         }
         else{
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집", style: .plain, target: self, action: #selector(checkButtonClicked))
-            navigationItem.rightBarButtonItem?.setTitleTextAttributes([.font: UIFont().nanumFont21], for: .normal)
+            navigationItem.rightBarButtonItem?.setTitleTextAttributes([.font: UIFont().customFont_Navigation], for: .normal)
             
             subjectTextField.isEnabled = false
             moneyTextField.isEnabled = false
@@ -140,7 +140,7 @@ final class RecordViewController: UIViewController {
     //편집 버튼 클릭시
     @objc func checkButtonClicked(){
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(editSaveButtonClicked))
-        navigationItem.rightBarButtonItem?.setTitleTextAttributes([.font: UIFont().nanumFont21], for: .normal)
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([.font: UIFont().customFont_Navigation], for: .normal)
         
         //이미지 버튼 클릭 가능하게
         let emotionImageButton = UITapGestureRecognizer(target: self, action: #selector(emotionImageButtonClicked))
@@ -262,7 +262,7 @@ final class RecordViewController: UIViewController {
         let leftView = UIImageView(image: UIImage(named: "surprised")!)
         let banner = NotificationBanner(title: text, leftView: leftView, style: .info, colors: CustomBannerColors())
         banner.titleLabel?.textColor = .label
-        banner.titleLabel?.font = UIFont().nanumFont17
+        banner.titleLabel?.font = UIFont().customFont_Content
         banner.duration = 3
         banner.show()
     }
@@ -280,7 +280,7 @@ final class RecordViewController: UIViewController {
         let leftView = UIImageView(image: emotionImage)
         let banner = NotificationBanner(title: text, leftView: leftView, style: .success, colors: CustomBannerColors())
         banner.titleLabel?.textColor = .label
-        banner.titleLabel?.font = UIFont().nanumFont17
+        banner.titleLabel?.font = UIFont().customFont_Content
         banner.duration = 3
         banner.show()
     }
