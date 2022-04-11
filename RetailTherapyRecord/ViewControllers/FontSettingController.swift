@@ -52,9 +52,6 @@ final class FontSettingViewController: BaseViewController{
         titleLabel.font = UIFont().customFont_Title
         moneyLabel.font = UIFont().customFont_Content
         descriptionLabel.font = UIFont().customFont_Content
-        
     }
-    
-    
     
 }

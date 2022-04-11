@@ -115,8 +115,7 @@ final class RecordViewController: BaseViewController {
                 contentTextView.textColor = .label
             }
             
-            self.tabBarController?.tabBar.isHidden = true
-            MainTabBarController.actionButton.isHidden = true
+            tabBarHiddenSet(hidden: true)
         }
         
     }
@@ -131,8 +130,7 @@ final class RecordViewController: BaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.tabBarController?.tabBar.isHidden = false
-        MainTabBarController.actionButton.isHidden = false
+        tabBarHiddenSet(hidden: false)
     }
     
     

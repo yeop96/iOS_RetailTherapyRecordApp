@@ -39,7 +39,7 @@ final class ListViewController: BaseViewController {
         searchController.searchResultsUpdater = self
         
         self.navigationItem.title = "이야기"
-        navigationBarFontSet()
+        //navigationBarFontSet()
         
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtonItem

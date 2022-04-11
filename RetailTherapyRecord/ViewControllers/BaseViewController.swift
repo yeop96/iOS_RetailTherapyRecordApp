@@ -15,6 +15,10 @@ class BaseViewController: UIViewController{
         configure()
         setupConstraints()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationBarFontSet()
+    }
     
     func configure(){
     }
@@ -33,6 +37,11 @@ class BaseViewController: UIViewController{
         } else{
             self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().customFont_Navigation]
         }
+    }
+    
+    func tabBarHiddenSet(hidden: Bool){
+        self.tabBarController?.tabBar.isHidden = hidden
+        MainTabBarController.actionButton.isHidden = hidden
     }
     
 }

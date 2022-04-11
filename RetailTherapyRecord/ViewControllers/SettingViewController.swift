@@ -14,11 +14,11 @@ final class SettingViewController: BaseViewController, SFSafariViewControllerDel
 
     @IBOutlet weak var tableView: UITableView!
     
-    let settings = [["오픈소스 라이선스", ">"],
+    var settings = [["오픈소스 라이선스", ">"],
                     ["문의하기",">"],
                     ["앱 이야기", ">"],
                     ["나의 글씨체", ">"],
-                    ["앱 버전","1.0.5"]]
+                    ["앱 버전","v.v.v"]]
     var clickCount = 0
     
     override func viewDidLoad() {
@@ -30,16 +30,25 @@ final class SettingViewController: BaseViewController, SFSafariViewControllerDel
         navigationBarFontSet()
         
         self.tableView.tableFooterView = UIView()
-        self.tabBarController?.tabBar.isHidden = true
-        MainTabBarController.actionButton.isHidden = true
+        tabBarHiddenSet(hidden: true)
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtonItem
+        settings[4][1] = appVersionGet()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         clickCount = 0
     }
+    
+    func appVersionGet() -> String{
+        guard let dictionary = Bundle.main.infoDictionary,
+              let version = dictionary["CFBundleShortVersionString"] as? String,
+              let build = dictionary["CFBundleVersion"] as? String else {return ""}
+        print("vserion: \(version), build: \(build)")
+        return version
+    }
+    
 }
 
 extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate{
