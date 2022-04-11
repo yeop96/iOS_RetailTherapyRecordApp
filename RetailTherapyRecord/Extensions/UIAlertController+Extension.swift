@@ -24,7 +24,6 @@ extension UIAlertController {
                                           range: NSRange(location: 0, length: title.count))
         }
         self.setValue(attributeString, forKey: "attributedTitle")
-        
     }
 
     // Set message font and message color
