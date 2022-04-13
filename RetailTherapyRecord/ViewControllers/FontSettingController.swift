@@ -23,7 +23,6 @@ final class FontSettingViewController: BaseViewController{
     
     override func configure() {
         title = "나의 글씨체"
-        navigationBarFontSet()
         recordView.layer.borderWidth = 1
         recordView.layer.cornerRadius = 8
         recordView.layer.borderColor = UIColor.primary.cgColor

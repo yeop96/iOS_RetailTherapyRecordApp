@@ -29,6 +29,10 @@ final class RecordViewController: BaseViewController {
     let localRealm = try! Realm()
     var taskUpdateRow: CostList!
     
+    @IBOutlet weak var subjectLabel: UILabel!
+    @IBOutlet weak var moneyLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    
     @IBOutlet weak var dateButton: UIButton!
     @IBOutlet weak var emotionButton: UIButton!
     @IBOutlet weak var emotionImageView: UIImageView!
@@ -44,24 +48,30 @@ final class RecordViewController: BaseViewController {
         
         title = editRecordBool ? "나의 감정 소비" : "감정 소비 기록"
         
-        navigationBarFontSet()
+        subjectLabel.font = UIFont().customFont_Record
+        moneyLabel.font = UIFont().customFont_Record
+        contentLabel.font = UIFont().customFont_Record
         
         dateButton.setTitleColor(.primary, for: .disabled)
+        dateButton.titleLabel?.font = UIFont().customFont_Content
+        emotionButton.titleLabel?.font = UIFont().customFont_Content
+        
         subjectTextField.layer.borderWidth = 1.0
         subjectTextField.layer.cornerRadius = 10
         subjectTextField.layer.borderColor = UIColor.primary.cgColor
         subjectTextField.addLeftPadding()
+        subjectTextField.font = UIFont().customFont_Record
         
         moneyTextField.layer.borderWidth = 1.0
         moneyTextField.layer.cornerRadius = 10
         moneyTextField.layer.borderColor = UIColor.primary.cgColor
         moneyTextField.addLeftPadding()
+        moneyTextField.font = UIFont().customFont_Record
         
         contentTextView.layer.borderWidth = 1.0
         contentTextView.layer.borderColor = UIColor.primary.cgColor
         contentTextView.layer.cornerRadius = 10
         contentTextView.textContainerInset = UIEdgeInsets(top: 10, left: 5, bottom: 0, right: 5)
-        
         contentTextView.font = UIFont().customFont_Record
         
         if !editRecordBool{

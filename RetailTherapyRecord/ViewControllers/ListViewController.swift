@@ -39,7 +39,6 @@ final class ListViewController: BaseViewController {
         searchController.searchResultsUpdater = self
         
         self.navigationItem.title = "이야기"
-        //navigationBarFontSet()
         
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtonItem
@@ -53,6 +52,7 @@ final class ListViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        searchController = searchBarSetting()
         tasks = localRealm.objects(CostList.self).sorted(byKeyPath: "costDate", ascending: false) // 최근 등록일 순
         if tasks.isEmpty{
             emptyLabel.isHidden = false

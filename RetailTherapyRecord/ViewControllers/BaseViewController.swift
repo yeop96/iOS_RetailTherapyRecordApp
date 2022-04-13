@@ -37,6 +37,7 @@ class BaseViewController: UIViewController{
         } else{
             self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont().customFont_Navigation]
         }
+        
     }
     
     func tabBarHiddenSet(hidden: Bool){

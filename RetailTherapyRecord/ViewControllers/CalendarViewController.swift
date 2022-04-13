@@ -76,7 +76,6 @@ final class CalendarViewController: BaseViewController {
         //calendarView.appearance.titleTodayColor
         //calendarView.appearance.borderRadius = 0
         self.navigationItem.title = "흔적"
-        navigationBarFontSet()
         
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtonItem

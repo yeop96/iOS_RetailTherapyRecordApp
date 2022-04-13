@@ -195,11 +195,14 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="contentLabel" destination="6v4-QE-Cff" id="xFB-rE-X63"/>
                         <outlet property="contentTextView" destination="NK8-7K-Ed4" id="UDb-zX-Fdh"/>
                         <outlet property="dateButton" destination="87s-ES-QHC" id="YNU-PE-q8l"/>
                         <outlet property="emotionButton" destination="PTJ-T8-urG" id="0hJ-Zs-EWr"/>
                         <outlet property="emotionImageView" destination="CcM-95-wqI" id="LqL-YA-nOl"/>
+                        <outlet property="moneyLabel" destination="hz7-Jd-D2B" id="soD-O3-mIW"/>
                         <outlet property="moneyTextField" destination="Mfl-Vb-6C5" id="DRy-uo-tgl"/>
+                        <outlet property="subjectLabel" destination="8ce-vb-asT" id="rYv-mE-3W3"/>
                         <outlet property="subjectTextField" destination="xIf-5h-8tb" id="uTC-2W-vwv"/>
                     </connections>
                 </viewController>
