@@ -53,6 +53,8 @@ final class ListViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         searchController = searchBarSetting()
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
         tasks = localRealm.objects(CostList.self).sorted(byKeyPath: "costDate", ascending: false) // 최근 등록일 순
         if tasks.isEmpty{
             emptyLabel.isHidden = false
@@ -102,7 +104,7 @@ final class ListViewController: BaseViewController {
 extension ListViewController: UISearchBarDelegate, UISearchResultsUpdating{
     
     func updateSearchResults(for searchController: UISearchController) {
-        searchText  = searchController.searchBar.text!
+        searchText = searchController.searchBar.text!
         tableView.reloadData()
     }
     
