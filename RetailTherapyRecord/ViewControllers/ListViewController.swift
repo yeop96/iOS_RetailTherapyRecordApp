@@ -57,6 +57,7 @@ final class ListViewController: BaseViewController {
         searchController.searchResultsUpdater = self
         tasks = localRealm.objects(CostList.self).sorted(byKeyPath: "costDate", ascending: false) // 최근 등록일 순
         if tasks.isEmpty{
+            emptyLabel.font = UIFont().customFont_Title
             emptyLabel.isHidden = false
         }
         else{
