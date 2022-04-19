@@ -276,6 +276,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         let noAction = UIAlertAction(title: "아니오", style: .cancel){ (action) in
             return
         }
+        //UIAlertAction은 컬러만 변경 가능(폰트 및 크기 설정 불가능), 추후 custom Alert 제작 예정
         yesAction.setValue(UIColor.strawberryMilk, forKey: "titleTextColor")
         noAction.setValue(UIColor.label, forKey: "titleTextColor")
         alert.addAction(yesAction)
