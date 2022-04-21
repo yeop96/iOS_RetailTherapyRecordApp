@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="KCC-Kimhwanki.otf">
+            <string>KCC-Kimhwanki</string>
+        </array>
         <array key="NotoSansCJKkr-Regular.otf">
             <string>NotoSansCJKkr-Regular</string>
         </array>
@@ -128,7 +131,7 @@
                                                     <constraint firstAttribute="width" secondItem="bB2-zr-oIj" secondAttribute="height" multiplier="1:1" id="e2Y-UN-rpn"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="circlebadge" catalog="system"/>
+                                                <state key="normal" image="circle" catalog="system"/>
                                                 <connections>
                                                     <action selector="buttonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sOI-os-MV1"/>
                                                 </connections>
@@ -165,21 +168,51 @@
                                             <constraint firstAttribute="height" constant="36" id="jAN-6k-8Nr"/>
                                         </constraints>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="593-qn-hyn">
+                                        <rect key="frame" x="12" y="192" width="366" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KCC김환기체" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNt-Ei-STc">
+                                                <rect key="frame" x="0.0" y="0.0" width="330" height="36"/>
+                                                <fontDescription key="fontDescription" name="KCC-Kimhwanki" family="KCC-Kimhwanki" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9y-mc-oy9">
+                                                <rect key="frame" x="330" y="0.0" width="36" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="e9y-mc-oy9" secondAttribute="height" multiplier="1:1" id="e5g-uM-Lko"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="circle" catalog="system"/>
+                                                <connections>
+                                                    <action selector="buttonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6Lz-oC-lPf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="CTa-H3-7lM"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="EfA-t4-Lsr"/>
+                                            <constraint firstItem="e9y-mc-oy9" firstAttribute="width" relation="lessThanOrEqual" secondItem="HNt-Ei-STc" secondAttribute="width" multiplier="0.2" id="x8F-pC-oLO"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="gDr-ub-VcL" firstAttribute="leading" secondItem="Ury-Bp-aJR" secondAttribute="leading" constant="12" id="19h-on-lz3"/>
-                                    <constraint firstItem="Gyq-Bv-Fey" firstAttribute="width" secondItem="vyH-VX-12J" secondAttribute="width" multiplier="0.938462" id="2l7-mc-c6Q"/>
                                     <constraint firstItem="Gyq-Bv-Fey" firstAttribute="top" secondItem="gDr-ub-VcL" secondAttribute="bottom" constant="24" id="3Qi-Ef-oj8"/>
                                     <constraint firstItem="gDr-ub-VcL" firstAttribute="leading" secondItem="vyH-VX-12J" secondAttribute="leading" constant="12" id="3ty-XX-0q3"/>
                                     <constraint firstItem="Gyq-Bv-Fey" firstAttribute="top" secondItem="gDr-ub-VcL" secondAttribute="bottom" constant="24" id="Bip-r7-QdX"/>
+                                    <constraint firstItem="Gyq-Bv-Fey" firstAttribute="bottom" secondItem="Ury-Bp-aJR" secondAttribute="bottom" constant="96" id="JEA-ch-E2f"/>
+                                    <constraint firstItem="vyH-VX-12J" firstAttribute="trailing" secondItem="Gyq-Bv-Fey" secondAttribute="trailing" constant="12" id="PRa-og-QEF"/>
                                     <constraint firstItem="Gyq-Bv-Fey" firstAttribute="bottom" secondItem="Ury-Bp-aJR" secondAttribute="bottom" constant="96" id="S2z-TX-T2H"/>
                                     <constraint firstItem="Gyq-Bv-Fey" firstAttribute="leading" secondItem="vyH-VX-12J" secondAttribute="leading" constant="12" id="THH-zK-Ujw"/>
                                     <constraint firstItem="dbT-xB-YDA" firstAttribute="top" secondItem="Gyq-Bv-Fey" secondAttribute="bottom" constant="24" id="Ucf-3z-3hY"/>
                                     <constraint firstItem="vyH-VX-12J" firstAttribute="trailing" secondItem="dbT-xB-YDA" secondAttribute="trailing" constant="12" id="aik-EX-w6V"/>
                                     <constraint firstItem="gDr-ub-VcL" firstAttribute="top" secondItem="Ury-Bp-aJR" secondAttribute="top" constant="12" id="beq-Qg-kMA"/>
-                                    <constraint firstItem="vyH-VX-12J" firstAttribute="trailing" secondItem="Gyq-Bv-Fey" secondAttribute="trailing" constant="12" id="g2h-fg-ZSA"/>
+                                    <constraint firstItem="593-qn-hyn" firstAttribute="leading" secondItem="vyH-VX-12J" secondAttribute="leading" constant="12" id="ctV-fk-RQu"/>
+                                    <constraint firstItem="vyH-VX-12J" firstAttribute="trailing" secondItem="593-qn-hyn" secondAttribute="trailing" constant="12" id="dfO-a5-xFE"/>
                                     <constraint firstItem="gDr-ub-VcL" firstAttribute="trailing" secondItem="Ury-Bp-aJR" secondAttribute="trailing" constant="378" id="hjy-62-jEi"/>
                                     <constraint firstItem="dbT-xB-YDA" firstAttribute="top" secondItem="Gyq-Bv-Fey" secondAttribute="bottom" constant="24" id="k7N-WF-mlb"/>
+                                    <constraint firstItem="593-qn-hyn" firstAttribute="top" secondItem="dbT-xB-YDA" secondAttribute="bottom" constant="24" id="sBd-du-BYL"/>
                                     <constraint firstItem="gDr-ub-VcL" firstAttribute="top" secondItem="vyH-VX-12J" secondAttribute="top" constant="12" id="sRS-bn-nAf"/>
                                     <constraint firstItem="dbT-xB-YDA" firstAttribute="leading" secondItem="vyH-VX-12J" secondAttribute="leading" constant="12" id="vJZ-pI-Z58"/>
                                     <constraint firstItem="vyH-VX-12J" firstAttribute="trailing" secondItem="gDr-ub-VcL" secondAttribute="trailing" constant="12" id="wfu-Tb-JIv"/>
@@ -208,6 +241,7 @@
                         <outletCollection property="radioButtons" destination="GNH-X7-03T" collectionClass="NSMutableArray" id="g0s-Vi-Q8p"/>
                         <outletCollection property="radioButtons" destination="bB2-zr-oIj" collectionClass="NSMutableArray" id="nzA-xk-atX"/>
                         <outletCollection property="radioButtons" destination="c1V-Wj-taT" collectionClass="NSMutableArray" id="Bnm-lE-pkV"/>
+                        <outletCollection property="radioButtons" destination="e9y-mc-oy9" collectionClass="NSMutableArray" id="5iK-Ic-Mew"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -217,7 +251,6 @@
     </scenes>
     <resources>
         <image name="circle" catalog="system" width="128" height="121"/>
-        <image name="circlebadge" catalog="system" width="128" height="120"/>
         <image name="greedy.png" width="912" height="912"/>
         <image name="heart.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">

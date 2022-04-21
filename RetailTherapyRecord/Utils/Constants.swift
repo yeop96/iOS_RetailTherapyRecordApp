@@ -41,4 +41,5 @@ enum CustomUserFont: Int {
     case base = 0
     case nanum = 1
     case noto = 2
+    case kcc = 3
 }

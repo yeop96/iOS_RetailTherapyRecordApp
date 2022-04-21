@@ -14,6 +14,9 @@ import UIKit
 //        =========> NotoSansCJKKr-Medium
 //        =========> NotoSansCJKkr-Regular
 
+//        KCC-Kimhwanki
+//        ====> KCC-Kimhwanki 김환기체
+
 extension UIFont{
     var nanumFont12: UIFont {
         return UIFont(name: "NanumBaReunHiPi", size: 12)!
@@ -79,11 +82,13 @@ extension UIFont{
 func customFontSize(fontSize: CGFloat) -> UIFont{
     switch UserData.customUserFont {
     case CustomUserFont.base.rawValue:
-        return UIFont.systemFont(ofSize: fontSize - 3)
+        return UIFont.systemFont(ofSize: fontSize - 2)
     case CustomUserFont.nanum.rawValue:
         return UIFont(name: "NanumBaReunHiPi", size: fontSize)!
     case CustomUserFont.noto.rawValue:
-        return UIFont(name: "NotoSansCJKkr-Regular", size: fontSize - 3)!
+        return UIFont(name: "NotoSansCJKkr-Regular", size: fontSize - 2)!
+    case CustomUserFont.kcc.rawValue:
+        return UIFont(name: "KCC-Kimhwanki", size: fontSize)!
     default:
         return UIFont(name: "NanumBaReunHiPi", size: fontSize)!
     }
