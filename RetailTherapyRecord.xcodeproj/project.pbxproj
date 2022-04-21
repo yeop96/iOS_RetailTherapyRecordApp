@@ -54,6 +54,7 @@
 		27C256CA27DE38EC00BB3164 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C256C927DE38EC00BB3164 /* UIAlertController+Extension.swift */; };
 		27C256CC27E24C5900BB3164 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27C256CB27E24C5800BB3164 /* GoogleService-Info.plist */; };
 		27C97CEA27FB4F30009D4ABA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C97CE927FB4F30009D4ABA /* BaseViewController.swift */; };
+		27CD3F79281135F9002A9B1D /* KCC-Kimhwanki.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27CD3F78281135F9002A9B1D /* KCC-Kimhwanki.otf */; };
 		27DB47C1275AD2F5003BFDC7 /* wasted.png in Resources */ = {isa = PBXBuildFile; fileRef = 27DB47C0275AD2F5003BFDC7 /* wasted.png */; };
 		27DB47C3275BB868003BFDC7 /* yummy.png in Resources */ = {isa = PBXBuildFile; fileRef = 27DB47C2275BB868003BFDC7 /* yummy.png */; };
 		27E894A427F5B6AC004FCAC7 /* FontSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E894A327F5B6AC004FCAC7 /* FontSetting.storyboard */; };
@@ -103,6 +104,7 @@
 		27C256C927DE38EC00BB3164 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		27C256CB27E24C5800BB3164 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		27C97CE927FB4F30009D4ABA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		27CD3F78281135F9002A9B1D /* KCC-Kimhwanki.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KCC-Kimhwanki.otf"; sourceTree = "<group>"; };
 		27DB47C0275AD2F5003BFDC7 /* wasted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wasted.png; sourceTree = "<group>"; };
 		27DB47C2275BB868003BFDC7 /* yummy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yummy.png; sourceTree = "<group>"; };
 		27E894A327F5B6AC004FCAC7 /* FontSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FontSetting.storyboard; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 		277FDEA7275A9EF10035C0B6 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				27CD3F78281135F9002A9B1D /* KCC-Kimhwanki.otf */,
 				27353A4127EB893E00B6D834 /* NotoSansCJKkr-Medium.otf */,
 				27353A4027EB893D00B6D834 /* NotoSansCJKkr-Regular.otf */,
 				277FDEA8275A9F380035C0B6 /* 나눔손글씨 바른히피.ttf */,
@@ -353,6 +356,7 @@
 				277FDE912757D75D0035C0B6 /* greedy.png in Resources */,
 				277FDEA42759BE150035C0B6 /* surprised.png in Resources */,
 				27604F482752D45300E7EABE /* sad.png in Resources */,
+				27CD3F79281135F9002A9B1D /* KCC-Kimhwanki.otf in Resources */,
 				27604F492752D45300E7EABE /* rich.png in Resources */,
 				277ED12B2746CDC40091C076 /* LaunchScreen.storyboard in Resources */,
 				27353A4227EB893E00B6D834 /* NotoSansCJKkr-Regular.otf in Resources */,
