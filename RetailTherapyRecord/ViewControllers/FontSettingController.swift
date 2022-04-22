@@ -7,6 +7,7 @@
 
 
 import UIKit
+import NotificationBannerSwift
 
 final class FontSettingViewController: BaseViewController{
     
@@ -16,6 +17,7 @@ final class FontSettingViewController: BaseViewController{
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet var radioButtons: [UIButton]!
     var indexOfOneAndOnlySelectedBtn = UserData.customUserFont
+    var clickCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,10 @@ final class FontSettingViewController: BaseViewController{
             $0.setImage(UIImage(systemName: "heart.circle"), for: .selected)
         }
         radioButtons[indexOfOneAndOnlySelectedBtn].isSelected = true
+        
+        clickCount = 0
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(recordViewClicked(sender:)))
+        recordView.addGestureRecognizer(tapGesture)
     }
     
     @IBAction func buttonClicked(_ sender: UIButton) {
@@ -52,5 +58,23 @@ final class FontSettingViewController: BaseViewController{
         moneyLabel.font = UIFont().customFont_Content
         descriptionLabel.font = UIFont().customFont_Content
     }
+    
+    
+    @objc func recordViewClicked(sender: UITapGestureRecognizer){
+        let leftView = UIImageView(image: UIImage(named: "wasted")!)
+        if clickCount < 5{
+            let banner = NotificationBanner(title: "글씨체 확인 예시입니다!", leftView: leftView, style: .success, colors: CustomBannerColors())
+            
+            banner.titleLabel?.textColor = .label
+            banner.titleLabel?.font = UIFont().customFont_Content
+            banner.duration = 0.2
+            banner.show()
+            
+            clickCount += 1
+        } else{
+            return
+        }
+    }
+    
     
 }
