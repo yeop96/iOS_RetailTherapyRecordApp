@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if #available(iOS 15, *) {
             let appearance = UINavigationBarAppearance()
+            
             appearance.configureWithOpaqueBackground()
             appearance.titleTextAttributes = [.font : UIFont().customFont_Navigation]
             UINavigationBar.appearance().standardAppearance = appearance
