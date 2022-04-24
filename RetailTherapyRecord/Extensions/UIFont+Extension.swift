@@ -17,48 +17,8 @@ import UIKit
 //        KCC-Kimhwanki
 //        ====> KCC-Kimhwanki 김환기체
 
-extension UIFont{
-    var nanumFont12: UIFont {
-        return UIFont(name: "NanumBaReunHiPi", size: 12)!
-    }
-    var nanumFont15: UIFont {
-        return UIFont(name: "NanumBaReunHiPi", size: 15)!
-    }
-    var nanumFont17: UIFont {
-        return UIFont(name: "NanumBaReunHiPi", size: 17)!
-    }
-    var nanumFont18: UIFont {
-        return UIFont(name: "NanumBaReunHiPi", size: 18)!
-    }
-    var nanumFont21: UIFont {
-        return UIFont(name: "NanumBaReunHiPi", size: 21)!
-    }
-    var nanumFont24: UIFont {
-        return UIFont(name: "NanumBaReunHiPi", size: 24)!
-    }
-}
-
 
 extension UIFont{
-    var customFont12: UIFont {
-        customFontSize(fontSize: 12)
-    }
-    var customFont15: UIFont {
-        customFontSize(fontSize: 15)
-    }
-    var customFont17: UIFont {
-        customFontSize(fontSize: 17)
-    }
-    var customFont18: UIFont {
-        customFontSize(fontSize: 18)
-    }
-    var customFont21: UIFont {
-        customFontSize(fontSize: 21)
-    }
-    var customFont24: UIFont {
-        customFontSize(fontSize: 24)
-    }
-    
     var customFont_Title: UIFont {
         customFontSize(fontSize: 18)
     }
