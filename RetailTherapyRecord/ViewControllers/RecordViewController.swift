@@ -42,6 +42,23 @@ final class RecordViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let dateString = DateFormatter().koreaDateFormatString(date: selectDate)
+        dateButton.setTitle(dateString, for: .normal)
+        emotionImageView.image = UIImage(named: imageFileName[selectEmotionInt])
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tabBarHiddenSet(hidden: false)
+    }
+    
+    
+    override func configure() {
         contentTextView.delegate = self
         subjectTextField.delegate = self
         moneyTextField.delegate = self
@@ -127,20 +144,6 @@ final class RecordViewController: BaseViewController {
             
             tabBarHiddenSet(hidden: true)
         }
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let dateString = DateFormatter().koreaDateFormatString(date: selectDate)
-        dateButton.setTitle(dateString, for: .normal)
-        emotionImageView.image = UIImage(named: imageFileName[selectEmotionInt])
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        tabBarHiddenSet(hidden: false)
     }
     
     
