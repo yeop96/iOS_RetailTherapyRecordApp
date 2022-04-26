@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DatePickerViewController: UIViewController {
+final class DatePickerViewController: BaseViewController {
     
     var saveActionHandler: (() -> Void)?
     var selectDate = Date()
@@ -18,6 +18,9 @@ final class DatePickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func configure() {
         popUpView.layer.cornerRadius = 25
         popUpView.clipsToBounds = true
         
@@ -43,7 +46,6 @@ final class DatePickerViewController: UIViewController {
     }
     
     @IBAction func tapGestureAction(_ sender: UITapGestureRecognizer) {
-        
         self.dismiss(animated: true)
     }
     

@@ -7,16 +7,22 @@
 
 import UIKit
 
-final class EmotionPickerViewController: UIViewController {
+final class EmotionPickerViewController: BaseViewController {
     
     let MAX_ARRAY_NUM = 7 // 이미지의 파일명을 저장할 배열의 최대 크기를 지정
     let PICKER_VIEW_COLUMN = 1 // 피커 뷰의 열의 갯수 지정
     let PICKER_VIEW_HEIGHT: CGFloat = 64 // 피커 뷰의 높이를 지정할 상수
     var imageArray = [UIImage?]()
-    var imageFileName = ["rich.png", "smile.png", "angry.png", "cry.png", "sad.png", "yummy.png", "expressionless.png"] // 이미지의 파일명을 저장할 배열
+    var imageFileName = ["rich.png",
+                         "smile.png",
+                         "angry.png",
+                         "cry.png",
+                         "sad.png",
+                         "yummy.png",
+                         "expressionless.png"] // 이미지의 파일명을 저장할 배열
     var selectEmotionInt = 0
     var saveActionHandler: (() -> Void)?
-
+    
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var saveButton: UIButton!
@@ -24,6 +30,9 @@ final class EmotionPickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func configure() {
         popUpView.layer.cornerRadius = 25
         popUpView.clipsToBounds = true
         
@@ -38,7 +47,6 @@ final class EmotionPickerViewController: UIViewController {
         }
     }
     
-
     @IBAction func tapGestureAction(_ sender: UITapGestureRecognizer) {
         self.dismiss(animated: true)
     }
@@ -61,13 +69,13 @@ extension EmotionPickerViewController: UIPickerViewDelegate, UIPickerViewDataSou
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return PICKER_VIEW_HEIGHT
     }
-
+    
     // 피커 뷰의 개수 설정
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return imageFileName.count
     }
-
-
+    
+    
     // 피커 뷰의 각 Row의 view 설정
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView{
         let imageView = UIImageView(image: imageArray[row])
@@ -80,7 +88,5 @@ extension EmotionPickerViewController: UIPickerViewDelegate, UIPickerViewDataSou
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectEmotionInt = row
     }
-
-    
     
 }
