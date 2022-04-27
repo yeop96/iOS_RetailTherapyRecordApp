@@ -16,9 +16,6 @@ final class ListViewController: BaseViewController {
     var dateArray = Array<String>()
     var searchController:  UISearchController!
     var searchText = ""
-    
-    @IBOutlet weak var tableView: UITableView!
-    
     let emptyLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center // 중앙 정렬.
@@ -30,28 +27,36 @@ final class ListViewController: BaseViewController {
         return label
     }()
     
+    @IBOutlet weak var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        willAppearConfigure()
+    }
+    
+    override func configure() {
         tableView.delegate = self
         tableView.dataSource = self
         searchController = searchBarSetting()
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
-        
+    
         self.navigationItem.title = "이야기"
         
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtonItem
-        
+    }
+    override func setupConstraints() {
         view.addSubview(emptyLabel)
         emptyLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
-        
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    func willAppearConfigure(){
         searchController = searchBarSetting()
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
@@ -70,7 +75,6 @@ final class ListViewController: BaseViewController {
         dateArray = Array(dateSet.sorted(by: >))
         tableView.reloadData()
     }
-    
     
     func searchBarSetting() -> UISearchController{
         let searchController = UISearchController(searchResultsController: nil)
@@ -269,7 +273,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         let yesAction = UIAlertAction(title: "예", style: .default){ (action) in
             try! self.localRealm.write{
                 self.localRealm.delete(row)
-                self.viewWillAppear(true)
+                self.willAppearConfigure()
             }
             return
         }
