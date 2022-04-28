@@ -33,35 +33,7 @@ final class CalendarViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tasks = localRealm.objects(CostList.self).sorted(byKeyPath: "costDate", ascending: false) // 최근 등록일 순
-        
-        tabBarHiddenSet(hidden: false)
-        calendarFontSet()
-        
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "ko_KR")
-        formatter.dateFormat = "yyyy-MM-dd"
-        
-        events = Array<Date>()
-        var cost = 0
-        tasks.forEach{
-            events +=  [formatter.date(from: DateFormatter().connectDateFormatString(date: $0.costDate))]
-            guard let money = $0.costMoney else { return }
-            cost += Int(money) ?? 0
-        }
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        let costs = numberFormatter.string(for: cost)!
-        yearCostLabel.text = costs + "원"
-        
-        //감정 소비 안한지 며칠인지 계산
-        if tasks.isEmpty{
-            unCostDayLabel.text = "아직 없음"
-        } else{
-            let distanceDay = Calendar.current.dateComponents([.day], from: Date(), to: tasks[0].costDate).day
-            unCostDayLabel.text = "\(String(-distanceDay!))일"
-        }
-        calendarView.reloadData()
+        willAppearConfigure()
     }
 
     override func configure() {
@@ -96,6 +68,38 @@ final class CalendarViewController: BaseViewController {
         circleView.layer.cornerRadius = circleView.frame.width / 2
         circleView.alpha = 0.8
         calendarExplainLabel.textColor = .placeholderText
+    }
+    
+    func willAppearConfigure(){
+        tasks = localRealm.objects(CostList.self).sorted(byKeyPath: "costDate", ascending: false) // 최근 등록일 순
+        
+        tabBarHiddenSet(hidden: false)
+        calendarFontSet()
+        
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        events = Array<Date>()
+        var cost = 0
+        tasks.forEach{
+            events +=  [formatter.date(from: DateFormatter().connectDateFormatString(date: $0.costDate))]
+            guard let money = $0.costMoney else { return }
+            cost += Int(money) ?? 0
+        }
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let costs = numberFormatter.string(for: cost)!
+        yearCostLabel.text = costs + "원"
+        
+        //감정 소비 안한지 며칠인지 계산
+        if tasks.isEmpty{
+            unCostDayLabel.text = "아직 없음"
+        } else{
+            let distanceDay = Calendar.current.dateComponents([.day], from: Date(), to: tasks[0].costDate).day
+            unCostDayLabel.text = "\(String(-distanceDay!))일"
+        }
+        calendarView.reloadData()
     }
     
     func calendarFontSet(){
