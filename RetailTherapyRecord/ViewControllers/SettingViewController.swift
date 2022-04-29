@@ -23,6 +23,17 @@ final class SettingViewController: BaseViewController, SFSafariViewControllerDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        clickCount = 0
+    }
+    
+    override func configure() {
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -33,14 +44,6 @@ final class SettingViewController: BaseViewController, SFSafariViewControllerDel
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtonItem
         settings[4][1] = appVersionGet()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        clickCount = 0
     }
     
     func appVersionGet() -> String{
