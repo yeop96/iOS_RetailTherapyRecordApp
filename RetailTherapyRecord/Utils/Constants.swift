@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 enum Expression : Int {
     case rich = 0
     case smile = 1
@@ -42,4 +41,13 @@ enum CustomUserFont: Int {
     case nanum = 1
     case noto = 2
     case kcc = 3
+}
+
+enum SettingString: String {
+    case openSourceLicense = "오픈소스 라이선스"
+    case contactUs = "문의하기"
+    case appStory = "앱 이야기"
+    case myFont = "나의 글씨체"
+    case appVersion = "앱 버전"
+    case showMore = ">"
 }
