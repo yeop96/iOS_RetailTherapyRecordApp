@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Expression : Int {
+enum Expression: Int {
     case rich = 0
     case smile = 1
     case angry = 2
@@ -43,11 +43,26 @@ enum CustomUserFont: Int {
     case kcc = 3
 }
 
-enum SettingString: String {
-    case openSourceLicense = "오픈소스 라이선스"
-    case contactUs = "문의하기"
-    case appStory = "앱 이야기"
-    case myFont = "나의 글씨체"
-    case appVersion = "앱 버전"
-    case showMore = ">"
+enum SettingString: Int, CaseIterable {
+    case openSourceLicense
+    case contactUs
+    case appStory
+    case myFont
+    case appVersion
+    
+    func settingTitle() -> String{
+        switch self {
+        case .openSourceLicense:
+            return "오픈소스 라이선스"
+        case .contactUs:
+            return "문의하기"
+        case .appStory:
+            return "앱 이야기"
+        case .myFont:
+            return "나의 글씨체"
+        case .appVersion:
+            return "앱 버전"
+        }
+    }
+    
 }

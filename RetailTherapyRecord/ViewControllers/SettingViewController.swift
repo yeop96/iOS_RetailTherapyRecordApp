@@ -14,11 +14,6 @@ final class SettingViewController: BaseViewController, SFSafariViewControllerDel
 
     @IBOutlet weak var tableView: UITableView!
     
-    var settings = [["오픈소스 라이선스", ">"],
-                    ["문의하기",">"],
-                    ["앱 이야기", ">"],
-                    ["나의 글씨체", ">"],
-                    ["앱 버전","v.v.v"]]
     var clickCount = 0
     
     override func viewDidLoad() {
@@ -43,7 +38,6 @@ final class SettingViewController: BaseViewController, SFSafariViewControllerDel
         tabBarHiddenSet(hidden: true)
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtonItem
-        settings[4][1] = appVersionGet()
     }
     
     func appVersionGet() -> String{
@@ -58,19 +52,20 @@ final class SettingViewController: BaseViewController, SFSafariViewControllerDel
 extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settings.count
+        return SettingString.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SettingListTableViewCell") as? SettingListTableViewCell else{
             return UITableViewCell()
         }
+        let row = indexPath.row
         
         cell.titleLabel.font = UIFont().customFont_Content
         cell.rightLabel.font = UIFont().customFont_Content
         
-        cell.titleLabel.text = settings[indexPath.row][0]
-        cell.rightLabel.text = settings[indexPath.row][1]
+        cell.titleLabel.text = SettingString(rawValue: row)?.settingTitle()
+        cell.rightLabel.text = row == SettingString.appVersion.rawValue ? appVersionGet() : ">"
         
         return cell
     }
@@ -80,8 +75,9 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
         //오픈소스 라이선스
-        if indexPath.row == 0{
+        if row == SettingString.openSourceLicense.rawValue{
             guard let appleUrl = URL(string: "https://organic-shingle-94f.notion.site/7ead3acad79c4a63a414ca9bc7711443")   else { return }
             let safariViewController = SFSafariViewController(url: appleUrl)
             safariViewController.delegate = self
@@ -90,7 +86,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
             
         }
         //문의하기
-        else if indexPath.row == 1{
+        else if row == SettingString.contactUs.rawValue{
             if MFMailComposeViewController.canSendMail() {
                 let compseVC = MFMailComposeViewController()
                 compseVC.mailComposeDelegate = self
@@ -105,7 +101,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
             }
         }
         //앱 이야기
-        else if indexPath.row == 2{
+        else if row == SettingString.appStory.rawValue{
             guard let appleUrl = URL(string: "https://organic-shingle-94f.notion.site/d2081d949d094b93b325d730ec946033")   else { return }
             let safariViewController = SFSafariViewController(url: appleUrl)
             safariViewController.delegate = self
@@ -113,15 +109,14 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
             self.present(safariViewController, animated: true, completion: nil)
         }
         //나의 글씨체
-        else if indexPath.row == 3{
-            
+        else if row == SettingString.myFont.rawValue{
             let storyboard = UIStoryboard(name: "FontSetting", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "FontSettingViewController") as! FontSettingViewController
             
             self.navigationController?.pushViewController(vc, animated: true)
         }
         //앱 버전
-        else if indexPath.row == 4{
+        else if row == SettingString.appVersion.rawValue{
             let leftView = UIImageView(image: UIImage(named: "wasted")!)
             if clickCount > 10{
                 return
