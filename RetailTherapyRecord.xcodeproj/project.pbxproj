@@ -55,6 +55,8 @@
 		27C256CC27E24C5900BB3164 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27C256CB27E24C5800BB3164 /* GoogleService-Info.plist */; };
 		27C97CEA27FB4F30009D4ABA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C97CE927FB4F30009D4ABA /* BaseViewController.swift */; };
 		27CD3F79281135F9002A9B1D /* KCC-Kimhwanki.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27CD3F78281135F9002A9B1D /* KCC-Kimhwanki.otf */; };
+		27CF6F322820350500E00FE9 /* MyPrivacyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27CF6F312820350500E00FE9 /* MyPrivacyInfo.plist */; };
+		27CF6F34282035CA00E00FE9 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CF6F33282035CA00E00FE9 /* Bundle+Extension.swift */; };
 		27DB47C1275AD2F5003BFDC7 /* wasted.png in Resources */ = {isa = PBXBuildFile; fileRef = 27DB47C0275AD2F5003BFDC7 /* wasted.png */; };
 		27DB47C3275BB868003BFDC7 /* yummy.png in Resources */ = {isa = PBXBuildFile; fileRef = 27DB47C2275BB868003BFDC7 /* yummy.png */; };
 		27E894A427F5B6AC004FCAC7 /* FontSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E894A327F5B6AC004FCAC7 /* FontSetting.storyboard */; };
@@ -105,6 +107,8 @@
 		27C256CB27E24C5800BB3164 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		27C97CE927FB4F30009D4ABA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		27CD3F78281135F9002A9B1D /* KCC-Kimhwanki.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KCC-Kimhwanki.otf"; sourceTree = "<group>"; };
+		27CF6F312820350500E00FE9 /* MyPrivacyInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MyPrivacyInfo.plist; sourceTree = "<group>"; };
+		27CF6F33282035CA00E00FE9 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		27DB47C0275AD2F5003BFDC7 /* wasted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wasted.png; sourceTree = "<group>"; };
 		27DB47C2275BB868003BFDC7 /* yummy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yummy.png; sourceTree = "<group>"; };
 		27E894A327F5B6AC004FCAC7 /* FontSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FontSetting.storyboard; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 				277FDEAA275AA3600035C0B6 /* UIFont+Extension.swift */,
 				2770B3CA2795E56000AF63A1 /* UITableViewCell+Extension.swift */,
 				27C256C927DE38EC00BB3164 /* UIAlertController+Extension.swift */,
+				27CF6F33282035CA00E00FE9 /* Bundle+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 				277ED1272746CDC40091C076 /* Assets.xcassets */,
 				277ED12C2746CDC40091C076 /* Info.plist */,
 				27C256CB27E24C5800BB3164 /* GoogleService-Info.plist */,
+				27CF6F312820350500E00FE9 /* MyPrivacyInfo.plist */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 				27604F492752D45300E7EABE /* rich.png in Resources */,
 				277ED12B2746CDC40091C076 /* LaunchScreen.storyboard in Resources */,
 				27353A4227EB893E00B6D834 /* NotoSansCJKkr-Regular.otf in Resources */,
+				27CF6F322820350500E00FE9 /* MyPrivacyInfo.plist in Resources */,
 				27604F402752D28E00E7EABE /* smile.png in Resources */,
 				27604F4B2752D45300E7EABE /* angry.png in Resources */,
 				27353A4327EB893E00B6D834 /* NotoSansCJKkr-Medium.otf in Resources */,
@@ -456,6 +463,7 @@
 				27C256CA27DE38EC00BB3164 /* UIAlertController+Extension.swift in Sources */,
 				277FDEA62759FDF50035C0B6 /* Customs.swift in Sources */,
 				277FDE952757E2A40035C0B6 /* SettingViewController.swift in Sources */,
+				27CF6F34282035CA00E00FE9 /* Bundle+Extension.swift in Sources */,
 				277ED11F2746CDC00091C076 /* AppDelegate.swift in Sources */,
 				277ED1532747FE140091C076 /* ListViewController.swift in Sources */,
 				277FDEAB275AA3600035C0B6 /* UIFont+Extension.swift in Sources */,

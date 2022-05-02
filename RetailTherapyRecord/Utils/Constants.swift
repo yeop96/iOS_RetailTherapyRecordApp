@@ -48,6 +48,7 @@ enum SettingString: Int, CaseIterable {
     case contactUs
     case appStory
     case myFont
+    case appStoreReview
     case appVersion
     
     func settingTitle() -> String{
@@ -60,6 +61,8 @@ enum SettingString: Int, CaseIterable {
             return "앱 이야기"
         case .myFont:
             return "나의 글씨체"
+        case .appStoreReview:
+            return "리뷰 쓰러 이동"
         case .appVersion:
             return "앱 버전"
         }

@@ -40,13 +40,6 @@ final class SettingViewController: BaseViewController, SFSafariViewControllerDel
         self.navigationItem.backBarButtonItem = backBarButtonItem
     }
     
-    func appVersionGet() -> String{
-        guard let dictionary = Bundle.main.infoDictionary,
-              let version = dictionary["CFBundleShortVersionString"] as? String
-        else { return "" }
-        return version
-    }
-    
 }
 
 extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate{
@@ -115,6 +108,11 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
             
             self.navigationController?.pushViewController(vc, animated: true)
         }
+        //앱스토어 리뷰
+        else if row == SettingString.appStoreReview.rawValue{
+            let appAppleID = Bundle.main.appAppleID
+            requestReviewmenually(id: appAppleID)
+        }
         //앱 버전
         else if row == SettingString.appVersion.rawValue{
             let leftView = UIImageView(image: UIImage(named: "wasted")!)
@@ -160,7 +158,13 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
         else { return }
         UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
     }
-
+    
+    func appVersionGet() -> String{
+        guard let dictionary = Bundle.main.infoDictionary,
+              let version = dictionary["CFBundleShortVersionString"] as? String
+        else { return "" }
+        return version
+    }
 
 }
 
