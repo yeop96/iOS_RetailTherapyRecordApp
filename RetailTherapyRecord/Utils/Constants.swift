@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Expression: Int {
+enum Expression: Int, CaseIterable {
     case rich = 0
     case smile = 1
     case angry = 2

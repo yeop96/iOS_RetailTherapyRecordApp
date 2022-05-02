@@ -13,13 +13,6 @@ final class EmotionPickerViewController: BaseViewController {
     let PICKER_VIEW_COLUMN = 1 // 피커 뷰의 열의 갯수 지정
     let PICKER_VIEW_HEIGHT: CGFloat = 64 // 피커 뷰의 높이를 지정할 상수
     var imageArray = [UIImage?]()
-    var imageFileName = ["rich.png",
-                         "smile.png",
-                         "angry.png",
-                         "cry.png",
-                         "sad.png",
-                         "yummy.png",
-                         "expressionless.png"] // 이미지의 파일명을 저장할 배열
     var selectEmotionInt = 0
     var saveActionHandler: (() -> Void)?
     
@@ -40,8 +33,8 @@ final class EmotionPickerViewController: BaseViewController {
         pickerView.dataSource = self
         
         for i in 0 ..< MAX_ARRAY_NUM {
-            // 각 파일 명에 해당하는 이미지를 생성
-            let image = UIImage(named: imageFileName[i])
+            // 각 파일에 해당하는 이미지를 생성
+            let image = Expression(rawValue: i)?.expressionEmoji()
             // 생성된 이미지를 imageArray에 추가
             imageArray.append(image)
         }
@@ -72,7 +65,7 @@ extension EmotionPickerViewController: UIPickerViewDelegate, UIPickerViewDataSou
     
     // 피커 뷰의 개수 설정
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return imageFileName.count
+        return Expression.allCases.count
     }
     
     

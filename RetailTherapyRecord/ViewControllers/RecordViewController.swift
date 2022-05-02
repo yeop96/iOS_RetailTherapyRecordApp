@@ -13,13 +13,6 @@ final class RecordViewController: BaseViewController {
     var editRecordBool = false //셀에서 진입시 true, 추가 버튼에서 진입시 false
     var selectDate = Date()
     var selectEmotionInt = 0
-    var imageFileName = ["rich.png",
-                         "smile.png",
-                         "angry.png",
-                         "cry.png",
-                         "sad.png",
-                         "yummy.png",
-                         "expressionless.png"] // 이미지의 파일명을 저장할 배열
     let placeholderText = "감정 소비한 이야기를 적어보세요 :)"
     
     var existingSubject = ""
@@ -49,7 +42,7 @@ final class RecordViewController: BaseViewController {
         
         let dateString = DateFormatter().koreaDateFormatString(date: selectDate)
         dateButton.setTitle(dateString, for: .normal)
-        emotionImageView.image = UIImage(named: imageFileName[selectEmotionInt])
+        emotionImageView.image = Expression(rawValue: selectEmotionInt)?.expressionEmoji()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
