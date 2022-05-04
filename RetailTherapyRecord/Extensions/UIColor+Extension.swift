@@ -9,7 +9,7 @@ import UIKit
 
 extension UIColor {
     /// Primary ColorSet
-
+    
     /// Primary color
     class var primary: UIColor { return UIColor(named: "primary")! }
     /// Secondary color

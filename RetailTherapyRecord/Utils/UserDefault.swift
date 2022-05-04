@@ -11,12 +11,12 @@ import Foundation
 struct UserDefault<T> {
     private let key: String
     private let defaultValue: T
-
+    
     init(key: String, defaultValue: T) {
         self.key = key
         self.defaultValue = defaultValue
     }
-
+    
     var wrappedValue: T {
         get {
             // Read value from UserDefaults

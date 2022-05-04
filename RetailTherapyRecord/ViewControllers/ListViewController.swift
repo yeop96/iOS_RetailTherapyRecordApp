@@ -222,7 +222,6 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     
     //셀의 높이: heightForRowAt
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         return 90
     }
     //헤더 높이: heightForHeaderInSection

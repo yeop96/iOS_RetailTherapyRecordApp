@@ -96,7 +96,7 @@ final class RecordViewController: BaseViewController {
             
             emotionButton.setTitle("표정 선택", for: .normal)
             subjectTextField.becomeFirstResponder()
-
+            
         }
         else{
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집", style: .plain, target: self, action: #selector(checkButtonClicked))
@@ -122,7 +122,7 @@ final class RecordViewController: BaseViewController {
                 let cost = numberFormatter.string(for: Int(existingMoeny)!)! + "원"
                 moneyTextField.text = cost
             }
-    
+            
             contentTextView.text = existingContent
             emotionButton.setTitle("표정", for: .normal)
             
@@ -169,7 +169,7 @@ final class RecordViewController: BaseViewController {
     
     //편집 저장 클릭시
     @objc func editSaveButtonClicked(){
-    
+        
         //공백일 경우
         guard let subject = subjectTextField.text else{ return }
         if subject.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty{
@@ -217,7 +217,7 @@ final class RecordViewController: BaseViewController {
     
     //우측 상단 완료버튼 클릭시
     @objc func saveButtonClicked(){
-    
+        
         //공백일 경우
         guard let subject = subjectTextField.text else{ return }
         if subject.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty{
@@ -248,7 +248,7 @@ final class RecordViewController: BaseViewController {
         
         //Realm 저장
         let task = CostList(costSubject: subject, costMoney: moneyTextField.text, costContent: content, costDate: selectDate, costEmotion: selectEmotionInt)
-                    
+        
         try! self.localRealm.write {
             self.localRealm.add(task)
         }

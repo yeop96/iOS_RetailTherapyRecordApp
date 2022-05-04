@@ -10,7 +10,7 @@ import FSCalendar
 import RealmSwift
 
 final class CalendarViewController: BaseViewController {
-
+    
     let localRealm = try! Realm()
     var tasks: Results<CostList>!
     var dateSet = Set<String>()
@@ -26,7 +26,6 @@ final class CalendarViewController: BaseViewController {
     @IBOutlet weak var sumCostTitleLabel: UILabel!
     @IBOutlet weak var unCostDayTitleLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -35,7 +34,7 @@ final class CalendarViewController: BaseViewController {
         super.viewWillAppear(animated)
         willAppearConfigure()
     }
-
+    
     override func configure() {
         calendarView.delegate = self
         calendarView.dataSource = self
@@ -57,7 +56,7 @@ final class CalendarViewController: BaseViewController {
         calendarView.headerHeight = 50
         calendarView.appearance.headerDateFormat = "YYYY년 M월"
         calendarView.appearance.headerTitleColor = .primary
-
+        
         calendarView.appearance.weekdayTextColor = .label
         
         calendarView.appearance.titleWeekendColor = .strawberryMilk
@@ -114,7 +113,7 @@ final class CalendarViewController: BaseViewController {
         calendarView.appearance.titleFont = UIFont().customFont_Content
         calendarView.appearance.subtitleFont = UIFont().customFont_Header
     }
-
+    
     
     //세팅 버튼 클릭시
     @objc func settingButtonClicked(){
@@ -156,14 +155,14 @@ extension CalendarViewController : FSCalendarDelegate, FSCalendarDataSource, FSC
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "ko_KR")
         formatter.dateFormat = "yyyy-MM-dd"
-            
+        
         switch formatter.string(from: date) {
-            case formatter.string(from: Date()):
-                return "오늘"
-            case "2022-12-25":
-                return "크리스마스"
-            default:
-                return nil
+        case formatter.string(from: Date()):
+            return "오늘"
+        case "2022-12-25":
+            return "크리스마스"
+        default:
+            return nil
         }
     }
 }

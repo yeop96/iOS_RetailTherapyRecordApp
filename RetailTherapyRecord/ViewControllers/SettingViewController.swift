@@ -11,9 +11,8 @@ import MessageUI
 import NotificationBannerSwift
 
 final class SettingViewController: BaseViewController, SFSafariViewControllerDelegate {
-
-    @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var tableView: UITableView!
     var clickCount = 0
     
     override func viewDidLoad() {
@@ -165,7 +164,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
         else { return "" }
         return version
     }
-
+    
 }
 
 

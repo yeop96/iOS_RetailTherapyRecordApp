@@ -25,7 +25,7 @@ extension UIAlertController {
         }
         self.setValue(attributeString, forKey: "attributedTitle")
     }
-
+    
     // Set message font and message color
     func setMessage(font: UIFont?, color: UIColor?) {
         guard let message = self.message else { return }
