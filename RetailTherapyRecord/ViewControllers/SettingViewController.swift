@@ -107,6 +107,14 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
             
             self.navigationController?.pushViewController(vc, animated: true)
         }
+        //데이터 백업
+        else if row == SettingString.dataBackup.rawValue{
+            
+        }
+        //데이터 복구
+        else if row == SettingString.dataRestore.rawValue{
+            
+        }
         //앱스토어 리뷰
         else if row == SettingString.appStoreReview.rawValue{
             let appAppleID = Bundle.main.appAppleID

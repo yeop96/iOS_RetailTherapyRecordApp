@@ -48,6 +48,8 @@ enum SettingString: Int, CaseIterable {
     case contactUs
     case appStory
     case myFont
+    case dataBackup
+    case dataRestore
     case appStoreReview
     case appVersion
     
@@ -61,6 +63,10 @@ enum SettingString: Int, CaseIterable {
             return "앱 이야기"
         case .myFont:
             return "나의 글씨체"
+        case .dataBackup:
+            return "데이터 백업"
+        case .dataRestore:
+            return "데이터 복원"
         case .appStoreReview:
             return "앱 리뷰 이동"
         case .appVersion:
