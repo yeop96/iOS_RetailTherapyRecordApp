@@ -9,6 +9,7 @@ import UIKit
 import SafariServices
 import MessageUI
 import NotificationBannerSwift
+import Zip
 
 final class SettingViewController: BaseViewController, SFSafariViewControllerDelegate {
     
@@ -172,8 +173,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
         else { return "" }
         return version
     }
-    
 }
+
 
 
 class SettingListTableViewCell: UITableViewCell{

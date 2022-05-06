@@ -50,6 +50,7 @@
 		277FDEA62759FDF50035C0B6 /* Customs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDEA52759FDF50035C0B6 /* Customs.swift */; };
 		277FDEA9275A9F380035C0B6 /* 나눔손글씨 바른히피.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 277FDEA8275A9F380035C0B6 /* 나눔손글씨 바른히피.ttf */; };
 		277FDEAB275AA3600035C0B6 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FDEAA275AA3600035C0B6 /* UIFont+Extension.swift */; };
+		27AA637C282EB22B006AF429 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 27AA637B282EB22B006AF429 /* Zip */; };
 		27B6296F27D7A2FE0040F59F /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6296E27D7A2FE0040F59F /* UserDefault.swift */; };
 		27C256CA27DE38EC00BB3164 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C256C927DE38EC00BB3164 /* UIAlertController+Extension.swift */; };
 		27C256CC27E24C5900BB3164 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27C256CB27E24C5800BB3164 /* GoogleService-Info.plist */; };
@@ -129,6 +130,7 @@
 				277ED14B2746D34A0091C076 /* RealmSwift in Frameworks */,
 				277ED1432746D2EE0091C076 /* IQKeyboardManagerSwift in Frameworks */,
 				277ED1462746D2FE0091C076 /* FSCalendar in Frameworks */,
+				27AA637C282EB22B006AF429 /* Zip in Frameworks */,
 				060602FD2031B3C7BD1203E7 /* Pods_RetailTherapyRecord.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +310,7 @@
 				277ED14A2746D34A0091C076 /* RealmSwift */,
 				277ED15F27481A280091C076 /* JJFloatingActionButton */,
 				277FDE9F27599FDD0035C0B6 /* NotificationBannerSwift */,
+				27AA637B282EB22B006AF429 /* Zip */,
 			);
 			productName = RetailTherapyRecord;
 			productReference = 277ED11B2746CDC00091C076 /* RetailTherapyRecord.app */;
@@ -344,6 +347,7 @@
 				277ED15E27481A280091C076 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */,
 				277FDE9E27599FDD0035C0B6 /* XCRemoteSwiftPackageReference "NotificationBanner" */,
 				27CF5358279343D5003F1DAA /* XCRemoteSwiftPackageReference "SnapKit" */,
+				27AA637A282EB22B006AF429 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = 277ED11C2746CDC00091C076 /* Products */;
 			projectDirPath = "";
@@ -749,6 +753,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		27AA637A282EB22B006AF429 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		27CF5358279343D5003F1DAA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -789,6 +801,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 277FDE9E27599FDD0035C0B6 /* XCRemoteSwiftPackageReference "NotificationBanner" */;
 			productName = NotificationBannerSwift;
+		};
+		27AA637B282EB22B006AF429 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27AA637A282EB22B006AF429 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
