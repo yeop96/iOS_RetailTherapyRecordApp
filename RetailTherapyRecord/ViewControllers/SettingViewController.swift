@@ -10,6 +10,7 @@ import SafariServices
 import MessageUI
 import NotificationBannerSwift
 import Zip
+//import MobileCoreServices
 
 final class SettingViewController: BaseViewController, SFSafariViewControllerDelegate {
     
@@ -175,7 +176,95 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
     }
 }
 
-
+extension SettingViewController: UIDocumentPickerDelegate{
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        print("취소됐을때")
+    }
+    
+    //도큐먼트 폴더 위치
+    func documentDirectoryPath() -> String?{
+        let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+        let path = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
+        
+        if let directoryPath = path.first{
+            return directoryPath
+        }
+        else{
+            return nil
+        }
+    }
+    
+    //공유 화면
+    func presentActivityViewController(){
+        //압축 파일 경로 가져오기
+        let fileName = (documentDirectoryPath()! as NSString).appendingPathComponent("EmotionalConsumption_App_data.zip")
+        let fileURL = URL(fileURLWithPath: fileName)
+        let vc = UIActivityViewController(activityItems: [fileURL], applicationActivities: [])
+        self.present(vc, animated: true, completion: nil)
+        
+    }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        //선택한 파일에 대한 경로를 가져와야함
+        guard let selectedFileURL = urls.first else { return }
+        let directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let sandboxFileURL = directory.appendingPathComponent(selectedFileURL.lastPathComponent)
+        
+        //압축 해제
+        if FileManager.default.fileExists(atPath: sandboxFileURL.path){
+            //기존에 복구하고자 하는 zip파일을 도큐먼트에 가지고 있을 경우, 도큐먼트에 위치한 zip파일을 압축 해제 하면 됨
+            do{
+                let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+                let fileURL = documentDirectory.appendingPathComponent("EmotionalConsumption_App_data.zip")
+                
+                try Zip.unzipFile(fileURL, destination: documentDirectory, overwrite: true, password: nil, progress: { progress in
+                    print(progress)
+                }, fileOutputHandler: { unzippedFile in
+                    print("unzippedFile : \(unzippedFile) ")
+                    
+                    let alert = UIAlertController(title: "복구 완료", message: "앱을 재실행 해주세요", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "확인", style: .default){ (action) in
+                        exit(0)
+                    }
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true, completion: nil)
+                })
+            }
+            catch{
+                print("error")
+            }
+            
+        }
+        else{
+            //파일 앱의 zip -> 도큐먼트 폴더에 복사
+            do{
+                try FileManager.default.copyItem(at: selectedFileURL, to: sandboxFileURL)
+                
+                let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+                let fileURL = documentDirectory.appendingPathComponent("EmotionalConsumption_App_data.zip")
+                
+                try Zip.unzipFile(fileURL, destination: documentDirectory, overwrite: true, password: nil, progress: { progress in
+                    print(progress)
+                }, fileOutputHandler: { unzippedFile in
+                    print("unzippedFile : \(unzippedFile) ")
+                    
+                    let alert = UIAlertController(title: "복구 완료", message: "앱을 재실행 해주세요", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "확인", style: .default){ (action) in
+                        exit(0)
+                    }
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true, completion: nil)
+                })
+            }
+            catch{
+                print("error")
+            }
+        }
+        
+    }
+    
+}
 
 class SettingListTableViewCell: UITableViewCell{
     
