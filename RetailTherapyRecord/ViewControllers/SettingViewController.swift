@@ -39,6 +39,7 @@ final class SettingViewController: BaseViewController, SFSafariViewControllerDel
         tabBarHiddenSet(hidden: true)
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtonItem
+        
     }
     
 }
@@ -111,7 +112,31 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
         }
         //데이터 백업
         else if row == SettingString.dataBackup.rawValue{
+            //백업할 파일에 대한 URL 배열
+            var urlPaths = [URL]()
             
+            //도큐먼트 폴더 위치
+            if let path = self.documentDirectoryPath(){
+                //백업하고자 하는 파일 URL 확인
+                let realm = (path as NSString).appendingPathComponent("default.realm")
+                //백업하고자 하는 파일 존재 여부 확인
+                if FileManager.default.fileExists(atPath: realm){
+                    //URL배열에 백업 파일 URL 추가
+                    urlPaths.append(URL(string: realm)!)
+                }
+                else{
+                    print("백업할 파일이 없습니다.")
+                }
+            }
+            //배열에 대해 압축 파일 만들기
+            do {
+                let zipFilePath = try Zip.quickZipFiles(urlPaths, fileName: "감정소비_앱_데이터") // Zip
+                print("압축 경로: \(zipFilePath)")
+                self.presentActivityViewController()
+            }
+            catch {
+                print("압축 에러")
+            }
         }
         //데이터 복구
         else if row == SettingString.dataRestore.rawValue{
@@ -198,7 +223,7 @@ extension SettingViewController: UIDocumentPickerDelegate{
     //공유 화면
     func presentActivityViewController(){
         //압축 파일 경로 가져오기
-        let fileName = (documentDirectoryPath()! as NSString).appendingPathComponent("EmotionalConsumption_App_data.zip")
+        let fileName = (documentDirectoryPath()! as NSString).appendingPathComponent("감정소비_앱_데이터.zip")
         let fileURL = URL(fileURLWithPath: fileName)
         let vc = UIActivityViewController(activityItems: [fileURL], applicationActivities: [])
         self.present(vc, animated: true, completion: nil)
@@ -216,7 +241,7 @@ extension SettingViewController: UIDocumentPickerDelegate{
             //기존에 복구하고자 하는 zip파일을 도큐먼트에 가지고 있을 경우, 도큐먼트에 위치한 zip파일을 압축 해제 하면 됨
             do{
                 let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-                let fileURL = documentDirectory.appendingPathComponent("EmotionalConsumption_App_data.zip")
+                let fileURL = documentDirectory.appendingPathComponent("감정소비_앱_데이터.zip")
                 
                 try Zip.unzipFile(fileURL, destination: documentDirectory, overwrite: true, password: nil, progress: { progress in
                     print(progress)
@@ -242,7 +267,7 @@ extension SettingViewController: UIDocumentPickerDelegate{
                 try FileManager.default.copyItem(at: selectedFileURL, to: sandboxFileURL)
                 
                 let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-                let fileURL = documentDirectory.appendingPathComponent("EmotionalConsumption_App_data.zip")
+                let fileURL = documentDirectory.appendingPathComponent("감정소비_앱_데이터.zip")
                 
                 try Zip.unzipFile(fileURL, destination: documentDirectory, overwrite: true, password: nil, progress: { progress in
                     print(progress)
