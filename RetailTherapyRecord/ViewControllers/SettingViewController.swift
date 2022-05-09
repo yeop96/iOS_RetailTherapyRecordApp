@@ -10,7 +10,7 @@ import SafariServices
 import MessageUI
 import NotificationBannerSwift
 import Zip
-//import MobileCoreServices
+import MobileCoreServices
 
 final class SettingViewController: BaseViewController, SFSafariViewControllerDelegate {
     
@@ -114,7 +114,6 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
         else if row == SettingString.dataBackup.rawValue{
             //백업할 파일에 대한 URL 배열
             var urlPaths = [URL]()
-            
             //도큐먼트 폴더 위치
             if let path = self.documentDirectoryPath(){
                 //백업하고자 하는 파일 URL 확인
@@ -140,7 +139,10 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
         }
         //데이터 복구
         else if row == SettingString.dataRestore.rawValue{
-            
+            let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypeArchive as String], in: .import)
+            documentPicker.delegate = self
+            documentPicker.allowsMultipleSelection = false // 여러개 선택 가능한지
+            self.present(documentPicker, animated: true, completion: nil)
         }
         //앱스토어 리뷰
         else if row == SettingString.appStoreReview.rawValue{
