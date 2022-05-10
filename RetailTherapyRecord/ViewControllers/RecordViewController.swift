@@ -347,6 +347,8 @@ final class RecordViewController: BaseViewController {
     
 }
 
+
+// MARK: - UITextFieldDelegate
 extension RecordViewController: UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == moneyTextField{

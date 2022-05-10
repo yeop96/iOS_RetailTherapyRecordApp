@@ -124,7 +124,7 @@ final class CalendarViewController: BaseViewController {
     }
 }
 
-
+// MARK: - FSCalendarDelegate
 extension CalendarViewController : FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     
     //밑에 동그란 이벤트 표시

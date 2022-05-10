@@ -51,6 +51,8 @@ final class EmotionPickerViewController: BaseViewController {
     
 }
 
+
+// MARK: - UIPickerViewDelegate
 extension EmotionPickerViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     
     // 피커 뷰의 컴포넌트 수 설정

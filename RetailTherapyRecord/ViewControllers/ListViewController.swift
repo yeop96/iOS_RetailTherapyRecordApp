@@ -106,6 +106,7 @@ final class ListViewController: BaseViewController {
 }
 
 
+// MARK: - UISearchBarDelegate
 extension ListViewController: UISearchBarDelegate, UISearchResultsUpdating{
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -136,6 +137,8 @@ extension ListViewController: UISearchBarDelegate, UISearchResultsUpdating{
 }
 
 
+
+// MARK: - UITableViewDelegate
 extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     
     //섹션의 수: numberOfSections (default가 1이라서)
@@ -295,6 +298,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
 
 
 // 감정 소비 기록 셀 클래스
+// MARK: - ListTableViewCell
 class ListTableViewCell: UITableViewCell{
     @IBOutlet weak var emotionImageView: UIImageView!
     @IBOutlet weak var costSubjectLabel: UILabel!

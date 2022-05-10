@@ -44,6 +44,8 @@ final class SettingViewController: BaseViewController, SFSafariViewControllerDel
     
 }
 
+
+// MARK: - UITableViewDelegate
 extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -293,6 +295,8 @@ extension SettingViewController: UIDocumentPickerDelegate{
     
 }
 
+
+// MARK: - SettingListTableViewCell
 class SettingListTableViewCell: UITableViewCell{
     
     @IBOutlet weak var titleLabel: UILabel!
