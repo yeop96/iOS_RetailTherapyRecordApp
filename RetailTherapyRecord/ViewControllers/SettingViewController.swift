@@ -12,7 +12,7 @@ import NotificationBannerSwift
 import Zip
 import MobileCoreServices
 
-final class SettingViewController: BaseViewController, SFSafariViewControllerDelegate {
+final class SettingViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var clickCount = 0
@@ -46,7 +46,7 @@ final class SettingViewController: BaseViewController, SFSafariViewControllerDel
 
 
 // MARK: - UITableViewDelegate
-extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate{
+extension SettingViewController: UITableViewDelegate, UITableViewDataSource, SFSafariViewControllerDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return SettingString.allCases.count
@@ -177,20 +177,6 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
         
     }
     
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-    
-    func showSendMailErrorAlert() {
-        let sendMailErrorAlert = UIAlertController(title: "메일을 전송 실패", message: "아이폰 이메일 설정을 확인하고 다시 시도해주세요.", preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "확인", style: .default) {
-            (action) in
-            print("확인")
-        }
-        sendMailErrorAlert.addAction(confirmAction)
-        self.present(sendMailErrorAlert, animated: true, completion: nil)
-    }
-    
     func requestReviewmenually(id: String) { //app store connect의 앱정보에서 apple id를 확인한다
         guard let writeReviewURL = URL(string: "https://apps.apple.com/app/id\(id)?action=write-review")
         else { return }
@@ -205,6 +191,24 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFM
     }
 }
 
+// MARK: - MFMailComposeViewControllerDelegate
+extension SettingViewController: MFMailComposeViewControllerDelegate{
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertController(title: "메일을 전송 실패", message: "아이폰 이메일 설정을 확인하고 다시 시도해주세요.", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "확인", style: .default) {
+            (action) in
+            print("확인")
+        }
+        sendMailErrorAlert.addAction(confirmAction)
+        self.present(sendMailErrorAlert, animated: true, completion: nil)
+    }
+}
+
+// MARK: - UIDocumentPickerDelegate
 extension SettingViewController: UIDocumentPickerDelegate{
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         print("취소됐을때")
@@ -231,7 +235,6 @@ extension SettingViewController: UIDocumentPickerDelegate{
         let fileURL = URL(fileURLWithPath: fileName)
         let vc = UIActivityViewController(activityItems: [fileURL], applicationActivities: [])
         self.present(vc, animated: true, completion: nil)
-        
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
@@ -263,7 +266,6 @@ extension SettingViewController: UIDocumentPickerDelegate{
             catch{
                 print("error")
             }
-            
         }
         else{
             //파일 앱의 zip -> 도큐먼트 폴더에 복사
@@ -290,9 +292,7 @@ extension SettingViewController: UIDocumentPickerDelegate{
                 print("error")
             }
         }
-        
     }
-    
 }
 
 
@@ -305,6 +305,5 @@ class SettingListTableViewCell: UITableViewCell{
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
 }
 

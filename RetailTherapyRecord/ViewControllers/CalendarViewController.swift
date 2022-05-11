@@ -114,7 +114,6 @@ final class CalendarViewController: BaseViewController {
         calendarView.appearance.subtitleFont = UIFont().customFont_Header
     }
     
-    
     //세팅 버튼 클릭시
     @objc func settingButtonClicked(){
         let storyboard = UIStoryboard(name: "Setting", bundle: nil)
