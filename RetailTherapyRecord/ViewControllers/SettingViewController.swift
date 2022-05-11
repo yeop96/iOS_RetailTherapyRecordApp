@@ -75,7 +75,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, SFS
         let row = indexPath.row
         //오픈소스 라이선스
         if row == SettingString.openSourceLicense.rawValue{
-            guard let appleUrl = URL(string: "https://organic-shingle-94f.notion.site/7ead3acad79c4a63a414ca9bc7711443")   else { return }
+            let openSourceLicenseURL = Bundle.main.openSourceLicenseURL
+            guard let appleUrl = URL(string: openSourceLicenseURL)   else { return }
             let safariViewController = SFSafariViewController(url: appleUrl)
             safariViewController.delegate = self
             safariViewController.modalPresentationStyle = .automatic
@@ -84,14 +85,14 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, SFS
         }
         //문의하기
         else if row == SettingString.contactUs.rawValue{
+            let myEmail = Bundle.main.myEmail
             if MFMailComposeViewController.canSendMail() {
                 let compseVC = MFMailComposeViewController()
                 compseVC.mailComposeDelegate = self
-                compseVC.setToRecipients(["ekdh787@gmail.com"])
+                compseVC.setToRecipients([myEmail])
                 compseVC.setSubject("[감정 소비]")
                 //compseVC.setMessageBody("Message Content", isHTML: false)
                 self.present(compseVC, animated: true, completion: nil)
-                
             }
             else {
                 self.showSendMailErrorAlert()
@@ -99,7 +100,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, SFS
         }
         //앱 이야기
         else if row == SettingString.appStory.rawValue{
-            guard let appleUrl = URL(string: "https://organic-shingle-94f.notion.site/d2081d949d094b93b325d730ec946033")   else { return }
+            let appStoryURL = Bundle.main.appStoryURL
+            guard let appleUrl = URL(string: appStoryURL)   else { return }
             let safariViewController = SFSafariViewController(url: appleUrl)
             safariViewController.delegate = self
             safariViewController.modalPresentationStyle = .automatic
