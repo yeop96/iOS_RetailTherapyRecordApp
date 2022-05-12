@@ -268,7 +268,6 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         
         let row = isFiltering() ? taskSearched[indexPath.row] : taskFiltered[indexPath.row]
         
-        
         let alert = UIAlertController(title: row.costSubject, message: "기록을 삭제해도 되나요?", preferredStyle: .alert)
         alert.setTitle(font: UIFont().customFont_Navigation, color: .label)
         alert.setMessage(font: UIFont().customFont_Content, color: .strawberryMilk)
