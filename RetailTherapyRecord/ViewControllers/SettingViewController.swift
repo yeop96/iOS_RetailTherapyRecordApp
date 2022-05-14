@@ -111,16 +111,43 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource, SFS
         else if row == SettingString.myFont.rawValue{
             let storyboard = UIStoryboard(name: "FontSetting", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "FontSettingViewController") as! FontSettingViewController
-            
             self.navigationController?.pushViewController(vc, animated: true)
         }
         //데이터 백업
         else if row == SettingString.dataBackup.rawValue{
-            dataBackup()
+            let alert = UIAlertController(title: "감정소비 백업", message: "데이터를 파일에 저장(save to files)을 눌러 저장하면 백업이 됩니다. 안전한 데이터 백업을 위해 아이폰 저장공간을 확보해주세요.", preferredStyle: .alert)
+            alert.setTitle(font: UIFont().customFont_Navigation, color: .label)
+            alert.setMessage(font: UIFont().customFont_Content, color: .strawberryMilk)
+            let yesAction = UIAlertAction(title: "확인", style: .default){ (action) in
+                self.dataBackup()
+                return
+            }
+            let noAction = UIAlertAction(title: "취소", style: .cancel){ (action) in
+                return
+            }
+            yesAction.setValue(UIColor.strawberryMilk, forKey: "titleTextColor")
+            noAction.setValue(UIColor.label, forKey: "titleTextColor")
+            alert.addAction(yesAction)
+            alert.addAction(noAction)
+            present(alert, animated: true, completion: nil)
         }
-        //데이터 복구
+        //데이터 복원
         else if row == SettingString.dataRestore.rawValue{
-            dataRestore()
+            let alert = UIAlertController(title: "감정소비 복원", message: "백업해놓은 zip으로 된 감정소비 데이터를 선택하면 복원 후 앱 재 시작하면 됩니다.", preferredStyle: .alert)
+            alert.setTitle(font: UIFont().customFont_Navigation, color: .label)
+            alert.setMessage(font: UIFont().customFont_Content, color: .strawberryMilk)
+            let yesAction = UIAlertAction(title: "확인", style: .default){ (action) in
+                self.dataRestore()
+                return
+            }
+            let noAction = UIAlertAction(title: "취소", style: .cancel){ (action) in
+                return
+            }
+            yesAction.setValue(UIColor.strawberryMilk, forKey: "titleTextColor")
+            noAction.setValue(UIColor.label, forKey: "titleTextColor")
+            alert.addAction(yesAction)
+            alert.addAction(noAction)
+            present(alert, animated: true, completion: nil)
         }
         //앱스토어 리뷰
         else if row == SettingString.appStoreReview.rawValue{
