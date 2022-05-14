@@ -2,10 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>사용자 피드백을 수집하는데 동의해주세요 :) (개인정보는 절대 담기지 않습니다.)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>ko_KR</string>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>사용자 피드백을 수집하는데 동의해주세요! (개인정보는 절대 담기지 않습니다.)</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>나눔손글씨 바른히피.ttf</string>
